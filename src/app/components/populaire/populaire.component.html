@@ -1,4 +1,4 @@
-<app-header *ngIf="isCalledFromHome"></app-header>
+<app-header *ngIf="!isCalledFromHome"></app-header>
 <section class="padding-bottom-45">
   <div class="container">
       <div class="row gutters-40">
@@ -32,7 +32,7 @@
                                   <p>{{recette.description_recette}}</p>
                                   <ul class="entry-meta remove-3rd-child-lg">
                                       <li><a [routerLink]="['/recette', recette.id_recette]"><i class="fas fa-clock"></i>{{recette.tempspreparation_recette}}</a></li>
-                                      <li><a [routerLink]="['/recette', recette.id_recette]"><i class="fas fa-user"></i>by <span>{{recette.id_utilisateur}}</span></a></li>
+                                      <li><a [routerLink]="['/recette', recette.id_recette]"><i class="fas fa-user"></i>par <span>{{recette.username}}</span></a></li>
                                       <li><a [routerLink]="['/recette', recette.id_recette]"><i class="fas fa-heart"></i><span>{{recette.nblike}}</span> Likes</a></li>
                                   </ul>
                               </div>
@@ -44,13 +44,13 @@
           </div>
           <div class="col-lg-4 sidebar-widget-area sidebar-break-md">
 
-            <app-lastrecipes></app-lastrecipes>
+            <!-- <app-lastrecipes *ngIf="!isCalledFromHome"></app-lastrecipes> -->
             <!-- <div class="widget ranna-box-padding">
                 <div class="widget-ad">
                     <a href="#"><img src="assets/img/figure/figure3.jpg" alt="Ad" class="img-fluid"></a>
                 </div>
             </div> -->
-            <app-categorie></app-categorie>
+            <!-- <app-categorie *ngIf="!isCalledFromHome"></app-categorie> -->
         </div>
                 </div>
 

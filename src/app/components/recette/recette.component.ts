@@ -14,6 +14,7 @@ import { NgModule } from '@angular/core';
 import {  EventEmitter, Output } from '@angular/core';
 import { Utilisateur } from 'src/app/models/utilisateur/utilsateur';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { User } from 'src/app/models/user/user';
 
 @Component({
   selector: 'app-recette',
@@ -35,7 +36,7 @@ declare recetteSelectionnee : Recette;
  declare commentaire:Commentaire;
  declare gallerie : any [];
  public  affichegallerie: any[] = [];
-declare idrecetteselectionner:number;
+
   public recette!: Recette;
   likesCount = 0;
   formeditRecette: any;
@@ -43,6 +44,8 @@ declare idrecetteselectionner:number;
 
   currentRate: number= 0;
   public moyenne:number = 0;
+  declare idrecetteselectionner:number;
+public usernamerecette: string | undefined;
 
   public commentairesRecette: any[]=[];
 uid:number=0;
@@ -71,6 +74,7 @@ ngOnInit(): void {
 
     });
 
+
     const id = this.route.snapshot.paramMap.get('id');
     if (id !== null) {
       this.idrecetteselectionner = +id;
@@ -93,7 +97,7 @@ ngOnInit(): void {
           )
         }
       )
-      // this.recetteService.gettoken();
+
       const token = localStorage.getItem('token');
 if (token) {
   const jwtHelper = new JwtHelperService();
@@ -113,12 +117,16 @@ if (token) {
     this.commentaireserivce.findAllCommentaire().subscribe(
       data => {
         console.log(data);
-        this.commentaireaffiche =data as any ;
+        this.commentaireaffiche = data as any;
+        this.commentaireaffiche.forEach(commentaire => {
+          this.userService.getuser(commentaire.uid).subscribe(user => {
+            commentaire.username = user.username;
+          });
+        });
         this.calculerNoteMoyenne();
-
-
       }
     )
+
 
 
 
@@ -207,6 +215,12 @@ getRecetteById(idRecette: number) {
   this.listEtape=this.convertToListetape(recetteSelectionnee.listEtape);
  this.listGalerie=this.convertToListgalerie(recetteSelectionnee.listGalerie);
 
+
+ this.userService.getuser(this.recetteSelectionnee.uid).subscribe(userrecette => {
+  console.log(userrecette);
+   console.log("Le créateur de la recette est " + userrecette.username);
+   this.usernamerecette= userrecette.username;;
+ });
 
 //  const uidrecetteselectionner=this.userService.getuser(this.recetteSelectionnee.uid)
 //  const usernamerecetteselectionner =uidrecetteselectionner//Object.values(uidrecetteselectionner);

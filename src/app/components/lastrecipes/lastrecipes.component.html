@@ -13,7 +13,7 @@
               <div class="item-content">
                   <div class="item-ctg" >{{recette.categorie_recette}}</div>
                   <h4 class="item-title"><a [routerLink]="['/recette', recette.id_recette]">{{recette.titre_recette}}</a></h4>
-                  <div class="item-post-by"><a [routerLink]="['/recette', recette.id_recette]"><i class="fas fa-user"></i><span>by</span>{{recette.uid}}</a></div>
+                  <div class="item-post-by"><a [routerLink]="['/recette', recette.id_recette]"><i class="fas fa-user"></i><span>Par </span>{{recette.username}}</a></div>
               </div>
 
           </li>

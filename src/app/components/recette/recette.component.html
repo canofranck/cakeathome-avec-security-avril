@@ -58,7 +58,7 @@
                               <div class="col-xl-9 col-12">
                                   <ul class="entry-meta">
                                       <li class="single-meta"><a href="#"><i class="far fa-calendar-alt"></i>{{recetteSelectionnee.date_recette | date:'short'}}</a></li>
-                                      <li class="single-meta"><a href="#"><i class="fas fa-user"></i>by <span>{{recetteSelectionnee.uid}}</span></a></li>
+                                      <li class="single-meta"><a href="#"><i class="fas fa-user"></i>Recette proposé par  <span>{{ usernamerecette}}</span></a></li>
                                       <li class="single-meta">
                                         <ul class="item-rating">
                                           <ng-container *ngIf="recetteSelectionnee.notemoyenne">  <!--au cas ou la valeur est null-->
@@ -82,7 +82,7 @@
                                       </li>
                                   </ul>
                               </div>
-                              <!-- <div class="col-xl-3 col-12">
+                              <div class="col-xl-3 col-12">
                                   <ul class="action-item">
                                       <li><button><i class="fas fa-print"></i></button></li>
                                       <li><button><i class="fas fa-expand-arrows-alt"></i></button></li>
@@ -97,7 +97,7 @@
                                           </div>
                                       </li>
                                   </ul>
-                              </div> -->
+                              </div>
                           </div>
                           <div class="item-figure">
 
@@ -418,7 +418,7 @@
                                     <div class="media media-none--xs" *ngFor="let item of commentaireaffiche">
                                         <!-- <img src="./assets/img/blog/comment1.jpg" alt="Comment" class="media-img-auto"> -->
                                         <div class="media-body">
-                                            <h4 class="comment-title"  *ngIf="item.id_recette==idrecetteselectionner">{{item.uid}}</h4>
+                                            <h4 class="comment-title"  *ngIf="item.id_recette==idrecetteselectionner">{{item.username}}</h4>
                                             <span class="post-date"  *ngIf="item.id_recette==idrecetteselectionner">{{item.datecommentaire | date:'short' }}</span>
                                             <p  *ngIf="item.id_recette==idrecetteselectionner">{{item.commentaire}}</p>
                                              <ul class="item-rating">

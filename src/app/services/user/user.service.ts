@@ -90,8 +90,11 @@ export class UserService {
         return formData;
       }
 
-      public getuser(userId: number) : Observable< CustomHttpResponse >{
-        return this.http.get<CustomHttpResponse>(`${this.host}/find/${userId}`);
+      // public getuser(userId: number) : Observable< CustomHttpResponse >{
+      //   return this.http.get<CustomHttpResponse>(`${this.host}/find/${userId}`);
+      // }
+      public getuser(userId: number) : Observable<User>{
+        return this.http.get<User>(`${this.host}/finduser/${userId}`);
       }
 
 

@@ -7,6 +7,7 @@ import { Recette } from 'src/app/models/recette/recette';
 import { filter } from 'rxjs';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Commentaire } from 'src/app/models/commentaire/commentaire';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-tendance',
@@ -26,7 +27,7 @@ export class TendanceComponent implements OnInit {
   constructor (
   private recetteService: RecetteService, // Service pour les recettes
   private gallerieService : GallerieService, // Service pour les galeries
-
+  private userService:UserService,
   private router: Router, // Router pour naviguer entre les pages
   private route: ActivatedRoute,  // ActivatedRoute pour obtenir des informations sur l'URL actuelle
     ){}
@@ -47,20 +48,35 @@ this.getRecettestendance(); // Appel de la méthode getRecettestendance() pour o
 
 
 
+       getRecettestendance() {
+        this.recetteService.findAllRecettes().subscribe(
+          data => {
+            const recettes = data as any[]; // récupérer les données de l'API en tant que tableau de Recette
 
-    getRecettestendance() {
-      this.recetteService.findAllRecettes().subscribe(
-        data => {
-          const recettes = data as Recette[]; // récupérer les données de l'API en tant que tableau de Recette
-          const topRecettes = recettes.sort((a, b) => b.nbvuerecette - a.nbvuerecette).slice(0, 3); // trier les recettes par nombre de vues et en prendre les 3 premières
-          this.topRecettes=topRecettes; // stocker les recettes les plus vues dans la variable topRecettes
-          console.log(topRecettes); // afficher les 3 recettes les plus vues
-        },
-        error => {
-          console.log(error);  // afficher une erreur si la requête a échoué
-        }
-      );
-    }
+            // Vérifier si la liste de recettes n'est pas vide
+            if (recettes.length > 0) {
+              const topRecettes = recettes.sort((a, b) => b.nbvuerecette - a.nbvuerecette).slice(0, 3); // trier les recettes par nombre de vues et en prendre les 3 premières
+
+              // Ajouter le nom d'utilisateur à chaque recette de topRecettes
+              topRecettes.forEach(recette => {
+                this.userService.getuser(recette.uid).subscribe(user => {
+                  recette.username = user.username;
+                });
+              });
+
+              this.topRecettes=topRecettes; // stocker les recettes les plus vues dans la variable topRecettes
+              console.log(topRecettes); // afficher les 3 recettes les plus vues
+            }
+            else {
+              console.log("Aucune recette n'a été trouvée.");
+            }
+          },
+          error => {
+            console.log(error);  // afficher une erreur si la requête a échoué
+          }
+        );
+      }
+
 
 
 

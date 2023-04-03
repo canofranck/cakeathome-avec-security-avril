@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Gallerie } from 'src/app/models/gallerie/gallerie';
 import { FileUploadServiceService } from 'src/app/services/fileUploadService/file-upload-service.service';
 import { GallerieService } from 'src/app/services/gallerie/gallerie.service';
@@ -20,6 +21,7 @@ export class UploadFileComponent implements OnInit{
   declare form : FormGroup;
   declare gallerie : any [];// Tableau des galeries d'images
   declare recettes : any ; // Tableau des recettes
+  uid:number=0;
   @Input() idrecetteencours! : number;  // ID de la recette en cours
 
   constructor(
@@ -50,12 +52,21 @@ export class UploadFileComponent implements OnInit{
           // console.log(" id recette en cours dans affiche ingredient"+this.idrecetteencours);
         }
     )
+    const token = localStorage.getItem('token');
+          if (token) {
+            const jwtHelper = new JwtHelperService();
+            const tokenPayload = jwtHelper.decodeToken(token);
+            const username = tokenPayload.sub;
+            const uid =tokenPayload.uid
+
+            this.uid=uid
+          }
      // Création du formulaire pour upload le fichier image
     this.form = this.formBuilder.group({
       gallerie_id:  ['', Validators.required], // Sélection obligatoire d'une galerie d'images
       id_recette:  [this.idrecetteencours], // ID de la recette en cours
 	    galleriefilename:  ['', Validators.required],// Nom de fichier obligatoire
-	    uid :  ['1', Validators.required],// ID de l'utilisateur pour upload le fichier
+	    uid :  ['', Validators.required],// ID de l'utilisateur pour upload le fichier
 
     })
     this.getGalleries();
@@ -71,6 +82,7 @@ export class UploadFileComponent implements OnInit{
 
     this.form.value.galleriefilename =  this.file.name;
     this.form.value.id_recette= this.idrecetteencours;
+    this.form.value.uid= this.uid;
     this.fileUploadService.upload(this.form.value).subscribe({
       next: (data) => {
         console.log("Data : "+data);

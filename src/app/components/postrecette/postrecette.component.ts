@@ -42,7 +42,7 @@ export class PostrecetteComponent implements OnInit{
   ){}
     ngOnInit(): void {
 
-
+      this.gettoken();
         this.formaddIngredient = this.formBuilder.group({
           // id_ingredient:['',Validators.required],
           id_recette:['',Validators.required],
@@ -61,7 +61,7 @@ export class PostrecetteComponent implements OnInit{
           tempstotal_recette:[''],
           nbpersonne_recette:[''],
           recettepremium_recette:[''],
-          uid:['1'],
+          uid:[this.uid],
         })
         // console.table(this.form.value)
 
@@ -69,20 +69,9 @@ export class PostrecetteComponent implements OnInit{
   create(){
     // this.recetteService.getIdRecetteEncours();
     console.log(this.idrecetteencours)
-          // this.recetteService.gettoken();
-          const token = localStorage.getItem('token');
-          if (token) {
-            const jwtHelper = new JwtHelperService();
-            const tokenPayload = jwtHelper.decodeToken(token);
-            const username = tokenPayload.sub;
-            const uid =tokenPayload.uid
-            console.log(" ici le pseudo du token  " +username);
-            console.log(" ici l id utilisateur du token  " +uid);
-            this.uid=uid
-            console.log("uid veant du token : "+uid);
+   
 
-          }
-
+     console.log("final recette"+this.uid);
     const formValues = this.form.value;
     const recette2 = new Recette();
     //  recette2.id_recette=this.idrecetteencours;
@@ -102,7 +91,7 @@ export class PostrecetteComponent implements OnInit{
           recette2.tempstotal_recette=this.form.value.tempstotal_recette;
           recette2.nbpersonne_recette=this.form.value.nbpersonne_recette;
           recette2.recettepremium_recette=this.form.value.recettepremium_recette;
-          recette2.uid=this.uid;
+          // recette2.uid= this.uid;
           recette2.id_recette=this.idrecetteencours;
     console.log(this.form.value);
     console.log(this.idrecetteencours)
@@ -128,7 +117,7 @@ export class PostrecetteComponent implements OnInit{
           recette.tempstotal_recette='';
           recette.nbpersonne_recette='';
           recette.recettepremium_recette=false;
-          recette.uid=1;
+           recette.uid= this.uid;
 console.log(this.recette);
 
         this.recetteService.saveRecette(recette).pipe(
@@ -140,9 +129,11 @@ console.log(this.recette);
             this.recettes.sort((a: { date_recette: number; }, b: { date_recette: number; }) => (a.date_recette < b.date_recette ? 1 : -1))
             console.log(this.recettes);
             this.idrecetteencours=this.recettes[0].id_recette;
-            console.log(" id recette avant le set"+this.idrecetteencours);
+            if ( this.recettes[0].uid=this.uid){
+                          console.log(" id recette avant le set"+this.idrecetteencours);
             this.recetteService.setIdRecetteEncours( this.idrecetteencours);
             console.log(" id recette en cours dans affiche ingredient"+this.idrecetteencours);
+            }
           }
         );
 
@@ -161,7 +152,20 @@ console.log(this.recette);
   cachetape(){
     this.afficheretape=false;
   }
+  gettoken(){
+  const token = localStorage.getItem('token');
+  if (token) {
+    const jwtHelper = new JwtHelperService();
+    const tokenPayload = jwtHelper.decodeToken(token);
+    const username = tokenPayload.sub;
+    const uid =tokenPayload.uid
+    console.log(" ici le pseudo du token  " +username);
+    console.log(" ici l id utilisateur du token  " +uid);
+    this.uid=uid
+    console.log("uid veant du token : "+uid);
 
+  }
+}
   }
 
 

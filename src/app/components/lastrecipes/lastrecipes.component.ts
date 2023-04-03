@@ -6,6 +6,7 @@ import { Gallerie } from 'src/app/models/gallerie/gallerie';
 import { Recette } from 'src/app/models/recette/recette';
 import { GallerieService } from 'src/app/services/gallerie/gallerie.service';
 import { RecetteService } from 'src/app/services/recette/recette.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-lastrecipes',
@@ -13,8 +14,8 @@ import { RecetteService } from 'src/app/services/recette/recette.service';
   styleUrls: ['./lastrecipes.component.css']
 })
 export class LastrecipesComponent implements AfterViewInit{
-  recettes!: Recette[];
-  lastRecettes :  Recette[]=[];
+  recettes: any[] = [];
+  lastRecettes : any[] = [];
 
   public i: number = 0;
   declare gallerie :any;
@@ -24,7 +25,8 @@ export class LastrecipesComponent implements AfterViewInit{
   private recetteService: RecetteService,
   private gallerieService : GallerieService,
   private router: Router,
-   private route: ActivatedRoute
+   private route: ActivatedRoute,
+   private userService:UserService,
   ){}
 
 
@@ -44,28 +46,37 @@ export class LastrecipesComponent implements AfterViewInit{
      console.log(this.isCalledFromHome);
   }
     // Méthode pour récupérer les dernières recettes
-  getLastRecettes() {
-    this.recetteService.findAllRecettes().subscribe(
-      data => {
-        this.recettes = data as Recette[];
+    getLastRecettes() {
+      this.recetteService.findAllRecettes().subscribe(
+        data => {
+          this.recettes = data as any[];
 
+          if (this.recettes.length === 0) {
+            // Si la base de données est vide, on stocke un tableau vide dans la variable lastRecettes
+            this.lastRecettes = [];
+          } else {
+            // Tri des recettes par date décroissante
+            this.recettes.sort((a, b) => new Date(b.date_recette).getTime() - new Date(a.date_recette).getTime());
 
+            // Sélection des 5 dernières recettes
+            const lastRecettes = this.recettes.slice(0, 5);
 
-        // Tri des recettes par date décroissante
-        this.recettes.sort((a, b) => new Date(b.date_recette).getTime() - new Date(a.date_recette).getTime());
+            // Ajout du nom d'utilisateur à chaque recette de lastRecettes
+            lastRecettes.forEach(recette => {
+              this.userService.getuser(recette.uid).subscribe(user => {
+                recette.username = user.username;
+              });
+            });
 
-        // Sélection des 5 dernières recettes
-        const lastRecettes = this.recettes.slice(0, 5);
+            this.lastRecettes = lastRecettes;
+          }
+        },
+        error => {
+          console.log(error);  // afficher une erreur si la requête a échoué
+        }
+      );
+    }
 
-       this.lastRecettes= lastRecettes;
-      //  console.table(this.lastRecettes);
-
-
-
-
-      }
-    );
-  }
  // Méthode pour récupérer les galeries d'images
   getGalleries() {
    this.gallerieService.findAllGalleries().subscribe(
