@@ -1,0 +1,79 @@
+<!-- <ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/utilisateur" >utilisateur</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/abonnement" >abonnement</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/listrecette" >recette</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/commentaire"   >commentaire</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/etape"   >etape</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/ingredient"   >ingredient</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/recetteingredient"   >recetteingredient</a>
+  </li>
+
+</ul> -->
+<br>
+<br>
+
+
+    <form [formGroup]="formaddEtape" (ngSubmit)="create()">
+        <div class="form-group">
+            <!-- <div class="input-field col s16">
+                <label for="id_etape">id_etape</label>
+                <input type="text" name="" id="id_etape" class="form-control" formControlName="id_etape" data-length="10">
+            </div> -->
+            <!-- <div class="input-field col s16">
+              <label for="id_recette"> id_recette</label>
+              <input type="text" name="" id="id_recette" class="form-control" formControlName="id_recette" data-length="100">
+            </div> -->
+            <div class="row no-gutters">
+              <div class="col-6">
+                       <div class="form-group additional-input-box icon-right">
+
+                <input type="text" name="" placeholder="numero_etape" id="numero_etape" class="form-control" formControlName="numero_etape" data-length="100">
+            </div>
+            </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-6">
+                       <div class="form-group additional-input-box icon-right">
+
+              <input type="text" name="" placeholder="instructions_etape" id="instructions_etape" class="form-control" formControlName="instructions_etape" data-length="255">
+            </div>
+            </div>
+            </div>
+            <!-- <div class="input-field col s16">
+              <label for="image_etape">image_etape</label>
+              <input type="text" name="" id="image_etape" class="form-control" formControlName="image_etape" data-length="100">
+            </div> -->
+
+
+        </div>
+        <button type="submit" class="btn-upload"><i class="flaticon-add-plus-button"></i>Enregistrer l'etape</button>
+        <!-- <button class="btn btn-success" type="submit">Soumettre</button> -->
+        <button type="button" class="btn-upload" (click)="cachertape()" ><i class="flaticon-add-plus-button"></i>Liste des etapes fini</button>
+    </form>
+    <div *ngFor="let item of listeEtape" style="text-align:center">
+      <div class="col-6">
+
+            <div class="form-group additional-input-box icon-left" >
+
+      <ul >{{"Etape n°"+item.numero_etape+"   :  "+item.instructions_etape}}</ul>
+
+      </div>
+      </div>
+
+
+    </div>
+
+

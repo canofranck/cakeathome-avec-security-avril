@@ -1,0 +1,36 @@
+
+
+<div class="container d-flex justify-content-center">
+  <div class="mt-5 row justify-content-center">
+    <label>ajouter une photos a la recette</label>
+      <div class="col-10 mb-3">
+          <label class="px-3">Selectionner une photo</label>
+          <input type="file" (change)="selectFile($event)" />
+      </div>
+
+      <div class="col-2">
+          <!-- <button class="btn btn-success btn-sm" (click)="uploadFile()">
+              Upload
+          </button> -->
+          <!-- <button type="button" class="btn-upload" (click)="uploadFile()"><i class="fas fa-cloud-upload-alt"></i>Upload</button> -->
+
+      </div>
+  </div>
+</div>
+
+<!-- <app-list-gallerie></app-list-gallerie> -->
+<div class="additional-input-wrap">
+
+  <tr>
+  <div class="form-group">
+      <ul class="upload-img">
+        <th *ngFor="let g of gallerie ">
+          <ng-container *ngIf="(g.uid == 1)&&(g.id_recette == idrecetteencours)" >
+          <li><img src="http://localhost:8085/image/{{g.galleriefilename}}" alt=""  style="width:130px"></li>
+          </ng-container>
+        </th>
+
+      </ul>
+
+  </div>
+</div>

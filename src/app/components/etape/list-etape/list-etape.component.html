@@ -1,0 +1,62 @@
+
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/utilisateur" >utilisateur</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/abonnement" >abonnement</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/listrecette" >recette</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/commentaire"   >commentaire</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/etape"   >etape</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/ingredient"   >ingredient</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/recetteingredient"   >recetteingredient</a>
+  </li>
+
+</ul>
+<br>
+<H1 class="text-center">Liste des Etapes</H1>
+<a routerLink="/addetape" class="btn btn-success waves-effect waves-light btn right orange">Ajouter une etape</a>
+<br>
+<br>
+<table id="table_id" class="table ">
+    <thead>
+        <tr>
+            <th scope="col">id_etape</th>
+
+            <th scope="col">id_recette</th>
+            <th scope="col">commentaire</th>
+            <th scope="col">numero_etape</th>
+            <th scope="col">instructions_etape</th>
+            <th scope="col">image_etape</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of etape">
+        <th scope="row"> {{item.id_etape}}</th>
+        <td>{{item.recette.id_recette}}</td>
+        <td>{{item.numero_etape}}</td>
+        <td>{{item.instructions_etape}}</td>
+        <td>{{item.image_etape}}</td>
+
+
+
+        <td><a  routerLink="/editetape/{{item.id_etape}}" class="btn btn-warning waves-effect waves-light btn right #e65100 green">Edit</a>
+        </td>
+        <td><a routerLink="/etape/{{item.id_etape}}"
+                class="btn btn-danger waves-effect waves-light btn right #e65100 green">Delete</a></td>
+    </tr>
+</tbody>
+
+</table>

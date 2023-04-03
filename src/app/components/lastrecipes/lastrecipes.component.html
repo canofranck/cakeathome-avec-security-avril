@@ -1,0 +1,24 @@
+<app-header *ngIf="isCalledFromHome"></app-header>
+<div class="widget ranna-box-padding" >
+  <div class="section-heading heading-dark" >
+      <h3 class="item-heading">DERNIERES RECETTES</h3>
+  </div>
+  <div class="widget-latest">
+      <ul class="block-list remove-5th-child-lg"  >
+          <li class="single-item" *ngFor="let recette of lastRecettes ; let i=index" >
+              <div class="item-img"   >
+                <a *ngFor="let g of gallerie; let i=index"  [routerLink]="['/recette', recette.id_recette]" ><img *ngIf="g.id_recette == recette.id_recette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" style="width:100px"></a>
+                  <div class="count-number">{{i+1}}</div>
+              </div>
+              <div class="item-content">
+                  <div class="item-ctg" >{{recette.categorie_recette}}</div>
+                  <h4 class="item-title"><a [routerLink]="['/recette', recette.id_recette]">{{recette.titre_recette}}</a></h4>
+                  <div class="item-post-by"><a [routerLink]="['/recette', recette.id_recette]"><i class="fas fa-user"></i><span>by</span>{{recette.uid}}</a></div>
+              </div>
+
+          </li>
+        </ul>
+
+  </div>
+</div>
+

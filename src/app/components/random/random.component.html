@@ -1,0 +1,40 @@
+<app-header *ngIf="isCalledFromHome"></app-header>
+<section class="padding-bottom-45">
+  <div class="container">
+      <div class="row gutters-40">
+          <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let item of randomRecettes ; let i=index">
+              <div class="product-box-layout4">
+                  <div class="item-figure">
+                    <a *ngFor="let g of gallerie; let i=index" [routerLink]="['/recette',item.id_recette]"><img *ngIf="g.id_recette == item.id_recette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" style="width:530px;height: 364px"></a>
+
+                      <a href="single-recipe1.html" class="item-dot">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                      </a>
+                  </div>
+                  <div class="item-content">
+                      <span class="sub-title">{{randomRecettes[i].categorie_recette }}</span>
+                      <h3 class="item-title"><a href="single-recipe1.html">{{randomRecettes[i].titre_recette}}</a></h3>
+                      <ul class="item-rating">
+                        <ng-container *ngIf="item.notemoyenne">  <!--au cas ou la valeur est null-->
+                          <ngb-rating [(rate)]="item.notemoyenne" [readonly]="true" [max]="5" class="custom-size custom-color"></ngb-rating>
+                          <span class="rating-number">{{ item.notemoyenne | number: '1.2-2' }}</span>
+                        </ng-container>
+                      </ul>
+                      <ul class="entry-meta">
+                          <li><a href="#"><i class="fas fa-clock"></i>{{randomRecettes[i].tempstotal_recette}}</a></li>
+                          <li><a href="#"><i class="fas fa-user"></i>by <span>{{randomRecettes[i].uid}}</span></a></li>
+                          <li><a href="#"><i class="fas fa-heart"></i><span>{{randomRecettes[i].nblike }}</span> Likes</a></li>
+
+                      </ul>
+                  </div>
+              </div>
+
+          </div>
+
+
+      </div>
+
+  </div>
+</section>

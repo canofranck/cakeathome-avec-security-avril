@@ -1,0 +1,57 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/utilisateur" >utilisateur</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/abonnement" >abonnement</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/listrecette" >recette</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/commentaire"   >commentaire</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/etape"   >etape</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/ingredient"   >ingredient</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/recetteingredient"   >recetteingredient</a>
+  </li>
+
+</ul>
+<br>
+<br>
+<H2 class="text-center">Editer une etape</H2>
+<div class="container border">
+    <form [formGroup]="editetapeForm" (ngSubmit)="update()">
+        <div class="form-group">
+            <div class="input-field col s16">
+                <label for="id_etape">  id_etape</label>
+                <input type="text" name="" id="id_etape" class="form-control" formControlName="id_etape" data-length="10">
+            </div>
+            <div class="input-field col s16">
+                <label for="numero_etape">numero_etape</label>
+                <input type="text" name="" id="numero_etape" class="form-control" formControlName="numero_etape" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="instructions_etape"> instructions_etape</label>
+              <input type="text" name="" id="instructions_etape" class="form-control" formControlName="instructions_etape" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="image_etape">image_etape</label>
+              <input type="text" name="" id="image_etape" class="form-control" formControlName="image_etape" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="id_recette"> id_recette</label>
+              <input type="text" name="" id="id_recette" class="form-control" formControlName="id_recette" data-length="100">
+            </div>
+
+        </div>
+        <button class="btn btn-success" type="submit">Soumettre</button>
+    </form>
+    <br>
+</div>
+{{editetapeForm.value | json}}

@@ -1,0 +1,165 @@
+
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/utilisateur" >utilisateur</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/abonnement" >abonnement</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/listrecette" >recette</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/commentaire"   >commentaire</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/etape"   >etape</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/ingredient"   >ingredient</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/recetteingredient"   >recetteingredient</a>
+  </li>
+
+</ul><br>
+<H1 class="text-center">Liste des recettes</H1>
+<a routerLink="/addrecette" class="btn btn-success waves-effect waves-light btn right orange">Ajouter une nouvelle recette</a>
+<br>
+<br>
+<table id="table_id" class="table ">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">titre</th>
+            <th scope="col">date</th>
+            <th scope="col">description</th>
+            <th scope="col">categorie</th>
+            <th scope="col">niveaudifficulte</th>
+            <th scope="col">tempspreparation</th>
+            <th scope="col">tempscuisson</th>
+            <th scope="col">tempstotal</th>
+            <th scope="col">nbpersonne</th>
+            <th scope="col">recettepremium_recette</th>
+            <th scope="col">uid</th>
+
+          </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of recettes">
+        <th scope="row"> {{item.id_recette}}</th>
+        <td>{{item.titre_recette}}</td>
+        <td>{{item.date_recette | date:"dd/MM/yy"}}</td>
+        <td>{{item.description_recette}}</td>
+        <td>{{item.categorie_recette}}</td>
+        <td>{{item.niveaudifficulte_recette}}</td>
+        <td>{{item.tempspreparation_recette}}</td>
+        <td>{{item.tempscuisson_recette}}</td>
+        <td>{{item.tempstotal_recette}}</td>
+        <td>{{item.nbpersonne_recette}}</td>
+        <td>{{item.recettepremium_recette}}</td>
+        <td>{{item.uid}}</td>
+
+        <td><a  routerLink="/editrecette/{{item.id_recette}}" class="btn btn-warning waves-effect waves-light btn right #e65100 green">Edit</a>
+        </td>
+        <td><a routerLink="/recette/{{item.id_recette}}"
+                class="btn btn-danger waves-effect waves-light btn right #e65100 green">Delete</a></td>
+    </tr>
+</tbody>
+
+ </table>
+
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css /> -->
+<!-- <div  >
+  <div class="row">
+      <div class="col-md-offset-1 col-md-20">
+          <div class="panel">
+              <div class="panel-heading">
+                  <div class="row">
+                      <div class="col-sm-12 col-xs-12">
+                          <a href="#" class="btn btn-sm btn-primary pull-left"><i class="fa fa-plus-circle"></i> Add New</a>
+                          <form class="form-horizontal pull-right">
+                              <div class="form-group">
+                                  <label>Show : </label>
+                                  <select class="form-control">
+                                      <option>5</option>
+                                      <option>10</option>
+                                      <option>15</option>
+                                      <option>20</option>
+                                  </select>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+              <div class="panel-body table-responsive">
+                  <table class="table" >
+                      <thead>
+                          <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">titre</th>
+                            <th scope="col">date</th>
+                            <th scope="col">description</th>
+                            <th scope="col">categorie</th>
+                            <th scope="col">niveaudifficulte</th>
+                            <th scope="col">tempspreparation</th>
+                            <th scope="col">tempscuisson</th>
+                            <th scope="col">tempstotal</th>
+                            <th scope="col">nbpersonne</th>
+                            <th scope="col">recettepremium_recette</th>
+                            <th scope="col">uid</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let item of recettes">
+                              <td>{{item.titre_recette}}</td>
+                              <td>{{item.id_recette}}</td>
+                              <td>{{item.titre_recette}}</td>
+                              <td>{{item.date_recette}}</td>
+                              <td>{{item.description_recette}}</td>
+                              <td>{{item.categorie_recette}}</td>
+                              <td>{{item.niveaudifficulte_recette}}</td>
+                              <td>{{item.tempspreparation_recette}}</td>
+                              <td>{{item.tempscuisson_recette}}</td>
+                              <td>{{item.tempstotal_recette}}</td>
+                              <td>{{item.nbpersonne_recette}}</td>
+                              <td>{{item.recettepremium_recette}}</td>
+                              <td>{{item.uid}}</td>
+
+
+                                    <ul class="action-list">
+                                        <li><a href="#" class="btn btn-primary"><i class="fa fa-pencil-alt"></i></a></li>
+                                        <li><a href="#" class="btn btn-danger"><i class="fa fa-times"></i></a></li>
+                                    </ul>
+
+
+                                <a href="#" class="btn btn-sm btn-success"><i class="fa fa-search"></i></a>
+                        </tr>
+
+                      </tbody>
+                  </table>
+              </div>
+              <div class="panel-footer">
+                  <div class="row">
+                      <div class="col-sm-6 col-xs-6">showing <b>5</b> out of <b>25</b> entries</div>
+                      <div class="col-sm-6 col-xs-6">
+                          <ul class="pagination hidden-xs pull-right">
+                              <li><a href="#">«</a></li>
+                              <li class="active"><a href="#">1</a></li>
+                              <li><a href="#">2</a></li>
+                              <li><a href="#">3</a></li>
+                              <li><a href="#">4</a></li>
+                              <li><a href="#">5</a></li>
+                              <li><a href="#">»</a></li>
+                          </ul>
+                          <ul class="pagination visible-xs pull-right">
+                              <li><a href="#">«</a></li>
+                              <li><a href="#">»</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> -->

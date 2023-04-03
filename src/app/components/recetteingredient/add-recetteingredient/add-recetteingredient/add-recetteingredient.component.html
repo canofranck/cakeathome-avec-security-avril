@@ -1,0 +1,154 @@
+ <ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/utilisateur" >utilisateur</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/abonnement" >abonnement</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/listrecette" >recette</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/commentaire"   >commentaire</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/etape"   >etape</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/ingredient"   >ingredient</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/recetteingredient"   >recetteingredient</a>
+  </li>
+
+</ul>
+<br>
+<br>
+<H2 class="text-center">Créer un recette to ingredient</H2>
+<div class="container border">
+    <form [formGroup]="formaddRecetteIngredient" (ngSubmit)="create()">
+        <div class="form-group">
+            <div class="input-field col s16">
+                <label for="id_recetteingredients">id_recetteingredients</label>
+                <input type="text" name="" id="id_recetteingredients" class="form-control" formControlName="id_recetteingredients" data-length="10">
+            </div>
+            <div class="input-field col s16">
+                <label for="quantite">quantite</label>
+                <input type="text" name="" id="quantite" class="form-control" formControlName="quantite" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="id_recette">id_recette</label>
+              <input type="text" name="" id="id_recette" class="form-control" formControlName="id_recette" data-length="10">
+          </div>
+          <div class="input-field col s16">
+              <label for="id_ingredient">id_ingredient</label>
+              <input type="text" name="" id="id_ingredient" class="form-control" formControlName="id_ingredient" data-length="100">
+          </div>
+            <!-- <label>Ingrédients :</label>
+
+            <div class="form-group">
+              <label for="ingredient">Ingrédient</label>
+              <select id="ingredient" [(ngModel)]="selectedIngredient" name="ingredient">
+                <option *ngFor="let ingredient of ingredients" [ngValue]="ingredient">{{ingredient.nomingredients}}</option>
+              </select>
+            </div>
+
+            <label>Recettes :</label>
+
+            <div class="form-group">
+              <label for="recette">Recette</label>
+              <select id="recette" [(ngModel)]="selectedRecette" name="recette">
+                <option *ngFor="let recette of recettes" [ngValue]="recette">{{recette.titre_recette}}</option>
+              </select>
+            </div> -->
+        </div>
+        <button class="btn btn-success" type="submit">Soumettre</button>
+    </form>
+    {{formaddRecetteIngredient.value | json}}
+    <br>
+</div>
+ -->
+
+ <!-- <div class="form-group">
+  <label for="recette">Recette:</label>
+  <select [(ngModel)]="selectedRecette" (ngModelChange)="onSelectRecette($event.target.value)" class="form-control" id="recette" required>
+    <option *ngFor="let recette of recettes" [ngValue]="recette">{{recette.titre_recette}}</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="ingredient">Ingrédient:</label>
+  <select [(ngModel)]="selectedIngredient" (ngModelChange)="onSelectIngredient($event.target.value)" class="form-control" id="ingredient" required>
+    <option *ngFor="let ingredient of ingredients" [ngValue]="ingredient">{{ingredient.nomingredients}}</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="quantite">Quantité:</label>
+
+  <input type="text" name="" id="quantite" class="form-control" formControlName="quantite" data-length="100">
+</div>
+
+<button type="submit" class="btn btn-primary" (click)="create()">Enregistrer</button> -->
+
+
+
+
+<!-- ce code est ok -->
+
+<!--
+<form [formGroup]="formaddRecetteIngredient">
+    <div class="form-group">
+      <label for="recette">Recette:</label>
+      <select [(ngModel)]="selectedRecette" (ngModelChange)="onSelectRecette($event.target.value)" class="form-control" id="recette" required>
+        <option *ngFor="let recette of recettes" [ngValue]="recette">{{recette.titre_recette}}</option>
+
+
+       </select>
+    </div>
+
+    <div class="form-group">
+    <label for="ingredient">Ingrédient:</label>
+    <select [(ngModel)]="selectedIngredient" (ngModelChange)="onSelectIngredient($event.target.value)" class="form-control" id="ingredient" required>
+      <option *ngFor="let ingredient of ingredients" [ngValue]="ingredient">{{ingredient.nomingredients}}</option>
+    </select>
+   </div>
+
+    <div class="form-group">
+    <label for="quantite">Quantité:</label>
+
+    <input type="text" name="" id="quantite" class="form-control" formControlName="quantite" data-length="100">
+    </div>
+   <div class="form-group">
+    <div class="input-field col s16">
+        <label for="id_recetteingredients">id_recetteingredients</label>
+        <input type="text" name="" id="id_recetteingredients" class="form-control" formControlName="id_recetteingredients" data-length="10">
+    </div>
+
+   <button (click)="create()">Ajouter</button>
+   </div>
+</form>
+{{formaddRecetteIngredient.value | json}} -->
+
+<!-- fin du code ok  -->
+
+<!--
+<form [formGroup]="formaddRecetteIngredient">
+  <div>
+    <label for="id_recetteingredients">Id recetteingredients:</label>
+    <input type="text" id="id_recetteingredients" formControlName="id_recetteingredients">
+  </div>
+  <div>
+    <label for="quantite">Quantité:</label>
+    <input type="text" id="quantite" formControlName="quantite" required>
+  </div>
+  <div>
+    <label for="ingredients">Ingredients:</label>
+    <input type="text" id="ingredients" formControlName="ingredients">
+  </div>
+  <div>
+    <label for="recettes">Recettes:</label>
+    <input type="text" id="recettes" formControlName="recettes">
+  </div>
+  <button type="submit">Submit</button>
+</form> -->

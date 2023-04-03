@@ -1,0 +1,55 @@
+<app-header *ngIf="isCalledFromHome"></app-header>
+<section class="padding-bottom-45">
+  <div class="container">
+      <div class="row gutters-40">
+          <div class="col-md-6 col-sm-6 col-12">
+              <div class="row gutters-40">
+                  <div class="col-12" >
+                    <div class="section-heading heading-dark" >
+                      <h2 class="item-heading">Les Recettes Tendance</h2>
+                  </div>
+                      <div class="product-box-layout4"  *ngFor="let recette of topRecettes  ; let i=index" >
+
+                          <div class="item-figure" >
+                            <a *ngFor="let g of gallerie; let i=index"  [routerLink]="['/recette', recette.id_recette]" href="#"><img *ngIf="g.id_recette == recette.id_recette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" ></a>
+
+                                <a>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                              </a>
+                          </div>
+                          <div class="item-content" >
+                              <span class="sub-title">{{recette.categorie_recette}}</span>
+
+                              <ul class="item-rating">
+                                <ng-container *ngIf="recette.notemoyenne">  <!--au cas ou la valeur est null-->
+                                  <ngb-rating [(rate)]="recette.notemoyenne" [readonly]="true" [max]="5" class="custom-size custom-color"></ngb-rating>
+                                  <span class="rating-number">{{ recette.notemoyenne | number: '1.2-2' }}</span>
+                                </ng-container>
+                              </ul>
+                              <p>{{recette.description_recette}}</p>
+                              <ul class="entry-meta">
+                                  <li><a [routerLink]="['/recette', recette.id_recette]"><i class="fas fa-clock"></i>{{recette.tempspreparation_recette}}</a></li>
+                                  <li><a [routerLink]="['/recette', recette.id_recette]"><i class="fas fa-user"></i>by <span>{{recette.uid}}</span></a></li>
+                                  <li><a [routerLink]="['/recette', recette.id_recette]"><i class="fas fa-eye"></i><span>{{recette.nbvuerecette}}</span> View</a></li>
+                                  <li><a [routerLink]="['/recette', recette.id_recette]"><i class="fas fa-heart"></i><span>{{recette.nblike}}</span> Likes</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 sidebar-widget-area sidebar-break-md">
+
+              <app-lastrecipes></app-lastrecipes>
+              <!-- <div class="widget ranna-box-padding">
+                  <div class="widget-ad">
+                      <a href="#"><img src="assets/img/figure/figure3.jpg" alt="Ad" class="img-fluid"></a>
+                  </div>
+              </div> -->
+              <app-categorie></app-categorie>
+          </div>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/utilisateur" >utilisateur</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/abonnement" >abonnement</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/listrecette" >recette</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/commentaire"   >commentaire</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/etape"   >etape</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/ingredient"   >ingredient</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/recetteingredient"   >recetteingredient</a>
+  </li>
+
+</ul>
+<br>
+<br>
+<H2 class="text-center">Créer une Recette</H2>
+<div class="container border">
+    <form [formGroup]="formaddRecette" (ngSubmit)="create()">
+        <div class="form-group">
+            <div class="input-field col s16">
+                <label for="uid"> uid</label>
+                <input type="text" name="" id="uid" class="form-control" formControlName="uid" data-length="10">
+            </div>
+            <div class="input-field col s16">
+                <label for="titre_recette"> titre_recette</label>
+                <input type="text" name="" id="titre_recette" class="form-control" formControlName="titre_recette" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="date_recette"> date_recette</label>
+              <input type="text" name="" id="date_recette" class="form-control" formControlName="date_recette" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="description_recette">description_recette</label>
+              <input type="text" name="" id="description_recette" class="form-control" formControlName="description_recette" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="categorie_recette"> categorie_recette</label>
+              <input type="text" name="" id="categorie_recette" class="form-control" formControlName="categorie_recette" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="niveaudifficulte_recette"> niveaudifficulte_recette</label>
+              <input type="text" name="" id="niveaudifficulte_recette" class="form-control" formControlName="niveaudifficulte_recette" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="tempspreparation_recette"> tempspreparation_recette</label>
+              <input type="text" name="" id="tempspreparation_recette" class="form-control" formControlName="tempspreparation_recette" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="tempscuisson_recette"> tempscuisson_recette</label>
+              <input type="text" name="" id="tempscuisson_recette" class="form-control" formControlName="tempscuisson_recette" data-length="100">
+            </div>
+
+            <div class="input-field col s16">
+              <label for="tempstotal_recette"> tempstotal_recette</label>
+              <input type="text" name="" id="tempstotal_recette" class="form-control" formControlName="tempstotal_recette" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="nbpersonne_recette"> nbpersonne_recette</label>
+              <input type="text" name="" id="nbpersonne_recette" class="form-control" formControlName="nbpersonne_recette" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="recettepremium_recette"> recettepremium_recette</label>
+              <input type="text" name="" id="recettepremium_recette" class="form-control" formControlName="recettepremium_recette" data-length="100">
+            </div>
+
+            <!-- <div class="input-field col s16">
+              <label for="id_ingredient"> id_ingredient</label>
+              <input type="text" name="" id="id_ingredient" class="form-control" formControlName="id_ingredient" data-length="100">
+            </div> -->
+
+            <!-- <div class="input-field col s16">
+              <label for="quantiteingredient"> quantiteingredient</label>
+              <input type="text" name="" id="quantiteingredient" class="form-control" formControlName="quantiteingredient" data-length="100">
+            </div> -->
+
+        </div>
+        <button class="btn btn-success" type="submit">Soumettre</button>
+    </form>
+    <br>
+</div>
+{{formaddRecette.value | json}}

@@ -1,0 +1,64 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/utilisateur" >utilisateur</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/abonnement" >abonnement</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/listrecette" >recette</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/commentaire"   >commentaire</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/etape"   >etape</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/ingredient"   >ingredient</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/recetteingredient"   >recetteingredient</a>
+  </li>
+
+</ul>
+<br>
+<br>
+<H2 class="text-center">Créer un Commentaire</H2>
+<div class="container border">
+    <form [formGroup]="formAddCommentaire" (ngSubmit)="create()">
+        <div class="form-group">
+            <div class="input-field col s16">
+                <label for="id_commentaire"> id_commentaire</label>
+                <input type="text" name="" id="id_commentaire" class="form-control" formControlName="id_commentaire" data-length="10">
+            </div>
+            <div class="input-field col s16">
+                <label for="commentaire"> commentaire</label>
+                <input type="text" name="" id="commentaire" class="form-control" formControlName="commentaire" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="imagecommentaire"> imagecommentaire</label>
+              <input type="text" name="" id="imagecommentaire" class="form-control" formControlName="imagecommentaire" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="notecommentaire">notecommentaire</label>
+              <input type="text" name="" id="notecommentaire" class="form-control" formControlName="notecommentaire" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="datecommentaire"> datecommentaire</label>
+              <input type="text" name="" id="datecommentaire" class="form-control" formControlName="datecommentaire" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="uid"> uid</label>
+              <input type="text" name="" id="uid" class="form-control" formControlName="uid" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="id_recette"> id_recette</label>
+              <input type="text" name="" id="id_recette" class="form-control" formControlName="id_recette" data-length="100">
+            </div>
+        </div>
+        <button class="btn btn-success" type="submit">Soumettre</button>
+    </form>
+    <br>
+</div>
+{{formAddCommentaire.value | json}}

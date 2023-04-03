@@ -1,0 +1,89 @@
+
+<!-- <ng-container >
+  <tr *ngFor="let g of gallerie ">
+      <ng-container *ngIf="g.utilisateur_id == 2" >
+        <img src="http://localhost:8085/image/{{g.gallerie_filename}}" alt="">
+
+
+      </ng-container >
+
+
+
+
+  </tr>
+
+
+
+
+
+</ng-container> -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+</style>
+</head>
+<body>
+
+<h2>Thumbnail Image</h2>
+<p>Click on the image to enlarge it.</p>
+<ng-container >
+  <tr *ngFor="let g of gallerie ">
+      <ng-container *ngIf="g.utilisateur_id == 2" >
+         <img src="http://localhost:8085/image/{{g.gallerie_filename}}" alt="">
+        <a  href="http://localhost:8085/image/{{g.gallerie_filename}}">
+          <img src="http://localhost:8085/image/{{g.gallerie_filename}}" alt="Forest">
+        </a>
+
+      </ng-container >
+  </tr> -->
+
+<!--
+  <div class="additional-input-wrap">
+    <label>ajouter vos photos de la recette</label>
+    <div class="form-group">
+        <ul class="upload-img">
+          <tr *ngFor="let g of gallerie ">
+            <ng-container *ngIf="g.uid == 1" >
+            <li><img src="http://localhost:8085/image/{{g.gallerie_filename}}" alt=""></li>
+            </ng-container>
+          </tr>
+             <li><img src="../../../assets/img/figure/upload-banner1.jpg" alt="Upload Image"></li>
+            <li><img src="../../../assets/img/figure/upload-banner1.jpg" alt="Upload Image"></li>
+            <li><img src="../../../assets/img/figure/upload-banner1.jpg" alt="Upload Image"></li>
+            <li><img src="../../../assets/img/figure/upload-banner1.jpg" alt="Upload Image"></li>
+        </ul>
+        <button type="submit" class="btn-upload"><i class="fas fa-cloud-upload-alt"></i>ENVOYER</button>
+    </div>
+  </div> -->
+
+  <div class="additional-input-wrap">
+    <label>ajouter vos photos de la recette</label>
+    <tr>
+    <div class="form-group">
+        <ul class="upload-img">
+          <th *ngFor="let g of gallerie ">
+            <ng-container *ngIf="g.id_recette == 1" >
+            <li><img src="http://localhost:8085/image/{{g.gallerie_filename}}" alt=""  style="width:130px"></li>
+            </ng-container>
+          </th>
+
+        </ul>
+
+    </div>
+</div>
+
+
+
+

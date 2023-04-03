@@ -1,0 +1,57 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/utilisateur" >utilisateur</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/abonnement" >abonnement</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/listrecette" >recette</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/commentaire"   >commentaire</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/etape"   >etape</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/ingredient"   >ingredient</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/recetteingredient"   >recetteingredient</a>
+  </li>
+
+</ul>
+<br>
+<br>
+<H2 class="text-center">Editer un abonnement</H2>
+<div class="container border">
+    <form [formGroup]="editabonnementForm" (ngSubmit)="update()">
+        <div class="form-group">
+            <div class="input-field col s16">
+                <label for="id_abonnement">  id_abonnement</label>
+                <input type="text" name="" id="id_abonnement" class="form-control" formControlName="id_abonnement" data-length="10">
+            </div>
+            <div class="input-field col s16">
+                <label for="uid">uid</label>
+                <input type="text" name="" id="uid" class="form-control" formControlName="uid" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="abonnementpris"> abonnementpris</label>
+              <input type="text" name="" id="abonnementpris" class="form-control" formControlName="abonnementpris" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="abonnementdatedebut">abonnementdatedebut</label>
+              <input type="text" name="" id="abonnementdatedebut" class="form-control" formControlName="abonnementdatedebut" data-length="100">
+            </div>
+            <div class="input-field col s16">
+              <label for="abonnementduree"> abonnementduree</label>
+              <input type="text" name="" id="abonnementduree" class="form-control" formControlName="abonnementduree" data-length="100">
+            </div>
+
+        </div>
+        <button class="btn btn-success" type="submit">Soumettre</button>
+    </form>
+    <br>
+</div>
+{{editabonnementForm.value | json}}
