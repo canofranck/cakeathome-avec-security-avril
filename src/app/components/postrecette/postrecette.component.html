@@ -20,7 +20,7 @@
     <div id="wrapper" class="wrapper">
         <!-- Header Area Start Here -->
      <app-header></app-header>
-
+     <notifier-container></notifier-container>
         <!-- Header Area End Here -->
         <!-- Inne Page Banner Area Start Here -->
         <section class="inner-page-banner bg-common" data-bg-image="img/figure/inner-page-banner1.jpg">
@@ -137,7 +137,7 @@
                               <!-- <label>Ingredients:</label> -->
                               <!-- <label for="ingredients">Ingrédients :</label> -->
 
-                              <button type="button" class="btn-upload" (click)="affingre()" ><i class="flaticon-add-plus-button"></i>ADD NEW
+                              <button *ngIf="cachebuttoningredient" type="button" class="btn-upload" (click)="affingre()" ><i class="flaticon-add-plus-button"></i>ADD NEW
                                 INGREDIENT</button>
                               <app-add-ingredient *ngIf="addingre" (cacheringre)="cacheringr()"></app-add-ingredient>
 
@@ -181,7 +181,7 @@
 
                             <div class="form-group">
                                 <!-- <label>Description</label> -->
-                                <button type="button" class="btn-upload" (click)="affetapes()" ><i class="flaticon-add-plus-button"></i>AJOUTER UNE ETAPE</button>
+                                <button *ngIf="cachebuttonetape"  type="button" class="btn-upload" (click)="affetapes()" ><i class="flaticon-add-plus-button"></i>AJOUTER UNE ETAPE</button>
                                 <app-add-etape *ngIf="afficheretape" (cacheretape)="cachetape()"></app-add-etape>
                                 <div class="summernote"></div>
                             </div>

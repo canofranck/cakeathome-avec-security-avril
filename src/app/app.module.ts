@@ -78,12 +78,12 @@ import { LogoutComponent } from './components/logout/logout.component';
 const customNotifierOptions: NotifierOptions = {
   position: {
         horizontal: {
-            position: 'left',
-            distance: 250
+            position: 'right',
+            distance: 10
         },
         vertical: {
             position: 'top',
-            distance: 12,
+            distance: 100,
             gap: 10
         }
     },

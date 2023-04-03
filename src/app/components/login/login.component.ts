@@ -6,9 +6,9 @@ import { Subscription } from 'rxjs';
 import { HeaderType } from 'src/app/enum/header-type.enum';
 import { NotificationType } from 'src/app/enum/notification-type.enum';
 import { User } from 'src/app/models/user/user';
-import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
-import { NotificationService } from 'src/app/services/notification/notification.service';
-
+ import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+// import { NotificationService } from 'src/app/services/notification/notification.service';
+import { NotifierService } from 'angular-notifier';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit,OnDestroy {
   public showLoading: boolean = false;
   private subscriptions: Subscription [] = [];
 
-  constructor(private router: Router, private authenticationService: AuthenticationService, private notificationService: NotificationService) { }
+  constructor(private router: Router,private authenticationService: AuthenticationService, private notifierService: NotifierService) { }
 
   ngOnInit(): void {
     if(this.authenticationService.isUserLoggedIn()) {
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit,OnDestroy {
   public onLogin(user: User): void{
     this.showLoading = true;
     // console.log(user);
-
+    this.notifierService.notify('success', 'Bienvenue sur Cake At Home');
     this.subscriptions.push(this.authenticationService.login(user).subscribe(
       (response: HttpResponse<User>)=>  {
        const token = response.headers.get(HeaderType.JWT_TOKEN);
@@ -80,9 +80,9 @@ export class LoginComponent implements OnInit,OnDestroy {
   }
   private sendErrorNotification(notificationType: NotificationType, message: string): void {
     if(message){
-      this.notificationService.notify(notificationType, message);
+      // this.notificationService.notify(notificationType, message);
     } else {
-      this.notificationService.notify(notificationType, 'Une erreur est survenue. Veuillez réessayer.');
+      // this.notificationService.notify(notificationType, 'Une erreur es.');t survenue. Veuillez réessayer
     }
 
 }

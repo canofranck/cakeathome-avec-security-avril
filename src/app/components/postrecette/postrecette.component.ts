@@ -9,6 +9,7 @@ import { RecetteService } from 'src/app/services/recette/recette.service';
 import { Recette } from 'src/app/models/recette/recette';
 import { concatMap, delay } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { NotifierService } from 'angular-notifier';
 
 
 @Component({
@@ -22,6 +23,8 @@ export class PostrecetteComponent implements OnInit{
   declare ingredient : any ;
   declare formaddIngredient : FormGroup;
   addingre=false;
+  cachebuttoningredient=true;
+  cachebuttonetape=true;
   afficheretape=false;
   declare recettes : any ;
   idrecetteencours!: number;
@@ -38,7 +41,7 @@ export class PostrecetteComponent implements OnInit{
     private formBuilder: FormBuilder,
     private router : Router,
     private ingredientService : IngredientsService,
-
+    private notifier: NotifierService,
   ){}
     ngOnInit(): void {
 
@@ -69,7 +72,7 @@ export class PostrecetteComponent implements OnInit{
   create(){
     // this.recetteService.getIdRecetteEncours();
     console.log(this.idrecetteencours)
-   
+
 
      console.log("final recette"+this.uid);
     const formValues = this.form.value;
@@ -97,13 +100,14 @@ export class PostrecetteComponent implements OnInit{
     console.log(this.idrecetteencours)
      this.recetteService.updateRecette2(this.form.value,this.idrecetteencours).subscribe(
       () =>{
-
+        this.notifier.notify('success', 'Recette enregistrer avec succes ');
          this.router.navigate(['/home']);
       }
      );
   }
   affingre() {
     this.addingre=true;
+    this.cachebuttoningredient=false;
     console.log("affiche ingredient"+this.addingre);
 
         const recette = new Recette();
@@ -147,6 +151,7 @@ console.log(this.recette);
   }
   affetapes() {
     this.afficheretape=true;
+    this.cachebuttonetape=false;
     console.log(this.afficheretape);
   }
   cachetape(){

@@ -7,7 +7,7 @@
                   <div class="item-figure">
                     <a *ngFor="let g of gallerie; let i=index" [routerLink]="['/recette',item.id_recette]"><img *ngIf="g.id_recette == item.id_recette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" style="width:530px;height: 364px"></a>
 
-                      <a href="single-recipe1.html" class="item-dot">
+                      <a [routerLink]="['/recette',item.id_recette]" class="item-dot">
                           <span></span>
                           <span></span>
                           <span></span>
@@ -15,7 +15,7 @@
                   </div>
                   <div class="item-content">
                       <span class="sub-title">{{randomRecettes[i].categorie_recette }}</span>
-                      <h3 class="item-title"><a href="single-recipe1.html">{{randomRecettes[i].titre_recette}}</a></h3>
+                      <h3 class="item-title"><a [routerLink]="['/recette',item.id_recette]">{{randomRecettes[i].titre_recette}}</a></h3>
                       <ul class="item-rating">
                         <ng-container *ngIf="item.notemoyenne">  <!--au cas ou la valeur est null-->
                           <ngb-rating [(rate)]="item.notemoyenne" [readonly]="true" [max]="5" class="custom-size custom-color"></ngb-rating>
@@ -23,9 +23,9 @@
                         </ng-container>
                       </ul>
                       <ul class="entry-meta">
-                          <li><a href="#"><i class="fas fa-clock"></i>{{randomRecettes[i].tempstotal_recette}}</a></li>
-                          <li><a href="#"><i class="fas fa-user"></i>par <span>{{randomRecettes[i].username}}</span></a></li>
-                          <li><a href="#"><i class="fas fa-heart"></i><span>{{randomRecettes[i].nblike }}</span> Likes</a></li>
+                          <li><a [routerLink]="['/recette',item.id_recette]"><i class="fas fa-clock"></i>{{randomRecettes[i].tempstotal_recette}}</a></li>
+                          <li><a [routerLink]="['/recette',item.id_recette]"><i class="fas fa-user"></i>par <span>{{randomRecettes[i].username}}</span></a></li>
+                          <li><a [routerLink]="['/recette',item.id_recette]"><i class="fas fa-heart"></i><span>{{randomRecettes[i].nblike }}</span> Likes</a></li>
 
                       </ul>
                   </div>

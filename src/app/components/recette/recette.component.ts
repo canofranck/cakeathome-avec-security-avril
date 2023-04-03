@@ -15,7 +15,7 @@ import {  EventEmitter, Output } from '@angular/core';
 import { Utilisateur } from 'src/app/models/utilisateur/utilsateur';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { User } from 'src/app/models/user/user';
-
+import { NotifierService } from 'angular-notifier';
 @Component({
   selector: 'app-recette',
   templateUrl: './recette.component.html',
@@ -57,6 +57,7 @@ uid:number=0;
     private gallerieService : GallerieService,
     private route: ActivatedRoute,
     private userService:UserService,
+    private notifierService: NotifierService,
     ){
 
 }
@@ -74,7 +75,7 @@ ngOnInit(): void {
 
     });
 
-
+    this.notifierService.notify('success', 'La recette a été chargé');
     const id = this.route.snapshot.paramMap.get('id');
     if (id !== null) {
       this.idrecetteselectionner = +id;
