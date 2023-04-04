@@ -53,7 +53,7 @@ getRecettesRandom() {
 
       if (this.recettes.length <= 0) {
         // Si le nombre de recettes est nul, on ne fait rien et on laisse le tableau "randomRecettes" vide
-      } else if (this.recettes.length <= 3) {
+      } else if (this.recettes.length <= 2) {
         // Si le nombre de recettes est inférieur ou égal à 3, on stocke toutes les recettes disponibles
         randomRecettes = this.recettes;
       } else {
@@ -69,9 +69,11 @@ getRecettesRandom() {
             this.userService.getuser(randomRecette.uid).subscribe(userrecette => {
               // Ajout de l'username du créateur de la recette dans l'objet "randomRecette"
               randomRecette.username = userrecette.username;
+              console.log("liste random"+randomRecette);
             });
             // Ajout de la recette au tableau "randomRecettes"
             randomRecettes.push(randomRecette);
+            console.log("liste random"+randomRecette);
           }
         }
       }

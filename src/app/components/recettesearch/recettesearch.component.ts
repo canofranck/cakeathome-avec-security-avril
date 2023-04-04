@@ -137,9 +137,9 @@ rechercher(searchTerm: string) {
       // Si on a trouvé une correspondance entre un mot clé et l'ingrédient
       if (match) {
         // On récupère l'identifiant de la recette correspondante
-        const idRecette = ingredient.id_recette;
+        const idRecette = ingredient.idrecette;
         // On cherche la recette correspondante dans le tableau des recettes
-        const recette = this.recettes.find(r => r.id_recette === idRecette);
+        const recette = this.recettes.find(r => r.idrecette === idRecette);
         // Si on a trouvé une recette correspondante, on l'ajoute au tableau des recettes trouvées
         if (recette) {
           // On vérifie si la recette n'est pas déjà dans le tableau des recettes trouvées

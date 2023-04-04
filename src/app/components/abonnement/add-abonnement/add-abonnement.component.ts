@@ -27,7 +27,7 @@ export class AddAbonnementComponent implements OnInit{
   }
  ngOnInit(): void {
     this.formAddAbonnement= this.formBuilder.group({
-      id_abonnement: ['',Validators.required],
+      idabonnement: ['',Validators.required],
       uid: [''],
       abonnementpris: ['',Validators.required],
       abonnementdatedebut: ['',Validators.required],

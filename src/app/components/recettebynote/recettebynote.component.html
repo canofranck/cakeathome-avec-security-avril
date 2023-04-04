@@ -200,22 +200,22 @@
                   <div class="col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let recette of noteRecettes let i=index">
                       <div class="product-box-layout1" >
                         <figure class="item-figure">
-                          <a *ngFor="let g of gallerie" [routerLink]="['/recette',recette.id_recette]">
-                            <img *ngIf="g.id_recette == recette.id_recette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" style="width:350px" >
+                          <a *ngFor="let g of gallerie" [routerLink]="['/recette',recette.idrecette]">
+                            <img *ngIf="g.idrecette == recette.idrecette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" style="width:350px" >
                           </a>
                         </figure>
                           <div class="item-content">
-                              <span class="sub-title">{{recette.categorie_recette}}</span>
-                              <h3 class="item-title"><a href="single-recipe1.html">{{recette.titre_recette}}</a></h3>
+                              <span class="sub-title">{{recette.categorierecette}}</span>
+                              <h3 class="item-title"><a href="single-recipe1.html">{{recette.titrerecette}}</a></h3>
                               <ul class="item-rating">
                                 <ng-container *ngIf="recette.notemoyenne">  <!--au cas ou la valeur est null-->
                                   <ngb-rating [(rate)]="recette.notemoyenne" [readonly]="true" [max]="5" class="custom-size custom-color"></ngb-rating>
                                   <span class="rating-number">{{ recette.notemoyenne | number: '1.2-2' }}</span>
                                 </ng-container>
                               </ul>
-                              <p>{{recette.description_recette}}</p>
+                              <p>{{recette.descriptionrecette}}</p>
                               <ul class="entry-meta">
-                                  <li><a href="#"><i class="fas fa-clock"></i>{{recette.tempspreparation_recette}}</a></li>
+                                  <li><a href="#"><i class="fas fa-clock"></i>{{recette.tempspreparationrecette}}</a></li>
                                   <li><a href="#"><i class="fas fa-user"></i>Par <span>{{recette.username}}</span></a></li>
                                   <li><a href="#"><i class="fas fa-heart"></i><span>{{recette.nblike}}</span> Likes</a></li>
                               </ul>

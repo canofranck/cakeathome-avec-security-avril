@@ -50,14 +50,14 @@
                   <div class="col-lg-8">
                       <div class="single-recipe-layout1">
 
-                          <div class="ctg-name">{{recetteSelectionnee.categorie_recette}}</div>
+                          <div class="ctg-name">{{recetteSelectionnee.categorierecette}}</div>
 
 
-                          <h2 class="item-title">{{recetteSelectionnee.titre_recette}}</h2>
+                          <h2 class="item-title">{{recetteSelectionnee.titrerecette}}</h2>
                           <div class="row mb-4">
                               <div class="col-xl-9 col-12">
                                   <ul class="entry-meta">
-                                      <li class="single-meta"><a href="#"><i class="far fa-calendar-alt"></i>{{recetteSelectionnee.date_recette | date:'short'}}</a></li>
+                                      <li class="single-meta"><a href="#"><i class="far fa-calendar-alt"></i>{{recetteSelectionnee.daterecette | date:'short'}}</a></li>
                                       <li class="single-meta"><a href="#"><i class="fas fa-user"></i>Recette proposé par  <span>{{ usernamerecette}}</span></a></li>
                                       <li class="single-meta">
                                         <ul class="item-rating">
@@ -117,7 +117,7 @@
                                               </div>
                                               <div class="media-body space-sm">
                                                   <div class="feature-title">PREP TIME</div>
-                                                  <div class="feature-sub-title">{{recetteSelectionnee.tempspreparation_recette}}</div>
+                                                  <div class="feature-sub-title">{{recetteSelectionnee.tempspreparationrecette}}</div>
                                               </div>
                                           </div>
                                       </div>
@@ -130,7 +130,7 @@
                                               </div>
                                               <div class="media-body space-sm">
                                                   <div class="feature-title">COOK TIME</div>
-                                                  <div class="feature-sub-title">{{recetteSelectionnee.tempscuisson_recette}}</div>
+                                                  <div class="feature-sub-title">{{recetteSelectionnee.tempscuissonrecette}}</div>
                                               </div>
                                           </div>
                                       </div>
@@ -143,7 +143,7 @@
                                               </div>
                                               <div class="media-body space-sm">
                                                   <div class="feature-title">SERVING</div>
-                                                  <div class="feature-sub-title">{{recetteSelectionnee.nbpersonne_recette}}</div>
+                                                  <div class="feature-sub-title">{{recetteSelectionnee.nbpersonnerecette}}</div>
                                               </div>
                                           </div>
                                       </div>
@@ -163,12 +163,12 @@
                                   </li>
                               </ul>
                           </div>
-                          <!-- <p class="item-description">{{recetteSelectionnee.description_recette}}</p>
+                          <!-- <p class="item-description">{{recetteSelectionnee.descriptionrecette}}</p>
                           <p class="item-description"></p> -->
                           <div class="section-heading heading-dark">
                             <h2 class="item-heading">Description</h2>
                         </div>
-                        <p class="section-paragraph">{{recetteSelectionnee.description_recette}}</p>
+                        <p class="section-paragraph">{{recetteSelectionnee.descriptionrecette}}</p>
                           <div class="making-elements-wrap">
                               <div class="row">
                                   <div class="col-xl-6 col-12">
@@ -230,15 +230,15 @@
                               <!-- <div class="section-heading heading-dark">
                                   <h2 class="item-heading">Description</h2>
                               </div>
-                              <p class="section-paragraph">{{recetteSelectionnee.description_recette}}</p> -->
+                              <p class="section-paragraph">{{recetteSelectionnee.descriptionrecette}}</p> -->
 
                               <div class="direction-box-layout1"  *ngFor="let e of affichetape">
                                   <div class="item-figure">
                                       <!-- <img src="./assets/img/figure/direction1.jpg" alt="DIRECTIONS"> -->
                                   </div>
                                   <div class="item-content">
-                                      <div class="serial-number">etape : {{ e.numero_etape}}</div>
-                                      <p>{{ e.instructions_etape}}</p>
+                                      <div class="serial-number">etape : {{ e.numeroetape}}</div>
+                                      <p>{{ e.instructionsetape}}</p>
                                   </div>
                               </div>
                               <!-- <div class="direction-box-layout1">
@@ -418,11 +418,11 @@
                                     <div class="media media-none--xs" *ngFor="let item of commentaireaffiche">
                                         <!-- <img src="./assets/img/blog/comment1.jpg" alt="Comment" class="media-img-auto"> -->
                                         <div class="media-body">
-                                            <h4 class="comment-title"  *ngIf="item.id_recette==idrecetteselectionner">{{item.username}}</h4>
-                                            <span class="post-date"  *ngIf="item.id_recette==idrecetteselectionner">{{item.datecommentaire | date:'short' }}</span>
-                                            <p  *ngIf="item.id_recette==idrecetteselectionner">{{item.commentaire}}</p>
+                                            <h4 class="comment-title"  *ngIf="item.idrecette==idrecetteselectionner">{{item.username}}</h4>
+                                            <span class="post-date"  *ngIf="item.idrecette==idrecetteselectionner">{{item.datecommentaire | date:'short' }}</span>
+                                            <p  *ngIf="item.idrecette==idrecetteselectionner">{{item.commentaire}}</p>
                                              <ul class="item-rating">
-                                              <ng-container *ngIf="item.id_recette==idrecetteselectionner">  <!--au cas ou la valeur est null-->
+                                              <ng-container *ngIf="item.idrecette==idrecetteselectionner">  <!--au cas ou la valeur est null-->
                                                 <ngb-rating [(rate)]="item.notecommentaire" [readonly]="true" [max]="5" class="custom-size custom-color"></ngb-rating>
                                                 <span class="rating-number">{{item.notecommentaire | number: '1.2-2' }}</span>
                                               </ng-container>
@@ -638,30 +638,30 @@
 </div>
     <table>
       <tr>
-        <th>id_recette</th>
-        <TH>titre_recette</TH>
-        <th>description_recette</th>
-        <TH>categorie_recette</TH>
-        <TH>niveaudifficulte_recette</TH>
-        <TH>tempspreparation_recette</TH>
-        <TH>tempscuisson_recette</TH>
-        <TH>tempstotal_recette</TH>
-        <TH>nbpersonne_recette</TH>
-        <TH>recettepremium_recette</TH>
+        <th>idrecette</th>
+        <TH>titrerecette</TH>
+        <th>descriptionrecette</th>
+        <TH>categorierecette</TH>
+        <TH>niveaudifficulterecette</TH>
+        <TH>tempspreparationrecette</TH>
+        <TH>tempscuissonrecette</TH>
+        <TH>tempstotalrecette</TH>
+        <TH>nbpersonnerecette</TH>
+        <TH>recettepremiumrecette</TH>
 
 
       </tr>
       <tr *ngFor="let p of recettes">
-        <td>{{p.id_recette}}</td>
-        <td>{{p.titre_recette}}</td>
-        <td>{{p.description_recette}}</td>
-        <td>{{p.categorie_recette}}</td>
-        <td>{{p.niveaudifficulte_recette}}</td>
-        <td>{{p.tempspreparation_recette}}</td>
-        <td>{{p.tempscuisson_recette}}</td>
-        <td>{{p.tempstotal_recette}}</td>
-        <td>{{p.nbpersonne_recette}}</td>
-        <td>{{p.recettepremium_recette}}</td>
+        <td>{{p.idrecette}}</td>
+        <td>{{p.titrerecette}}</td>
+        <td>{{p.descriptionrecette}}</td>
+        <td>{{p.categorierecette}}</td>
+        <td>{{p.niveaudifficulterecette}}</td>
+        <td>{{p.tempspreparationrecette}}</td>
+        <td>{{p.tempscuissonrecette}}</td>
+        <td>{{p.tempstotalrecette}}</td>
+        <td>{{p.nbpersonnerecette}}</td>
+        <td>{{p.recettepremiumrecette}}</td>
 
       </tr>
     </table>

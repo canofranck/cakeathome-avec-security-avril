@@ -28,9 +28,9 @@ import { NotifierService } from 'angular-notifier';
 declare affiche : any[];
 declare recetteSelectionnee : Recette;
   declare recettes : any [];
-  public listIngredient: { id_ingredient: number; quantiteingredient: string; }[]=[];
-  public listEtape: { id_etape: number; id_recette : number;numero_etape : number; instructions_etape: string;image_etape:string  }[]=[];
-  public listGalerie : { id_gallerie: number, id_recette : number,galleriefilename : string, uid: number}[]= [];
+  public listIngredient: { idingredient: number; quantiteingredient: string; }[]=[];
+  public listEtape: { idetape: number; idrecette : number;numeroetape : number; instructionsetape: string;imageetape:string  }[]=[];
+  public listGalerie : { idgallerie: number, idrecette : number,galleriefilename : string, uid: number}[]= [];
   public  list: any[] = [];
  public  affichetape: any[] = [];
  declare commentaire:Commentaire;
@@ -64,13 +64,13 @@ uid:number=0;
 ngOnInit(): void {
    this.getRecettes();
   this.formaddCommentaire = this.formBuilder.group({
-    id_commentaire:['',Validators.required],
+    idcommentaire:['',Validators.required],
     commentaire:['',Validators.required],
     imagecommentaire:['',Validators.required],
     notecommentaire:['',Validators.required],
     datecommentaire:['',Validators.required],
     uid:['',Validators.required],
-    id_recette:['',Validators.required],
+    idrecette:['',Validators.required],
     notemoyenne:[''],
 
     });
@@ -133,7 +133,7 @@ if (token) {
 
 }
 calculerNoteMoyenne() {
-  let commentairesRecette = this.commentaireaffiche.filter(commentaire => commentaire.id_recette === this.idrecetteselectionner);
+  let commentairesRecette = this.commentaireaffiche.filter(commentaire => commentaire.idrecette === this.idrecetteselectionner);
   let totalNotes = commentairesRecette.reduce((sum, commentaire) => sum + commentaire.notecommentaire, 0);
 this.commentairesRecette=commentairesRecette
   this.moyenne = totalNotes / commentairesRecette.length;
@@ -185,7 +185,7 @@ create() {
   commentairepost.commentaire=this.formaddCommentaire.value.commentaire;
   commentairepost.datecommentaire=new Date();
   commentairepost.notecommentaire=this.currentRate;
-  commentairepost.id_recette= this.idrecetteselectionner;
+  commentairepost.idrecette= this.idrecetteselectionner;
   commentairepost.uid=this.uid;
 
   // console.log(this.formaddCommentaire.value);
@@ -206,7 +206,7 @@ create() {
 
 }
 getRecetteById(idRecette: number) {
-  const recetteSelectionnee = this.recettes.find(recette => recette.id_recette === idRecette);
+  const recetteSelectionnee = this.recettes.find(recette => recette.idrecette === idRecette);
   // console.table(recetteSelectionnee);
   // console.table(recetteSelectionnee.listIngredient);
    console.table(recetteSelectionnee.listEtape);
@@ -231,26 +231,26 @@ getRecetteById(idRecette: number) {
   // console.table( this.list)
   // console.table (this.affichetape)
 }
-convertToList(listIngredient: {id_ingredient: number, quantiteingredient: string}[]): any[] {
+convertToList(listIngredient: {idingredient: number, quantiteingredient: string}[]): any[] {
 
   for(let i = 0; i < listIngredient.length; i++) {
-    let ingredient = {id_ingredient: listIngredient[i].id_ingredient, quantiteingredient: listIngredient[i].quantiteingredient};
+    let ingredient = {idingredient: listIngredient[i].idingredient, quantiteingredient: listIngredient[i].quantiteingredient};
     this.list.push(ingredient);
   }
   return this.list;
 }
-convertToListetape(listEtape: { id_etape: number, id_recette : number,numero_etape : number, instructions_etape: string,image_etape:string}[]): any[] {
+convertToListetape(listEtape: { idetape: number, idrecette : number,numeroetape : number, instructionsetape: string,imageetape:string}[]): any[] {
 
   for(let i = 0; i < listEtape.length; i++) {
-    let etape = {id_etape: listEtape[i].id_etape,  id_recette : listEtape[i].id_recette ,numero_etape: listEtape[i].numero_etape,instructions_etape:listEtape[i].instructions_etape ,image_etape:listEtape[i].image_etape};
+    let etape = {idetape: listEtape[i].idetape,  idrecette : listEtape[i].idrecette ,numeroetape: listEtape[i].numeroetape,instructionsetape:listEtape[i].instructionsetape ,imageetape:listEtape[i].imageetape};
     this.affichetape.push(etape);
   }
   return this.affichetape;
 }
-convertToListgalerie(listGalerie: { id_gallerie: number, id_recette : number,galleriefilename : string, uid: number}[]): any[] {
+convertToListgalerie(listGalerie: { idgallerie: number, idrecette : number,galleriefilename : string, uid: number}[]): any[] {
 
   for(let i = 0; i <listGalerie.length; i++) {
-    let gallerie = {id_gallerie: listGalerie[i].id_gallerie,  id_recette : listGalerie[i].id_recette, galleriefilename: listGalerie[i].galleriefilename, uid:listGalerie[i]. uid};
+    let gallerie = {idgallerie: listGalerie[i].idgallerie,  idrecette : listGalerie[i].idrecette, galleriefilename: listGalerie[i].galleriefilename, uid:listGalerie[i]. uid};
     this.affichegallerie.push(gallerie);
   }
   return this.affichegallerie;

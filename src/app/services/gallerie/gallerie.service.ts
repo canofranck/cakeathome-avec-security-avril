@@ -30,7 +30,7 @@ export class GallerieService {
   }
 
   updateGallerie(gallerie:Gallerie){
-    return this.http.put(AppSettings.APP_URL+'/galleries/'+ gallerie.gallerie_id, JSON.stringify(gallerie),this.httpOptions);
+    return this.http.put(AppSettings.APP_URL+'/galleries/'+ gallerie.gallerieid, JSON.stringify(gallerie),this.httpOptions);
   }
 
   deleteGallerie(id : number){

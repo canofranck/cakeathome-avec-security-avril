@@ -27,7 +27,7 @@
 <a routerLink="/addrecette" class="btn btn-success waves-effect waves-light btn right orange">Ajouter une nouvelle recette</a>
 <br>
 <br>
-<table id="table_id" class="table ">
+<table id="tableid" class="table ">
     <thead>
         <tr>
             <th scope="col">id</th>
@@ -40,29 +40,29 @@
             <th scope="col">tempscuisson</th>
             <th scope="col">tempstotal</th>
             <th scope="col">nbpersonne</th>
-            <th scope="col">recettepremium_recette</th>
+            <th scope="col">recettepremiumrecette</th>
             <th scope="col">uid</th>
 
           </tr>
     </thead>
     <tbody>
     <tr *ngFor="let item of recettes">
-        <th scope="row"> {{item.id_recette}}</th>
-        <td>{{item.titre_recette}}</td>
-        <td>{{item.date_recette | date:"dd/MM/yy"}}</td>
-        <td>{{item.description_recette}}</td>
-        <td>{{item.categorie_recette}}</td>
-        <td>{{item.niveaudifficulte_recette}}</td>
-        <td>{{item.tempspreparation_recette}}</td>
-        <td>{{item.tempscuisson_recette}}</td>
-        <td>{{item.tempstotal_recette}}</td>
-        <td>{{item.nbpersonne_recette}}</td>
-        <td>{{item.recettepremium_recette}}</td>
+        <th scope="row"> {{item.idrecette}}</th>
+        <td>{{item.titrerecette}}</td>
+        <td>{{item.daterecette | date:"dd/MM/yy"}}</td>
+        <td>{{item.descriptionrecette}}</td>
+        <td>{{item.categorierecette}}</td>
+        <td>{{item.niveaudifficulterecette}}</td>
+        <td>{{item.tempspreparationrecette}}</td>
+        <td>{{item.tempscuissonrecette}}</td>
+        <td>{{item.tempstotalrecette}}</td>
+        <td>{{item.nbpersonnerecette}}</td>
+        <td>{{item.recettepremiumrecette}}</td>
         <td>{{item.uid}}</td>
 
-        <td><a  routerLink="/editrecette/{{item.id_recette}}" class="btn btn-warning waves-effect waves-light btn right #e65100 green">Edit</a>
+        <td><a  routerLink="/editrecette/{{item.idrecette}}" class="btn btn-warning waves-effect waves-light btn right #e65100 green">Edit</a>
         </td>
-        <td><a routerLink="/recette/{{item.id_recette}}"
+        <td><a routerLink="/recette/{{item.idrecette}}"
                 class="btn btn-danger waves-effect waves-light btn right #e65100 green">Delete</a></td>
     </tr>
 </tbody>
@@ -106,24 +106,24 @@
                             <th scope="col">tempscuisson</th>
                             <th scope="col">tempstotal</th>
                             <th scope="col">nbpersonne</th>
-                            <th scope="col">recettepremium_recette</th>
+                            <th scope="col">recettepremiumrecette</th>
                             <th scope="col">uid</th>
                           </tr>
                       </thead>
                       <tbody>
                         <tr *ngFor="let item of recettes">
-                              <td>{{item.titre_recette}}</td>
-                              <td>{{item.id_recette}}</td>
-                              <td>{{item.titre_recette}}</td>
-                              <td>{{item.date_recette}}</td>
-                              <td>{{item.description_recette}}</td>
-                              <td>{{item.categorie_recette}}</td>
-                              <td>{{item.niveaudifficulte_recette}}</td>
-                              <td>{{item.tempspreparation_recette}}</td>
-                              <td>{{item.tempscuisson_recette}}</td>
-                              <td>{{item.tempstotal_recette}}</td>
-                              <td>{{item.nbpersonne_recette}}</td>
-                              <td>{{item.recettepremium_recette}}</td>
+                              <td>{{item.titrerecette}}</td>
+                              <td>{{item.idrecette}}</td>
+                              <td>{{item.titrerecette}}</td>
+                              <td>{{item.daterecette}}</td>
+                              <td>{{item.descriptionrecette}}</td>
+                              <td>{{item.categorierecette}}</td>
+                              <td>{{item.niveaudifficulterecette}}</td>
+                              <td>{{item.tempspreparationrecette}}</td>
+                              <td>{{item.tempscuissonrecette}}</td>
+                              <td>{{item.tempstotalrecette}}</td>
+                              <td>{{item.nbpersonnerecette}}</td>
+                              <td>{{item.recettepremiumrecette}}</td>
                               <td>{{item.uid}}</td>
 
 

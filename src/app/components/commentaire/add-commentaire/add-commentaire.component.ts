@@ -27,13 +27,13 @@ export class AddCommentaireComponent implements OnInit{
   }
  ngOnInit(): void {
     this.formAddCommentaire= this.formBuilder.group({
-      id_commentaire: ['',Validators.required],
+      idcommentaire: ['',Validators.required],
       commentaire: ['',Validators.required],
       imagecommentaire: ['',Validators.required],
       notecommentaire: ['',Validators.required],
       datecommentaire :['',Validators.required],
       uid: ['',Validators.required],
-      id_recette: ['',Validators.required],
+      idrecette: ['',Validators.required],
     })
 }
 create(){
@@ -41,7 +41,7 @@ create(){
   // mehtode create avec manytoone depuis commentaire
   this.utilisateurService.editUser(this.formAddCommentaire.value.uid).subscribe(
     (utilisateur) => {
-      this.recetteService.editRecette(this.formAddCommentaire.value.id_recette).subscribe(
+      this.recetteService.editRecette(this.formAddCommentaire.value.idrecette).subscribe(
         (recette) => {
           if(utilisateur && recette) {
 

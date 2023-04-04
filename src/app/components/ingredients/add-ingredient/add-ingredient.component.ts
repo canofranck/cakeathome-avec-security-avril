@@ -37,8 +37,8 @@ export class AddIngredientComponent implements OnInit{
     ngOnInit(): void {
       // Initialisation du formulaire
         this.formaddIngredient = this.formBuilder.group({
-          id_ingredient:['',Validators.required],
-          id_recette:['',Validators.required],
+          idingredient:['',Validators.required],
+          idrecette:['',Validators.required],
           quantiteingredient:['',Validators.required],
 
 
@@ -51,7 +51,7 @@ export class AddIngredientComponent implements OnInit{
                 // Les recettes sont triées par ordre décroissant en fonction de leur date de création.
              this.recettes.sort((a: { date_recette: number; }, b: { date_recette: number; }) => (a.date_recette < b.date_recette ? 1 : -1))
                // La variable "idrecetteencours" est initialisée avec l'ID de la première recette (la plus récente).
-             this.idrecetteencours=this.recettes[0].id_recette;
+             this.idrecetteencours=this.recettes[0].idrecette;
              this.idrecetteencours+=1;
                // La méthode "setIdRecetteEncours" du service "recetteService" est appelée pour initialiser l'ID de la recette en cours.
               this.recetteService.setIdRecetteEncours( this.idrecetteencours);
@@ -71,8 +71,8 @@ export class AddIngredientComponent implements OnInit{
     const formValues = this.formaddIngredient.value;
     const ingredient = new Ingredients();
 
-      ingredient.id_ingredient = this.formaddIngredient.value.id_ingredient;
-      ingredient.id_recette = this.idrecetteencours;
+      ingredient.idingredient = this.formaddIngredient.value.idingredient;
+      ingredient.idrecette = this.idrecetteencours;
       ingredient.quantiteingredient = this.formaddIngredient.value.quantiteingredient;
       this.nouveau_tableau.push(ingredient);
     // Sauvegarde de l'ingrédient dans la base de données

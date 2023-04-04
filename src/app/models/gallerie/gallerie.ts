@@ -1,12 +1,12 @@
 export class Gallerie {
 
-  public gallerie_id: number;
-  public id_recette : number;
+  public gallerieid: number;
+  public idrecette : number;
 	public galleriefilename: string;
 	public uid: number;
   constructor(){
-    this.gallerie_id = 0;
-    this.id_recette =0;
+    this.gallerieid = 0;
+    this.idrecette =0;
     this.galleriefilename = "";
 
     this.uid = 0;

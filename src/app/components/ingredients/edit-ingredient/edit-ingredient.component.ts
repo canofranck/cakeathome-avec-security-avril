@@ -24,8 +24,8 @@ export class EditIngredientComponent implements OnInit {
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.formeditIngredient = this.formBuilder.group({
-      id_ingredient:['',Validators.required],
-      id_recette:['',Validators.required],
+      idingredient:['',Validators.required],
+      idrecette:['',Validators.required],
       quantiteingredient:['',Validators.required],
 
 

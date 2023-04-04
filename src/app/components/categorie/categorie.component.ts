@@ -32,7 +32,7 @@ export class CategorieComponent implements OnInit {
     // La méthode reduce permet de transformer un tableau en une seule valeur en appliquant une fonction réductrice
   // Ici, on utilise reduce pour compter le nombre de recettes par catégorie
     const resultats = recettes.reduce((acc, recette) => {
-      const categorie = recette.categorie_recette;  // Pour chaque recette, on récupère sa catégorie
+      const categorie = recette.categorierecette;  // Pour chaque recette, on récupère sa catégorie
       if (categorie in acc) { // Si la catégorie a déjà été rencontrée, on incrémente le nombre de recettes associé
         acc[categorie]++;
       } else { // Sinon, on ajoute une nouvelle entrée avec un compteur initialisé à 1

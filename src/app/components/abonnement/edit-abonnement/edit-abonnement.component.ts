@@ -26,7 +26,7 @@ private userService:UserService,
 ngOnInit(): void {
 const id = Number(this.route.snapshot.paramMap.get('id'));
 this.editabonnementForm = this.formBuilder.group({
-  id_abonnement: ['',Validators.required],
+  idabonnement: ['',Validators.required],
 
   abonnementpris: ['',Validators.required],
   abonnementdatedebut: ['',Validators.required],
@@ -40,7 +40,7 @@ this.abonnementService.editUser(id).subscribe(
     console.log(data)
     //complete le form avec le produit récupéré
     this.editabonnementForm.patchValue({
-        id_abonnement: data.id_abonnement,
+        idabonnement: data.idabonnement,
         uid: data.utilisateur.uid,
         abonnementpris: data.abonnementpris,
         abonnementdatedebut: data.abonnementdatedebut,

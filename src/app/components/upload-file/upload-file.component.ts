@@ -41,10 +41,10 @@ export class UploadFileComponent implements OnInit{
       // console.log(data);
           this.recettes = Object.values(data); // Récupération des recettes
            // Tri des recettes par date décroissante
-         this.recettes.sort((a: { date_recette: number; }, b: { date_recette: number; }) => (a.date_recette < b.date_recette ? 1 : -1))
+         this.recettes.sort((a: { daterecette: number; }, b: { daterecette: number; }) => (a.daterecette < b.daterecette ? 1 : -1))
           // console.log(this.recettes);
            // Récupération de l'ID de la première recette et définition de l'ID de la recette en cours
-         this.idrecetteencours=this.recettes[0].id_recette;
+         this.idrecetteencours=this.recettes[0].idrecette;
         //  console.log(" id recette avant le set"+this.idrecetteencours);
         this.idrecetteencours+=1;
          // Définition de l'ID de la recette en cours dans le service de gestion des recettes
@@ -63,8 +63,8 @@ export class UploadFileComponent implements OnInit{
           }
      // Création du formulaire pour upload le fichier image
     this.form = this.formBuilder.group({
-      gallerie_id:  ['', Validators.required], // Sélection obligatoire d'une galerie d'images
-      id_recette:  [this.idrecetteencours], // ID de la recette en cours
+      gallerieid:  ['', Validators.required], // Sélection obligatoire d'une galerie d'images
+      idrecette:  [this.idrecetteencours], // ID de la recette en cours
 	    galleriefilename:  ['', Validators.required],// Nom de fichier obligatoire
 	    uid :  ['', Validators.required],// ID de l'utilisateur pour upload le fichier
 
@@ -81,7 +81,7 @@ export class UploadFileComponent implements OnInit{
 
 
     this.form.value.galleriefilename =  this.file.name;
-    this.form.value.id_recette= this.idrecetteencours;
+    this.form.value.idrecette= this.idrecetteencours;
     this.form.value.uid= this.uid;
     this.fileUploadService.upload(this.form.value).subscribe({
       next: (data) => {

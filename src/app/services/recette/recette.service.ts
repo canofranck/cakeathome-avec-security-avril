@@ -26,13 +26,13 @@ export class RecetteService {
     return this.http.post(AppSettings.APP_URL+"/recette",JSON.stringify(recette),this.httpOptions);
   }
 
-  editRecette(id_recette:number){
-    return this.http.get(AppSettings.APP_URL+"/recette/"+id_recette)
+  editRecette(idrecette:number){
+    return this.http.get(AppSettings.APP_URL+"/recette/"+idrecette)
    }
 
    updateRecette(recette:Recette){
-    // console.log(this.http.put(AppSettings.APP_URL+"/recettes/"+recette.id_recette,JSON.stringify(recette),this.httpOptions))
-    return this.http.put(AppSettings.APP_URL+"/recettes/"+recette.id_recette,JSON.stringify(recette),this.httpOptions);
+    // console.log(this.http.put(AppSettings.APP_URL+"/recettes/"+recette.idrecette,JSON.stringify(recette),this.httpOptions))
+    return this.http.put(AppSettings.APP_URL+"/recettes/"+recette.idrecette,JSON.stringify(recette),this.httpOptions);
    }
 
    deleteRecette(id:number){
@@ -53,7 +53,7 @@ export class RecetteService {
     console.log("set idrecette"+this.idrecetteencours )
   }
   updateRecette2(recette:Recette,id :number){
-    // console.log(this.http.put(AppSettings.APP_URL+"/recettes/"+recette.id_recette,JSON.stringify(recette),this.httpOptions))
+    // console.log(this.http.put(AppSettings.APP_URL+"/recettes/"+recette.idrecette,JSON.stringify(recette),this.httpOptions))
     return this.http.put(AppSettings.APP_URL+"/recettes/"+id,JSON.stringify(recette),this.httpOptions);
    }
 

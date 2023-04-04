@@ -24,7 +24,7 @@ export class AbonnementService {
    }
   updateUser(abonnement:Abonnement){
 
-    return this.http.put(AppSettings.APP_URL + '/abonnements/'+abonnement.id_abonnement,JSON.stringify(abonnement),this.httpOptions);
+    return this.http.put(AppSettings.APP_URL + '/abonnements/'+abonnement.idabonnement,JSON.stringify(abonnement),this.httpOptions);
   }
   deleteUser(id:number){
     return this.http.delete(AppSettings.APP_URL + '/abonnements/'+id);

@@ -30,7 +30,7 @@ export class CommentaireService {
    }
   updateCommentaire(commentaire:Commentaire){
 
-    return this.http.put(AppSettings.APP_URL + '/commentaires/'+commentaire.id_commentaire,JSON.stringify(commentaire),this.httpOptions);
+    return this.http.put(AppSettings.APP_URL + '/commentaires/'+commentaire.idcommentaire,JSON.stringify(commentaire),this.httpOptions);
   }
   deleteCommentaire(id:number){
     return this.http.delete(AppSettings.APP_URL + '/commentaires/'+id);
@@ -38,7 +38,7 @@ export class CommentaireService {
 
 
 
-  
+
 
 
 

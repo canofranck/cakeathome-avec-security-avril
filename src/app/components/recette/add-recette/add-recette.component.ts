@@ -27,19 +27,19 @@ export class AddRecetteComponent implements OnInit{
   ){}
     ngOnInit(): void {
         this.formaddRecette = this.formBuilder.group({
-        titre_recette:['',Validators.required],
-        date_recette:['',Validators.required],
-        description_recette:['',Validators.required],
-        categorie_recette:['',Validators.required],
-        niveaudifficulte_recette:['',Validators.required],
-        tempspreparation_recette:['',Validators.required],
-        tempscuisson_recette:['',Validators.required],
-        tempstotal_recette:['',Validators.required],
-        nbpersonne_recette:['',Validators.required],
-        recettepremium_recette:['',Validators.required],
+        titrerecette:['',Validators.required],
+        daterecette:['',Validators.required],
+        descriptionrecette:['',Validators.required],
+        categorierecette:['',Validators.required],
+        niveaudifficulterecette:['',Validators.required],
+        tempspreparationrecette:['',Validators.required],
+        tempscuissonrecette:['',Validators.required],
+        tempstotalrecette:['',Validators.required],
+        nbpersonnerecette:['',Validators.required],
+        recettepremiumrecette:['',Validators.required],
         uid:['',Validators.required],
         // quantiteingredient:['',Validators.required],
-        // id_ingredient:['',Validators.required],
+        // idingredient:['',Validators.required],
         // ingredients:[[],,Validators.required],
         });
 
@@ -48,16 +48,16 @@ export class AddRecetteComponent implements OnInit{
     const formValues = this.formaddRecette.value;
     const recette = new Recette();
 
-      recette.titre_recette = this.formaddRecette.value.titre_recette;
-      recette.date_recette = this.formaddRecette.value.date_recette;
-      recette.description_recette = this.formaddRecette.value.description_recette;
-      recette.categorie_recette = this.formaddRecette.value.categorie_recette;
-      recette.niveaudifficulte_recette = this.formaddRecette.value.niveaudifficulte_recette;
-      recette.tempspreparation_recette = this.formaddRecette.value.tempspreparation_recette;
-      recette.tempscuisson_recette =this.formaddRecette.value.tempscuisson_recette;
-      recette.tempstotal_recette = this.formaddRecette.value.tempstotal_recette;
-      recette.nbpersonne_recette = this.formaddRecette.value.nbpersonne_recette;
-      recette.recettepremium_recette = this.formaddRecette.value.recettepremium_recette;
+      recette.titrerecette = this.formaddRecette.value.titrerecette;
+      recette.daterecette = this.formaddRecette.value.daterecette;
+      recette.descriptionrecette = this.formaddRecette.value.descriptionrecette;
+      recette.categorierecette = this.formaddRecette.value.categorierecette;
+      recette.niveaudifficulterecette = this.formaddRecette.value.niveaudifficulterecette;
+      recette.tempspreparationrecette = this.formaddRecette.value.tempspreparationrecette;
+      recette.tempscuissonrecette =this.formaddRecette.value.tempscuissonrecette;
+      recette.tempstotalrecette = this.formaddRecette.value.tempstotalrecette;
+      recette.nbpersonnerecette = this.formaddRecette.value.nbpersonnerecette;
+      recette.recettepremiumrecette = this.formaddRecette.value.recettepremiumrecette;
       recette.uid = this.formaddRecette.value.uid;
 
       // recette.quantiteingredient = this.formaddRecette.value.quantiteingredient;

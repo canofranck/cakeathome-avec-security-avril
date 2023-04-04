@@ -25,7 +25,7 @@ export class IngredientsService {
    }
 
    updateIngredient(ingredient:Ingredients){
-    return this.http.put(AppSettings.APP_URL+"/ingredients/"+ingredient.id_ingredient,JSON.stringify(ingredient),this.httpOptions);
+    return this.http.put(AppSettings.APP_URL+"/ingredients/"+ingredient.idingredient,JSON.stringify(ingredient),this.httpOptions);
    }
 
    deleteIngredient(id:number){

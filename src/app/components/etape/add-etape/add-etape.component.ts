@@ -28,11 +28,11 @@ export class AddEtapeComponent implements OnInit{
     ngOnInit(): void {
       // initialisation du formulaire
         this.formaddEtape = this.formBuilder.group({
-          id_etape:['',Validators.required],
-          numero_etape:['',Validators.required],
-          instructions_etape:['',Validators.required],
-          // image_etape:['',Validators.required],
-          id_recette:['',Validators.required],
+          idetape:['',Validators.required],
+          numeroetape:['',Validators.required],
+          instructionsetape:['',Validators.required],
+          // imageetape:['',Validators.required],
+          idrecette:['',Validators.required],
 
         })
         // Récupération des recettes
@@ -41,9 +41,9 @@ export class AddEtapeComponent implements OnInit{
             // stockage des recettes dans une variable
               this.recettes = Object.values(data);
                // tri des recettes par date décroissante
-             this.recettes.sort((a: { date_recette: number; }, b: { date_recette: number; }) => (a.date_recette < b.date_recette ? 1 : -1))
+             this.recettes.sort((a: { daterecette: number; }, b: { daterecette: number; }) => (a.daterecette < b.daterecette ? 1 : -1))
               // Récupération de l'id de la recette en cours
-             this.idrecetteencours=this.recettes[0].id_recette;
+             this.idrecetteencours=this.recettes[0].idrecette;
           // Stockage de l'id de la recette en cours dans le service des recettes
               this.recetteService.setIdRecetteEncours( this.idrecetteencours);
 
@@ -55,10 +55,10 @@ export class AddEtapeComponent implements OnInit{
     const formValues = this.formaddEtape.value;
     const etape = new Etape();
     // Récupération des valeurs du formulaire
-      etape.numero_etape = this.formaddEtape.value.numero_etape;
-     etape.instructions_etape =  this.formaddEtape.value.instructions_etape;
-      // etape.image_etape = this.formaddEtape.value.image_etape;
-      etape.id_recette=this.idrecetteencours;
+      etape.numeroetape = this.formaddEtape.value.numeroetape;
+     etape.instructionsetape =  this.formaddEtape.value.instructionsetape;
+      // etape.imageetape = this.formaddEtape.value.imageetape;
+      etape.idrecette=this.idrecetteencours;
       this.listeEtape.push(etape);
       // Envoi de la requête de création d'une étape
       this.etapeService.saveEtape(etape).subscribe((response) => {

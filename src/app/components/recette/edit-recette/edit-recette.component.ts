@@ -24,18 +24,18 @@ export class EditRecetteComponent implements OnInit {
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.formeditRecette = this.formBuilder.group({
-    titre_recette:['',Validators.required],
-    date_recette:['',Validators.required],
-    description_recette:['',Validators.required],
-    categorie_recette:['',Validators.required],
-    niveaudifficulte_recette:['',Validators.required],
-    tempspreparation_recette:['',Validators.required],
-    tempscuisson_recette:['',Validators.required],
-    tempstotal_recette:['',Validators.required],
-    nbpersonne_recette:['',Validators.required],
-    recettepremium_recette:['',Validators.required],
+    titrerecette:['',Validators.required],
+    daterecette:['',Validators.required],
+    descriptionrecette:['',Validators.required],
+    categorierecette:['',Validators.required],
+    niveaudifficulterecette:['',Validators.required],
+    tempspreparationrecette:['',Validators.required],
+    tempscuissonrecette:['',Validators.required],
+    tempstotalrecette:['',Validators.required],
+    nbpersonnerecette:['',Validators.required],
+    recettepremiumrecette:['',Validators.required],
     uid:['',Validators.required],
-    id_recette:['',Validators.required],
+    idrecette:['',Validators.required],
     listIngredient: [[]],
     })
     //récupere le produit via l'id

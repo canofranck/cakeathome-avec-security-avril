@@ -27,13 +27,13 @@ export class EditCommentaireComponent implements OnInit {
   ngOnInit(): void {
   const id = Number(this.route.snapshot.paramMap.get('id'));
   this.editcommentaireForm = this.formBuilder.group({
-    id_commentaire: ['',Validators.required],
+    idcommentaire: ['',Validators.required],
     commentaire: ['',Validators.required],
     imagecommentaire: ['',Validators.required],
     notecommentaire: ['',Validators.required],
     datecommentaire :['',Validators.required],
     uid: ['',Validators.required],
-    id_recette: ['',Validators.required],
+    idrecette: ['',Validators.required],
   })
   //récupere le produit via l'id
   this.commentaireService.editCommentaire(id).subscribe(
@@ -41,9 +41,9 @@ export class EditCommentaireComponent implements OnInit {
       console.log(data)
       //complete le form avec le produit récupéré
       this.editcommentaireForm.patchValue({
-          id_commentaire: data.id_commentaire,
+          idcommentaire: data.idcommentaire,
           uid: data.utilisateur.uid,
-          id_recette: data.recette.id_recette,
+          idrecette: data.recette.idrecette,
           commentaire: data.commentaire,
           imagecommentaire: data.imagecommentaire,
           notecommentaire: data.notecommentaire,

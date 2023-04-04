@@ -18,12 +18,12 @@ export class EtapeService {
     return this.http.post(AppSettings.APP_URL+"/etape",JSON.stringify(etape),this.httpOptions);
   }
 
-  editEtape(id_etape:number){
-    return this.http.get(AppSettings.APP_URL+"/etape/"+id_etape)
+  editEtape(idetape:number){
+    return this.http.get(AppSettings.APP_URL+"/etape/"+idetape)
    }
 
    updateEtape(etape:Etape){
-    return this.http.put(AppSettings.APP_URL+"/etapes/"+etape.id_recette,JSON.stringify(etape),this.httpOptions);
+    return this.http.put(AppSettings.APP_URL+"/etapes/"+etape.idrecette,JSON.stringify(etape),this.httpOptions);
    }
 
    deleteEtape(id:number){

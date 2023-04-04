@@ -29,12 +29,12 @@ export class EditEtapeComponent  implements OnInit {
   ngOnInit(): void {
   const id = Number(this.route.snapshot.paramMap.get('id'));
   this.editetapeForm = this.formBuilder.group({
-    id_etape: ['',Validators.required],
+    idetape: ['',Validators.required],
 
-    numero_etape: ['',Validators.required],
-    instructions_etape: ['',Validators.required],
-    image_etape :['',Validators.required],
-    id_recette: ['',Validators.required],
+    numeroetape: ['',Validators.required],
+    instructionsetape: ['',Validators.required],
+    imageetape :['',Validators.required],
+    idrecette: ['',Validators.required],
 
   })
   //récupere le produit via l'id
@@ -43,11 +43,11 @@ export class EditEtapeComponent  implements OnInit {
       console.log(data)
       //complete le form avec le produit récupéré
       this.editetapeForm.patchValue({
-         id_etape: data.id_etape,
-         id_recette: data.recette.id_recette,
-         numero_etape: data.numero_etape,
-         instructions_etape: data.instructions_etape,
-         image_etape: data.image_etape,
+         idetape: data.idetape,
+         idrecette: data.recette.idrecette,
+         numeroetape: data.numeroetape,
+         instructionsetape: data.instructionsetape,
+         imageetape: data.imageetape,
       });
       this.recette=data.recette;
     }

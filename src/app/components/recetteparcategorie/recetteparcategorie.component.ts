@@ -37,7 +37,7 @@ export class RecetteparcategorieComponent implements OnInit {
           // console.table(data);
             this.recettes = data as any[];
             console.log(this.recettes);
-            this.recettesFiltrees = this.recettes.filter((recette: Recette) => recette.categorie_recette === this.categorie);
+            this.recettesFiltrees = this.recettes.filter((recette: Recette) => recette.categorierecette === this.categorie);
             console.log(this.recettesFiltrees);
         }
       );

@@ -56,7 +56,7 @@ export class LastrecipesComponent implements AfterViewInit{
             this.lastRecettes = [];
           } else {
             // Tri des recettes par date décroissante
-            this.recettes.sort((a, b) => new Date(b.date_recette).getTime() - new Date(a.date_recette).getTime());
+            this.recettes.sort((a, b) => new Date(b.daterecette).getTime() - new Date(a.daterecette).getTime());
 
             // Sélection des 5 dernières recettes
             const lastRecettes = this.recettes.slice(0, 5);

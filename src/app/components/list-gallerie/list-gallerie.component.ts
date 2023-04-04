@@ -26,9 +26,9 @@ export class ListGallerieComponent implements OnInit{
   ngOnInit(): void {
     // Initialisation du formulaire
     this.form = this.formBuilder.group({
-      gallerie_id:  ['', Validators.required],
-      id_recette:  [''],
-	    gallerie_filename:  ['', Validators.required],
+      gallerieid:  ['', Validators.required],
+      idrecette:  [''],
+	    galleriefilename:  ['', Validators.required],
 	    uid :  ['', Validators.required],
 
     })
@@ -40,9 +40,9 @@ export class ListGallerieComponent implements OnInit{
         // Stockage des recettes dans un tableau
           this.recettes = Object.values(data);
            // Tri des recettes par date décroissante
-         this.recettes.sort((a: { date_recette: number; }, b: { date_recette: number; }) => (a.date_recette < b.date_recette ? 1 : -1))
+         this.recettes.sort((a: { daterecette: number; }, b: { daterecette: number; }) => (a.daterecette < b.daterecette ? 1 : -1))
         // Sélection de la première recette de la liste
-         this.idrecetteencours=this.recettes[0].id_recette;
+         this.idrecetteencours=this.recettes[0].idrecette;
         // Stockage de l'identifiant de la recette en cours
           this.recetteService.setIdRecetteEncours( this.idrecetteencours);
 

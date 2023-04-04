@@ -25,7 +25,7 @@
   <div class="form-group">
       <ul class="upload-img">
         <th *ngFor="let g of gallerie ">
-          <ng-container *ngIf="(g.uid == 1)&&(g.id_recette == idrecetteencours)" >
+          <ng-container *ngIf="(g.uid == 1)&&(g.idrecette == idrecetteencours)" >
           <li><img src="http://localhost:8085/image/{{g.galleriefilename}}" alt=""  style="width:130px"></li>
           </ng-container>
         </th>

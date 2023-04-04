@@ -24,7 +24,7 @@ import { ListEtapeComponent } from './components/etape/list-etape/list-etape.com
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
-import { ImagerecetteComponent } from './components/imagerecette/imagerecette.component';
+
 import { AddIngredientComponent } from './components/ingredients/add-ingredient/add-ingredient.component';
 import { EditIngredientComponent } from './components/ingredients/edit-ingredient/edit-ingredient.component';
 import { IngredientsComponent } from './components/ingredients/ingredients.component';
@@ -48,9 +48,7 @@ import { ListGallerieComponent } from './components/list-gallerie/list-gallerie.
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 
 
-import { AddRecetteingredientComponent } from './components/recetteingredient/add-recetteingredient/add-recetteingredient/add-recetteingredient.component';
-import { ListRecetteingredientComponent } from './components/recetteingredient/list-recetteingredient/list-recetteingredient/list-recetteingredient.component';
-import { EditRecetteingredientComponent } from './components/recetteingredient/edit-recetteingredient/edit-recetteingredient/edit-recetteingredient.component';
+
 import { RecetteparcategorieComponent } from './components/recetteparcategorie/recetteparcategorie.component';
 import { RecettesearchComponent } from './components/recettesearch/recettesearch.component';
 import { RecettebynoteComponent } from './components/recettebynote/recettebynote.component';
@@ -134,7 +132,7 @@ const customNotifierOptions: NotifierOptions = {
     AbonnementComponent,
     CommentaireComponent,
     EtapeComponent,
-    ImagerecetteComponent,
+
     UtilisateurComponent,
     AddUtilisateurComponent,
     EditUtilisateurComponent,
@@ -158,9 +156,7 @@ const customNotifierOptions: NotifierOptions = {
     UploadFileComponent,
     ListGallerieComponent,
 
-    AddRecetteingredientComponent,
-    ListRecetteingredientComponent,
-    EditRecetteingredientComponent,
+
     RecetteparcategorieComponent,
     RecettesearchComponent,
     RecettebynoteComponent,

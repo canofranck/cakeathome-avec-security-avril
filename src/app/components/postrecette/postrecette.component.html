@@ -50,14 +50,14 @@
                         <form class="submit-recipe-form"[formGroup]="form"(ngSubmit)="create() " action="post">
                             <div class="form-group">
                                 <label>Titre de la Recette</label>
-                                <input id="titre_recette" type="text" placeholder="Nom de la Recette" formControlName="titre_recette" data-length="255">
+                                <input id="titrerecette" type="text" placeholder="Nom de la Recette" formControlName="titrerecette" data-length="255">
 
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <label>Choisi une categorie</label>
-                                <!-- <input id="categorie_recette" type="text" placeholder="categorie_recette" formControlName="categorie_recette" data-length="255"> -->
-                                <select id="categorie_recette" formControlName="categorie_recette">
+                                <!-- <input id="categorierecette" type="text" placeholder="categorierecette" formControlName="categorierecette" data-length="255"> -->
+                                <select id="categorierecette" formControlName="categorierecette">
                                   <option value="gateaux">Gâteaux</option>
                                   <option value="cakes">Cakes</option>
                                   <option value="tarte">Tarte</option>
@@ -80,7 +80,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Description</label>
-                                <textarea placeholder="Entrez ICI la description de la recette" class="textarea form-control" name="description_recette" id="description_recette" formControlName="description_recette" data-length="255"
+                                <textarea placeholder="Entrez ICI la description de la recette" class="textarea form-control" name="descriptionrecette" id="descriptionrecette" formControlName="descriptionrecette" data-length="255"
                                     rows="7" cols="20" ></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -106,28 +106,28 @@
                                             <i class="far fa-clock"></i>
 
 
-                                            <input id="tempspreparation_recette" type="text" placeholder="Temps de préparation: 00.00.00" formControlName="tempspreparation_recette" data-length="255"
-                                                name="tempspreparation_recette">
+                                            <input id="tempspreparationrecette" type="text" placeholder="Temps de préparation: 00.00.00" formControlName="tempspreparationrecette" data-length="255"
+                                                name="tempspreparationrecette">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group additional-input-box icon-left">
                                             <i class="fas fa-utensils"></i>
-                                            <input id="tempscuisson_recette" type="text" placeholder="Temps de Cuisson: 00.00.00" formControlName="tempscuisson_recette" data-length="255"
-                                                name="tempscuisson_recette">
+                                            <input id="tempscuissonrecette" type="text" placeholder="Temps de Cuisson: 00.00.00" formControlName="tempscuissonrecette" data-length="255"
+                                                name="tempscuissonrecette">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group additional-input-box icon-left">
                                             <i class="fas fa-users"></i>
-                                            <input id="nbpersonne_recette" type="text" placeholder="Nombre de Personne: 00" formControlName="nbpersonne_recette" data-length="255"
-                                                name="nbpersonne_recette">
+                                            <input id="nbpersonnerecette" type="text" placeholder="Nombre de Personne: 00" formControlName="nbpersonnerecette" data-length="255"
+                                                name="nbpersonnerecette">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group additional-input-box icon-left">
                                             <i class="far fa-clock"></i>
-                                            <input id="tempstotal_recette" type="text" placeholder="Temps de cuisson total : 00.00.00" formControlName="tempstotal_recette" data-length="255" name="tempstotal_recette">
+                                            <input id="tempstotalrecette" type="text" placeholder="Temps de cuisson total : 00.00.00" formControlName="tempstotalrecette" data-length="255" name="tempstotalrecette">
                                         </div>
                                     </div>
                                 </div>

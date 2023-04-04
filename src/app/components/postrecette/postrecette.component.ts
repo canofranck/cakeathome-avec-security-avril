@@ -1,4 +1,4 @@
-import { Recetteingredient } from 'src/app/models/recetteingredient/recetteingredient';
+
 
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
@@ -47,23 +47,23 @@ export class PostrecetteComponent implements OnInit{
 
       this.gettoken();
         this.formaddIngredient = this.formBuilder.group({
-          // id_ingredient:['',Validators.required],
-          id_recette:['',Validators.required],
+          // idingredient:['',Validators.required],
+          idrecette:['',Validators.required],
           quantiteingredient:['',Validators.required],
         })
 
         this.form = this.formBuilder.group({
-          id_recette :[''],
-          titre_recette: [''],
-          date_recette:[new Date()],
-          description_recette:[''],
-          categorie_recette:[''],
-          niveaudifficulte_recette:[''],
-          tempspreparation_recette:[''],
-          tempscuisson_recette:[''],
-          tempstotal_recette:[''],
-          nbpersonne_recette:[''],
-          recettepremium_recette:[''],
+          idrecette :[''],
+          titrerecette: [''],
+          daterecette:[new Date()],
+          descriptionrecette:[''],
+          categorierecette:[''],
+          niveaudifficulterecette:[''],
+          tempspreparationrecette:[''],
+          tempscuissonrecette:[''],
+          tempstotalrecette:[''],
+          nbpersonnerecette:[''],
+          recettepremiumrecette:[''],
           uid:[this.uid],
         })
         // console.table(this.form.value)
@@ -77,25 +77,25 @@ export class PostrecetteComponent implements OnInit{
      console.log("final recette"+this.uid);
     const formValues = this.form.value;
     const recette2 = new Recette();
-    //  recette2.id_recette=this.idrecetteencours;
-       recette2.titre_recette=this.form.value.titre_recette;
-        recette2.date_recette=new Date();
-         recette2. description_recette=this.form.value.description_recette;
-          // recette2.categorie_recette=this.form.value.categorie_recette;
-        // Vérifier que l'élément de formulaire "categorie_recette" existe avant d'utiliser la méthode "get()"
-        if (formValues && formValues.categorie_recette) {
-          recette2.categorie_recette = formValues.categorie_recette;
+    //  recette2.idrecette=this.idrecetteencours;
+       recette2.titrerecette=this.form.value.titrerecette;
+        recette2.daterecette=new Date();
+         recette2. descriptionrecette=this.form.value.descriptionrecette;
+          // recette2.categorierecette=this.form.value.categorierecette;
+        // Vérifier que l'élément de formulaire "categorierecette" existe avant d'utiliser la méthode "get()"
+        if (formValues && formValues.categorierecette) {
+          recette2.categorierecette = formValues.categorierecette;
         }
 
 
-          recette2.niveaudifficulte_recette=this.form.value.niveaudifficulte_recette;
-          recette2.tempspreparation_recette=this.form.value.tempspreparation_recette;
-          recette2.tempscuisson_recette=this.form.value.tempscuisson_recette;
-          recette2.tempstotal_recette=this.form.value.tempstotal_recette;
-          recette2.nbpersonne_recette=this.form.value.nbpersonne_recette;
-          recette2.recettepremium_recette=this.form.value.recettepremium_recette;
+          recette2.niveaudifficulterecette=this.form.value.niveaudifficulterecette;
+          recette2.tempspreparationrecette=this.form.value.tempspreparationrecette;
+          recette2.tempscuissonrecette=this.form.value.tempscuissonrecette;
+          recette2.tempstotalrecette=this.form.value.tempstotalrecette;
+          recette2.nbpersonnerecette=this.form.value.nbpersonnerecette;
+          recette2.recettepremiumrecette=this.form.value.recettepremiumrecette;
           // recette2.uid= this.uid;
-          recette2.id_recette=this.idrecetteencours;
+          recette2.idrecette=this.idrecetteencours;
     console.log(this.form.value);
     console.log(this.idrecetteencours)
      this.recetteService.updateRecette2(this.form.value,this.idrecetteencours).subscribe(
@@ -111,16 +111,16 @@ export class PostrecetteComponent implements OnInit{
     console.log("affiche ingredient"+this.addingre);
 
         const recette = new Recette();
-        recette.date_recette = new Date();
-        recette.titre_recette='';
-        recette. description_recette='';
-          recette.categorie_recette='';
-          recette.niveaudifficulte_recette='';
-          recette.tempspreparation_recette='';
-          recette.tempscuisson_recette='';
-          recette.tempstotal_recette='';
-          recette.nbpersonne_recette='';
-          recette.recettepremium_recette=false;
+        recette.daterecette = new Date();
+        recette.titrerecette='';
+        recette. descriptionrecette='';
+          recette.categorierecette='';
+          recette.niveaudifficulterecette='';
+          recette.tempspreparationrecette='';
+          recette.tempscuissonrecette='';
+          recette.tempstotalrecette='';
+          recette.nbpersonnerecette='';
+          recette.recettepremiumrecette=false;
            recette.uid= this.uid;
 console.log(this.recette);
 
@@ -130,9 +130,9 @@ console.log(this.recette);
           data =>{
             console.log(data);
             this.recettes = Object.values(data);
-            this.recettes.sort((a: { date_recette: number; }, b: { date_recette: number; }) => (a.date_recette < b.date_recette ? 1 : -1))
+            this.recettes.sort((a: { daterecette: number; }, b: { daterecette: number; }) => (a.daterecette < b.daterecette ? 1 : -1))
             console.log(this.recettes);
-            this.idrecetteencours=this.recettes[0].id_recette;
+            this.idrecetteencours=this.recettes[0].idrecette;
             if ( this.recettes[0].uid=this.uid){
                           console.log(" id recette avant le set"+this.idrecetteencours);
             this.recetteService.setIdRecetteEncours( this.idrecetteencours);

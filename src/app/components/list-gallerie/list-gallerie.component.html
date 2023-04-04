@@ -1,8 +1,10 @@
 
 <!-- <ng-container >
   <tr *ngFor="let g of gallerie ">
-      <ng-container *ngIf="g.utilisateur_id == 2" >
-        <img src="http://localhost:8085/image/{{g.gallerie_filename}}" alt="">
+      <ng-container *ngIf="g.utilisateur
+
+      id == 2" >
+        <img src="http://localhost:8085/image/{{g.galleriefilename}}" alt="">
 
 
       </ng-container >
@@ -40,10 +42,10 @@ img:hover {
 <p>Click on the image to enlarge it.</p>
 <ng-container >
   <tr *ngFor="let g of gallerie ">
-      <ng-container *ngIf="g.utilisateur_id == 2" >
-         <img src="http://localhost:8085/image/{{g.gallerie_filename}}" alt="">
-        <a  href="http://localhost:8085/image/{{g.gallerie_filename}}">
-          <img src="http://localhost:8085/image/{{g.gallerie_filename}}" alt="Forest">
+      <ng-container *ngIf="g.utilisateurid == 2" >
+         <img src="http://localhost:8085/image/{{g.galleriefilename}}" alt="">
+        <a  href="http://localhost:8085/image/{{g.galleriefilename}}">
+          <img src="http://localhost:8085/image/{{g.galleriefilename}}" alt="Forest">
         </a>
 
       </ng-container >
@@ -56,7 +58,7 @@ img:hover {
         <ul class="upload-img">
           <tr *ngFor="let g of gallerie ">
             <ng-container *ngIf="g.uid == 1" >
-            <li><img src="http://localhost:8085/image/{{g.gallerie_filename}}" alt=""></li>
+            <li><img src="http://localhost:8085/image/{{g.galleriefilename}}" alt=""></li>
             </ng-container>
           </tr>
              <li><img src="../../../assets/img/figure/upload-banner1.jpg" alt="Upload Image"></li>
@@ -74,8 +76,8 @@ img:hover {
     <div class="form-group">
         <ul class="upload-img">
           <th *ngFor="let g of gallerie ">
-            <ng-container *ngIf="g.id_recette == 1" >
-            <li><img src="http://localhost:8085/image/{{g.gallerie_filename}}" alt=""  style="width:130px"></li>
+            <ng-container *ngIf="g.idrecette == 1" >
+            <li><img src="http://localhost:8085/image/{{g.galleriefilename}}" alt=""  style="width:130px"></li>
             </ng-container>
           </th>
 

@@ -26,9 +26,7 @@ import { AddRecetteComponent } from "./components/recette/add-recette/add-recett
 import { EditRecetteComponent } from "./components/recette/edit-recette/edit-recette.component";
 import { ListRecetteComponent } from "./components/recette/list-recette/list-recette.component";
 import { RecetteComponent } from "./components/recette/recette.component";
-import { AddRecetteingredientComponent } from "./components/recetteingredient/add-recetteingredient/add-recetteingredient/add-recetteingredient.component";
-import { EditRecetteingredientComponent } from "./components/recetteingredient/edit-recetteingredient/edit-recetteingredient/edit-recetteingredient.component";
-import { ListRecetteingredientComponent } from "./components/recetteingredient/list-recetteingredient/list-recetteingredient/list-recetteingredient.component";
+
 import { UploadFileComponent } from "./components/upload-file/upload-file.component";
 
 import { AddUtilisateurComponent } from "./components/utilisateur/add-utilisateur/add-utilisateur.component";
@@ -110,10 +108,10 @@ const routes: Routes = [
 
   {path:'gallerie',component:ListGallerieComponent},
 
-  {path:'recetteingredient',component:ListRecetteingredientComponent},
-  {path:'recetteingredient/:id',component:ListRecetteingredientComponent},
-  {path:'addrecetteingredient',component:AddRecetteingredientComponent},
-  {path:'editrecetteingredient/:id',component:EditRecetteingredientComponent},
+  // {path:'recetteingredient',component:ListRecetteingredientComponent},
+  // {path:'recetteingredient/:id',component:ListRecetteingredientComponent},
+  // {path:'addrecetteingredient',component:AddRecetteingredientComponent},
+  // {path:'editrecetteingredient/:id',component:EditRecetteingredientComponent},
 ];
 
 @NgModule({
