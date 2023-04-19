@@ -160,15 +160,8 @@ onRateChange(rate: number) {
 getRecettes() {
   this.recetteService.findAllRecettes().subscribe(
     data =>{
-      // console.table(data);
-        this.recettes = data as any[];
-      //  console.table(this.recettes)
-      //  const affiche: any[] =this.recettes.slice(4,5)
-//const idrecetteselectionner = 11; // Mettez ici l'id de la recette sélectionnée
-       this.getRecetteById(this.idrecetteselectionner);
-
-
-  // console.table(affiche);
+         this.recettes = data as any[];
+        this.getRecetteById(this.idrecetteselectionner);
 
     }
   );

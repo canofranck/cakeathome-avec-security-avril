@@ -6,10 +6,12 @@
   <div class="widget-latest">
       <ul class="block-list remove-5th-child-lg"  >
           <li class="single-item" *ngFor="let recette of lastRecettes ; let i=index" >
-              <div class="item-img"   >
-                <a *ngFor="let g of gallerie; let i=index"  [routerLink]="['/recette', recette.idrecette]" ><img *ngIf="g.idrecette == recette.idrecette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" style="width:100px"></a>
+              <div class="site-img"   >
+                <div class="item-img">
+                <a *ngFor="let g of gallerie; let i=index"  [routerLink]="['/recette', recette.idrecette]" ><img *ngIf="g.idrecette == recette.idrecette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" ></a>
                   <div class="count-number">{{i+1}}</div>
               </div>
+            </div>
               <div class="item-content">
                   <div class="item-ctg" >{{recette.categorierecette}}</div>
                   <h4 class="item-title"><a [routerLink]="['/recette', recette.idrecette]">{{recette.titrerecette}}</a></h4>

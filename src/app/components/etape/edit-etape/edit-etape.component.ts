@@ -14,9 +14,9 @@ import { EtapeService } from 'src/app/services/etape/etape.service';
 export class EditEtapeComponent  implements OnInit {
 
   declare editetapeForm: FormGroup;
-  etape: Etape = new Etape();
+  // Etape = new Etape();
 
-  recette: any ={};
+  recette: any =[];
   constructor(
   private etapeService : EtapeService,
   private router : Router,
@@ -30,38 +30,42 @@ export class EditEtapeComponent  implements OnInit {
   const id = Number(this.route.snapshot.paramMap.get('id'));
   this.editetapeForm = this.formBuilder.group({
     idetape: ['',Validators.required],
-
     numeroetape: ['',Validators.required],
     instructionsetape: ['',Validators.required],
-    imageetape :['',Validators.required],
     idrecette: ['',Validators.required],
 
   })
   //récupere le produit via l'id
   this.etapeService.editEtape(id).subscribe(
-    (data :any) => {
+    data  => {
       console.log(data)
       //complete le form avec le produit récupéré
-      this.editetapeForm.patchValue({
-         idetape: data.idetape,
-         idrecette: data.recette.idrecette,
-         numeroetape: data.numeroetape,
-         instructionsetape: data.instructionsetape,
-         imageetape: data.imageetape,
-      });
-      this.recette=data.recette;
+      this.editetapeForm.setValue(data
+        //  idetape: data.idetape,
+        //  idrecette: data.idrecette,
+        //  numeroetape: data.numeroetape,
+        //  instructionsetape: data.instructionsetape,
+
+      );
+      // this.recette=data.recette;
     }
   )
   }
   update() {
     if (this.editetapeForm.valid) {
       let data = this.editetapeForm.value;
-      data.recette= this.recette;
+      // data.recette= this.recette;
       console.log(this.editetapeForm.value);
+
+      // data.uid= this.editcommentaireForm.value;
+      // let data2 = this.editcommentaireForm.value;
+      // data.recette= this.recette;
+
+
 
       this.etapeService.updateEtape(data).subscribe(
         () => {
-      //  this.router.navigate(['/etape'])
+       this.router.navigate(['/etape'])
 
         }
       )

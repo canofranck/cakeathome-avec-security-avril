@@ -24,10 +24,11 @@
               <div class="col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let recette of recettesTrouvees.slice(debutnombrecetteaffichees, nombreRecettesAffichees); let i=index">
                   <div class="product-box-layout1" >
                       <figure class="item-figure">
+                        <div class="site-img">
                         <a *ngFor="let g of gallerie" [routerLink]="['/recette',recette.idrecette]">
-                          <img *ngIf="g.idrecette == recette.idrecette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" style="width:250px">
+                          <img *ngIf="g.idrecette == recette.idrecette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" >
                         </a>
-
+                        </div>
                          </figure>
                       <div class="item-content">
                           <span class="sub-title">{{recette.categorierecette}}</span>
@@ -50,13 +51,14 @@
                           <p>{{recette.descriptionrecette}}</p>
                           <ul class="entry-meta">
                               <li><a href="#"><i class="fas fa-clock"></i>{{recette.tempspreparationrecette}}</a></li>
-                              <li><a href="#"><i class="fas fa-user"></i>Par <span>{{recette.uid}}</span></a></li>
+                              <li><a href="#"><i class="fas fa-user"></i>Par <span>{{recette.username}}</span></a></li>
                               <li><a href="#"><i class="fas fa-heart"></i><span>{{recette.nblike}}</span> Likes</a></li>
                           </ul>
                       </div>
                   </div>
 
               </div>
+              <div></div>
               <div class="col-6">
                 <button  type="button" class="btn-submit" (click)="afficherMoins()"><i class="flaticon-add-plus-button"></i>Page Précedente</button>
               </div>
@@ -68,6 +70,7 @@
           </div>
       <!-- </div> -->
     </form>
+
   </section>
   <!-- Recipe Without Sidebar Area End Here -->
   <!-- Footer Area Start Here -->
@@ -92,17 +95,17 @@
   <!-- Footer Area End Here -->
   <app-footer></app-footer>
 <!-- Search Box Start Here -->
-<div id="search" class="search-wrap">
+<!-- <div id="search" class="search-wrap">
   <button type="button" class="close">×</button>
   <form class="search-form">
       <input type="search" value="" placeholder="Type here........" />
       <button type="submit" class="search-btn"><i class="flaticon-search"></i></button>
   </form>
-</div>
+</div> -->
 <!-- Search Box End Here -->
 
 <!-- Modal Start-->
-<div class="modal fade" id="myModal" role="dialog">
+<!-- <div class="modal fade" id="myModal" role="dialog">
 <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
@@ -137,7 +140,7 @@
       </div>
   </div>
 </div>
-</div>
+</div> -->
 <!-- Modal End-->
 
 

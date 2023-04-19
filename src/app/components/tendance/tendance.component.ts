@@ -56,7 +56,7 @@ this.getRecettestendance(); // Appel de la méthode getRecettestendance() pour o
             // Vérifier si la liste de recettes n'est pas vide
             if (recettes.length > 0) {
               const topRecettes = recettes.sort((a, b) => b.nbvuerecette - a.nbvuerecette).slice(0, 3); // trier les recettes par nombre de vues et en prendre les 3 premières
-
+console.log(recettes)
               // Ajouter le nom d'utilisateur à chaque recette de topRecettes
               topRecettes.forEach(recette => {
                 this.userService.getuser(recette.uid).subscribe(user => {

@@ -69,7 +69,9 @@ import { NotificationService } from './services/notification/notification.servic
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { UserComponent } from './components/user/user.component';
 import { LogoutComponent } from './components/logout/logout.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatFormFieldModule} from '@angular/material/form-field';
 /**
  * Custom angular notifier options
  */
@@ -164,6 +166,7 @@ const customNotifierOptions: NotifierOptions = {
     RegisterComponent,
     UserComponent,
     LogoutComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -172,7 +175,9 @@ const customNotifierOptions: NotifierOptions = {
     FormsModule,
     ReactiveFormsModule,
     NotifierModule.withConfig(customNotifierOptions),
-
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
 
   ],
   providers: [NotificationService,AuthenticationGuard,AuthenticationService,UserService,

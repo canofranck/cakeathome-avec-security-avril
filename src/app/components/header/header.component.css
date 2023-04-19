@@ -1,0 +1,35 @@
+@media only screen and (max-width: 768px) {
+  .site-logo {
+    display: none !important;
+  }
+  .navbar {
+    margin-bottom: 45px !important;
+  }
+}
+.site-logo {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      .site-logo img {
+        height: 100px;
+        width: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+      .fill-btn {
+        border: 2px solid  #ff4a52;
+        border-radius: 5px;
+        border-radius: 5px;
+        padding: 10px 20px;
+
+        color: white;
+        background-color:  #ff4a52;
+      }
+
+
+      /* .nav-action-perso ul li .fill-btn:hover {
+        background-color: #e92731;
+      } */

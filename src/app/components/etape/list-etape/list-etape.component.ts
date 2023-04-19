@@ -22,7 +22,7 @@ export class ListEtapeComponent implements  OnInit {
       this.etapeService.findAllEtapes().subscribe(
         data => {
           console.log(data);
-          this.etape =data as any ;
+          this.etape =data  as any[]
 
         }
       )

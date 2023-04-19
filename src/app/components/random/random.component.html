@@ -1,11 +1,13 @@
 <app-header *ngIf="isCalledFromHome"></app-header>
 <section class="padding-bottom-45">
   <div class="container">
+    <h2 class="item-heading">Les Recettes au Hasard</h2>
       <div class="row gutters-40">
           <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let item of randomRecettes ; let i=index">
               <div class="product-box-layout4">
-                  <div class="item-figure">
-                    <a *ngFor="let g of gallerie; let i=index" [routerLink]="['/recette',item.idrecette]"><img *ngIf="g.idrecette == item.idrecette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" style="width:530px;height: 364px"></a>
+                <div class="site-img">
+                    <div class="item-figure">
+                    <a *ngFor="let g of gallerie; let i=index" [routerLink]="['/recette',item.idrecette]"><img *ngIf="g.idrecette == item.idrecette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" ></a>
 
                       <a [routerLink]="['/recette',item.idrecette]" class="item-dot">
                           <span></span>
@@ -13,6 +15,7 @@
                           <span></span>
                       </a>
                   </div>
+                </div>
                   <div class="item-content">
                       <span class="sub-title">{{randomRecettes[i].categorierecette }}</span>
                       <h3 class="item-title"><a [routerLink]="['/recette',item.idrecette]">{{randomRecettes[i].titrerecette}}</a></h3>

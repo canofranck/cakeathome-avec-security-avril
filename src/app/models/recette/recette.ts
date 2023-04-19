@@ -21,6 +21,8 @@ export class Recette {
    public listGalerie:[];
    public listEtape:[];
    public listCommentaire:[];
+   public  username?: string;
+
   //  public quantiteingredient : string;
   //  public idingredient :number;
 //    public ingredients:Ingredients[];
@@ -46,6 +48,7 @@ export class Recette {
     this.listGalerie=[];
     this.listEtape=[];
     this.listCommentaire=[];
+    this.username="";
     // this.id_ingredient=0;
 //     this.ingredients=[];
 // this.quantiteingredient='';

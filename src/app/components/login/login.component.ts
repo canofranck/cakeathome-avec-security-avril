@@ -18,13 +18,17 @@ export class LoginComponent implements OnInit,OnDestroy {
   public showLoading: boolean = false;
   private subscriptions: Subscription [] = [];
 
-  constructor(private router: Router,private authenticationService: AuthenticationService, private notifierService: NotifierService) { }
+  constructor(private router: Router,
+    private authenticationService: AuthenticationService,
+  private notifierService: NotifierService)
+   { }
 
   ngOnInit(): void {
     if(this.authenticationService.isUserLoggedIn()) {
       this.router.navigateByUrl('/home');
       console.log("Ca fonctionne login");
     } else {
+      this.notifierService.notify('success', 'Veuillez vous connecter');
       this.router.navigateByUrl('/login');
       console.log("Ca ne fonctionne pas login");
 
@@ -37,9 +41,10 @@ export class LoginComponent implements OnInit,OnDestroy {
   public onLogin(user: User): void{
     this.showLoading = true;
     // console.log(user);
-    this.notifierService.notify('success', 'Bienvenue sur Cake At Home');
+
     this.subscriptions.push(this.authenticationService.login(user).subscribe(
       (response: HttpResponse<User>)=>  {
+        this.notifierService.notify('success', 'Bienvenue sur Cake At Home');
        const token = response.headers.get(HeaderType.JWT_TOKEN);
        this.authenticationService.saveToken(token!);
        this.authenticationService.addUserToLocalCache(response.body!);
@@ -51,6 +56,7 @@ export class LoginComponent implements OnInit,OnDestroy {
        if (loggedUser?.role == "ROLE_ADMIN"){
          console.log("un admin vient de se connecter on lui donne une clé secrète");
          localStorage.setItem('secretAuth', "cakelc8!*)54(im1gt7%@4y0^a8hyc2)v$vie-knhqh5*br3td@$#+cake");
+         this.notifierService.notify('success', 'Bienvenue sur Cake At Home adminstrateur');
         }
 // Récupération du token depuis le localStorage
 // const token = localStorage.getItem('token');
@@ -71,7 +77,7 @@ export class LoginComponent implements OnInit,OnDestroy {
       },
       (errorResponse: HttpErrorResponse) => {
           console.log(errorResponse);
-          this.sendErrorNotification(NotificationType.ERROR, errorResponse.error.message);
+
           this.showLoading = false;
       }
       )

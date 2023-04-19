@@ -21,7 +21,9 @@ ngOnInit(): void {
   this.recetteService.findAllRecettes().subscribe(
     data =>{
       console.table(data);
-        this.recettes = data;
+       
+        this.recettes = data as any[];
+
     }
   )
   if (this.route.snapshot.paramMap.get('id') != null) {

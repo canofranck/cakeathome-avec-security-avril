@@ -25,9 +25,14 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../cakeathome/src/assets/js/jquery-3.3.1.min.js",
+              "../cakeathome/src/assets/js/smoothscroll.min.js",
+              "../cakeathome/src/assets/js/main.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -87,9 +92,14 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../cakeathome/src/assets/js/jquery-3.3.1.min.js",
+              "../cakeathome/src/assets/js/smoothscroll.min.js",
+              "../cakeathome/src/assets/js/main.js"
+            ]
           }
         }
       }

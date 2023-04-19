@@ -29,7 +29,6 @@ export class EditCommentaireComponent implements OnInit {
   this.editcommentaireForm = this.formBuilder.group({
     idcommentaire: ['',Validators.required],
     commentaire: ['',Validators.required],
-    imagecommentaire: ['',Validators.required],
     notecommentaire: ['',Validators.required],
     datecommentaire :['',Validators.required],
     uid: ['',Validators.required],
@@ -42,14 +41,14 @@ export class EditCommentaireComponent implements OnInit {
       //complete le form avec le produit récupéré
       this.editcommentaireForm.patchValue({
           idcommentaire: data.idcommentaire,
-          uid: data.utilisateur.uid,
-          idrecette: data.recette.idrecette,
+          uid: data.uid,
+          idrecette: data.idrecette,
           commentaire: data.commentaire,
-          imagecommentaire: data.imagecommentaire,
+
           notecommentaire: data.notecommentaire,
           datecommentaire : data.datecommentaire,
       });
-      this.utilisateur=data.utilisateur;
+      // this.utilisateur=data.uid;
       this.recette=data.recette;
     }
   )
@@ -57,8 +56,8 @@ export class EditCommentaireComponent implements OnInit {
   update() {
     if (this.editcommentaireForm.valid) {
       let data = this.editcommentaireForm.value;
-      data.utilisateur= this.utilisateur;
-      let data2 = this.editcommentaireForm.value;
+      // data.uid= this.editcommentaireForm.value;
+      // let data2 = this.editcommentaireForm.value;
       data.recette= this.recette;
       console.log(this.editcommentaireForm.value);
 

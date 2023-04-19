@@ -5,6 +5,7 @@ import { Recette } from '../../models/recette/recette';
 import { GallerieService } from '../../services/gallerie/gallerie.service';
 import { IngredientsService } from '../../services/ingredients/ingredients.service';
 import { RecetteService } from '../../services/recette/recette.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-recettesearch',
@@ -32,7 +33,7 @@ public moyenne:number=0;
      private gallerieService : GallerieService,
      private ingredientService : IngredientsService,
      private router: Router,
-
+     private userService:UserService,
      ) { }
 
   ngOnInit(): void {
@@ -145,6 +146,11 @@ rechercher(searchTerm: string) {
           // On vérifie si la recette n'est pas déjà dans le tableau des recettes trouvées
           if (!this.recettesTrouvees.includes(recette)) {
             this.recettesTrouvees.push(recette);
+            this.recettesTrouvees.forEach(recette => {
+              this.userService.getuser(recette.uid).subscribe(user => {
+                recette.username = user.username;
+              });
+            });
           }
         }
       }

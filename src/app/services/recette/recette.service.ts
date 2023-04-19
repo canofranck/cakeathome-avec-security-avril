@@ -31,7 +31,7 @@ export class RecetteService {
    }
 
    updateRecette(recette:Recette){
-    // console.log(this.http.put(AppSettings.APP_URL+"/recettes/"+recette.idrecette,JSON.stringify(recette),this.httpOptions))
+   
     return this.http.put(AppSettings.APP_URL+"/recettes/"+recette.idrecette,JSON.stringify(recette),this.httpOptions);
    }
 

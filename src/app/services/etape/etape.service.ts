@@ -23,7 +23,7 @@ export class EtapeService {
    }
 
    updateEtape(etape:Etape){
-    return this.http.put(AppSettings.APP_URL+"/etapes/"+etape.idrecette,JSON.stringify(etape),this.httpOptions);
+    return this.http.put(AppSettings.APP_URL+"/etapes/"+etape.idetape,JSON.stringify(etape),this.httpOptions);
    }
 
    deleteEtape(id:number){

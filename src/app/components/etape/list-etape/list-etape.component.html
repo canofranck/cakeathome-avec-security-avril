@@ -34,10 +34,10 @@
             <th scope="col">idetape</th>
 
             <th scope="col">idrecette</th>
-            <th scope="col">commentaire</th>
+
             <th scope="col">numeroetape</th>
             <th scope="col">instructionsetape</th>
-            <th scope="col">imageetape</th>
+
 
 
         </tr>
@@ -45,10 +45,10 @@
     <tbody>
     <tr *ngFor="let item of etape">
         <th scope="row"> {{item.idetape}}</th>
-        <td>{{item.recette.idrecette}}</td>
+        <td>{{item.idrecette}}</td>
         <td>{{item.numeroetape}}</td>
         <td>{{item.instructionsetape}}</td>
-        <td>{{item.imageetape}}</td>
+    
 
 
 

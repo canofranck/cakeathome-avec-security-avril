@@ -4,6 +4,8 @@
 
 
 
+
+
     <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
@@ -47,17 +49,33 @@
             <div class="container">
                 <div class="row gutters-60">
                     <div class="col-lg-8">
-                        <form class="submit-recipe-form"[formGroup]="form"(ngSubmit)="create() " action="post">
-                            <div class="form-group">
-                                <label>Titre de la Recette</label>
-                                <input id="titrerecette" type="text" placeholder="Nom de la Recette" formControlName="titrerecette" data-length="255">
 
-                                <div class="help-block with-errors"></div>
+
+                        <form class="submit-recipe-form"[formGroup]="form"(ngSubmit)="create() " action="post">
+
+                          <div class="form-group">
+                            <div class="row no-gutters">
+                              <div class="col-6">
+                                       <div class="form-group additional-input-box icon-right">
+
+
+                                <input id="titrerecette" type="text"  class="form-control"  placeholder="Entrez ici le titre de la Recette" formControlName="titrerecette" data-length="255" size="35">
+                              </div>
                             </div>
-                            <div class="form-group">
-                                <label>Choisi une categorie</label>
-                                <!-- <input id="categorierecette" type="text" placeholder="categorierecette" formControlName="categorierecette" data-length="255"> -->
-                                <select id="categorierecette" formControlName="categorierecette">
+                            </div>
+
+                            <!-- <label>Titre de la Recette</label> -->
+
+
+                            <!-- <div class="help-block with-errors"></div> -->
+                        </div>
+                        <div class="form-group">
+                                <!-- <label>Choisi une categorie</label> -->
+                                <div class="row no-gutters">
+                                  <div class="col-6">
+                                  <div class="form-group additional-input-box icon-right">
+                                <select id="categorierecette" formControlName="categorierecette" class="form-control" >
+                                  <option value="" disabled selected hidden>Sélectionnez une catégorie</option>
                                   <option value="gateaux">Gâteaux</option>
                                   <option value="cakes">Cakes</option>
                                   <option value="tarte">Tarte</option>
@@ -68,21 +86,36 @@
                                   <option value="creme et mousses">Crème et Mousses</option>
                                   <option value="biscuit">Biscuit</option>
                                 </select>
-
-                                <!-- <select class="select2" name="filter-by">
-                                    <option value="0">Gateau</option>
-                                    <option value="1">Tarte et Tartelettes</option>
-                                    <option value="2">Cake</option>
-                                    <option value="3">Mouelleux ou Fondants</option>
-                                    <option value="4">Dessert aux fruits</option>
-                                    <option value="5">Viennoiserie</option>
-                                </select> -->
+                            </div>
+                            </div>
+                            </div>
                             </div>
                             <div class="form-group">
-                                <label>Description</label>
-                                <textarea placeholder="Entrez ICI la description de la recette" class="textarea form-control" name="descriptionrecette" id="descriptionrecette" formControlName="descriptionrecette" data-length="255"
-                                    rows="7" cols="20" ></textarea>
+                              <div class="row no-gutters">
+                                <div class="col-6">
+                                <div class="form-group additional-input-box icon-right">
+                              <!-- <label>Choisir la difficulté</label> -->
+                                <select id="niveaudifficulterecette" formControlName="niveaudifficulterecette" class="form-control">
+                                  <option value="" disabled selected hidden>Sélectionnez le difficulté</option>
+                                  <option value="Facile">Facile</option>
+                                <option value="Moyen">Moyen</option>
+                                <option value="Difficile">Diffifcile</option>
+                              </select>
+                              </div>
+                              </div>
+                              </div>
+                          </div>
+                            <div class="form-group">
+                                <!-- <label>Description</label> -->
+                                <div class="row no-gutters">
+                                  <!-- <div class="col-6"> -->
+                                  <div class="form-group additional-input-box icon-right">
+                                <textarea placeholder="Entrez ICI la description de la recette" class="textarea " name="descriptionrecette" id="descriptionrecette" formControlName="descriptionrecette" data-length="255"
+                                    rows="7" cols="20" style="height:150px; width:100%;"  ></textarea>
                                 <div class="help-block with-errors"></div>
+                                <!-- </div> -->
+                                </div>
+                                </div>
                             </div>
 
                             <!-- <div class="additional-input-wrap">
@@ -106,28 +139,29 @@
                                             <i class="far fa-clock"></i>
 
 
-                                            <input id="tempspreparationrecette" type="text" placeholder="Temps de préparation: 00.00.00" formControlName="tempspreparationrecette" data-length="255"
-                                                name="tempspreparationrecette">
+                                            <input id="tempspreparationrecette" type="text" placeholder="Temps de préparation en minute" formControlName="tempspreparationrecette" data-length="255"
+                                                name="tempspreparationrecette" size="26">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group additional-input-box icon-left">
                                             <i class="fas fa-utensils"></i>
-                                            <input id="tempscuissonrecette" type="text" placeholder="Temps de Cuisson: 00.00.00" formControlName="tempscuissonrecette" data-length="255"
-                                                name="tempscuissonrecette">
+                                            <input id="tempscuissonrecette" type="text" placeholder="Temps de Cuisson en minute" formControlName="tempscuissonrecette" data-length="255"
+                                                name="tempscuissonrecette" size="23">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group additional-input-box icon-left">
                                             <i class="fas fa-users"></i>
-                                            <input id="nbpersonnerecette" type="text" placeholder="Nombre de Personne: 00" formControlName="nbpersonnerecette" data-length="255"
-                                                name="nbpersonnerecette">
+                                            <label for="nbpersonnerecette" style="font-weight: normal; font-size: 16px;">Nombre de Personnes:</label>
+                                            <input id="nbpersonnerecette" type="number"  formControlName="nbpersonnerecette" data-length="255"
+                                                name="nbpersonnerecette" size="19" min="1" max="99" step="1" >
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group additional-input-box icon-left">
                                             <i class="far fa-clock"></i>
-                                            <input id="tempstotalrecette" type="text" placeholder="Temps de cuisson total : 00.00.00" formControlName="tempstotalrecette" data-length="255" name="tempstotalrecette">
+                                            <input id="tempstotalrecette" type="text" placeholder="Temps de cuisson total en minute" formControlName="tempstotalrecette" data-length="255" name="tempstotalrecette" size="28"  >
                                         </div>
                                     </div>
                                 </div>
@@ -137,8 +171,7 @@
                               <!-- <label>Ingredients:</label> -->
                               <!-- <label for="ingredients">Ingrédients :</label> -->
 
-                              <button *ngIf="cachebuttoningredient" type="button" class="btn-upload" (click)="affingre()" ><i class="flaticon-add-plus-button"></i>ADD NEW
-                                INGREDIENT</button>
+                              <button *ngIf="cachebuttoningredient" type="button" class="btn-upload" (click)="affingre()" ><i class="flaticon-add-plus-button"></i>AJOUTER DES INGREDIENTS</button>
                               <app-add-ingredient *ngIf="addingre" (cacheringre)="cacheringr()"></app-add-ingredient>
 
 
@@ -186,7 +219,8 @@
                                 <div class="summernote"></div>
                             </div>
                             <app-upload-file></app-upload-file>
-                            <button type="submit" class="btn-submit">ENREGISTRER LA RECETTE</button>
+
+                            <button type="submit"   [disabled]="!form.valid" class="btn-submit">ENREGISTRER LA RECETTE</button>
 
                         </form>
                     </div>

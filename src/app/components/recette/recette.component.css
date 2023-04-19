@@ -1,7 +1,12 @@
 
 
+.site-img img {
+  height: 390px;
+  width: auto;
 
-/* 
+}
+
+/*
 
  .custom-size {
   font-size: 24px;

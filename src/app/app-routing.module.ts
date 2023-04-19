@@ -48,7 +48,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
-  {path:'home',component:HomeComponent},
+  {path:'home',component:HomeComponent,canActivate:[AuthenticationGuard]  },
 
 
   // ,canActivate:[AuthenticationGuard] },
@@ -59,19 +59,19 @@ const routes: Routes = [
 {path:'user/management',component:UserComponent,canActivate:[AdminGuard] },
 { path:'',redirectTo:'login', pathMatch:'full'},
 
-  {path:'recette',component:RecetteComponent  },
+  {path:'recette',component:RecetteComponent,canActivate:[AuthenticationGuard]  },
   {path:'contact',component:ContactComponent },
-  {path:'postrecette',component:PostrecetteComponent },
-  {path:'ingredients',component:IngredientsComponent},
+  {path:'postrecette',component:PostrecetteComponent,canActivate:[AuthenticationGuard]  },
+  {path:'ingredients',component:IngredientsComponent,canActivate:[AuthenticationGuard]  },
 
-  {path:'utilisateur',component:UtilisateurComponent},
-  {path:'utilisateur/:id',component:ListUtilisateurComponent},
-  {path:'addutilisateur',component:AddUtilisateurComponent},
-  {path:'editutilisateur/:id',component:EditUtilisateurComponent},
+  {path:'utilisateur',component:UtilisateurComponent,canActivate:[AuthenticationGuard]  },
+  {path:'utilisateur/:id',component:ListUtilisateurComponent,canActivate:[AuthenticationGuard]  },
+  {path:'addutilisateur',component:AddUtilisateurComponent,canActivate:[AuthenticationGuard]  },
+  {path:'editutilisateur/:id',component:EditUtilisateurComponent,canActivate:[AuthenticationGuard]  },
   // {path:'listutilisateur',component:ListUtilisateurComponent},
-  {path:'recette',component:RecetteComponent},
-  {path:'recette/:id',component:RecetteComponent},
-  {path:'addrecette',component:AddRecetteComponent},
+  {path:'recette',component:RecetteComponent,canActivate:[AuthenticationGuard]  },
+  {path:'recette/:id',component:RecetteComponent,canActivate:[AuthenticationGuard]  },
+  {path:'addrecette',component:AddRecetteComponent,canActivate:[AuthenticationGuard]  },
   {path:'editrecette/:id',component:EditRecetteComponent},
   {path:'listrecette',component:ListRecetteComponent},
   {path:'recettes/:categorie',component:RecetteparcategorieComponent},

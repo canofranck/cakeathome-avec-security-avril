@@ -4,7 +4,6 @@ export class Commentaire {
 
 idcommentaire:number;
 commentaire:string;
-imagecommentaire:string;
 notecommentaire:number;
 datecommentaire:Date;
 uid:number;
@@ -14,7 +13,7 @@ idrecette:number;
 constructor (){
 this.idcommentaire=0;
 this.commentaire="";
-this.imagecommentaire="";
+
 this.notecommentaire=0;
 this.datecommentaire=new Date;
 this.uid=0;

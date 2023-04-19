@@ -8,9 +8,7 @@
     <!-- Add your site or application content here -->
 
     <!-- ScrollUp Start Here -->
-    <a href="#wrapper" data-type="section-switch" class="scrollup">
-      <i class="fas fa-angle-double-up"></i>
-  </a>
+
   <!-- ScrollUp End Here -->
 
       <!-- Header Area Start Here -->
@@ -206,7 +204,7 @@
                         </figure>
                           <div class="item-content">
                               <span class="sub-title">{{recette.categorierecette}}</span>
-                              <h3 class="item-title"><a href="single-recipe1.html">{{recette.titrerecette}}</a></h3>
+                              <h3 class="item-title"><a>{{recette.titrerecette}}</a></h3>
                               <ul class="item-rating">
                                 <ng-container *ngIf="recette.notemoyenne">  <!--au cas ou la valeur est null-->
                                   <ngb-rating [(rate)]="recette.notemoyenne" [readonly]="true" [max]="5" class="custom-size custom-color"></ngb-rating>

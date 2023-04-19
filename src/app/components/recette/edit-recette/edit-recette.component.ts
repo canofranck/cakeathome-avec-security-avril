@@ -55,7 +55,7 @@ export class EditRecetteComponent implements OnInit {
 
       this.recetteService.updateRecette(this.formeditRecette.value).subscribe(
         () => {
-          this.router.navigate(['/postrecette'])
+          this.router.navigate(['/listrecette'])
 
         }
       )

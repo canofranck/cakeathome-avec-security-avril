@@ -54,44 +54,46 @@ export class PostrecetteComponent implements OnInit{
 
         this.form = this.formBuilder.group({
           idrecette :[''],
-          titrerecette: [''],
+          titrerecette: ['',Validators.required],
           daterecette:[new Date()],
-          descriptionrecette:[''],
-          categorierecette:[''],
-          niveaudifficulterecette:[''],
-          tempspreparationrecette:[''],
-          tempscuissonrecette:[''],
-          tempstotalrecette:[''],
-          nbpersonnerecette:[''],
+          descriptionrecette:['',Validators.required],
+          categorierecette:['',Validators.required],
+          niveaudifficulterecette:['',Validators.required],
+          tempspreparationrecette:['',Validators.required],
+          tempscuissonrecette:['',Validators.required],
+          tempstotalrecette:['',Validators.required],
+          nbpersonnerecette:['1',Validators.required],
           recettepremiumrecette:[''],
           uid:[this.uid],
         })
-        // console.table(this.form.value)
-
-  }
+      }
   create(){
     // this.recetteService.getIdRecetteEncours();
     console.log(this.idrecetteencours)
-
-
-     console.log("final recette"+this.uid);
+    console.log("final recette"+this.uid);
     const formValues = this.form.value;
     const recette2 = new Recette();
-    //  recette2.idrecette=this.idrecetteencours;
-       recette2.titrerecette=this.form.value.titrerecette;
+        recette2.titrerecette=this.form.value.titrerecette;
         recette2.daterecette=new Date();
-         recette2. descriptionrecette=this.form.value.descriptionrecette;
+        recette2. descriptionrecette=this.form.value.descriptionrecette;
           // recette2.categorierecette=this.form.value.categorierecette;
         // Vérifier que l'élément de formulaire "categorierecette" existe avant d'utiliser la méthode "get()"
         if (formValues && formValues.categorierecette) {
           recette2.categorierecette = formValues.categorierecette;
         }
-
-
           recette2.niveaudifficulterecette=this.form.value.niveaudifficulterecette;
-          recette2.tempspreparationrecette=this.form.value.tempspreparationrecette;
-          recette2.tempscuissonrecette=this.form.value.tempscuissonrecette;
-          recette2.tempstotalrecette=this.form.value.tempstotalrecette;
+          recette2.tempspreparationrecette = this.form.value.tempspreparationrecette;
+          this.form.patchValue({
+            tempspreparationrecette: this.form.value.tempspreparationrecette.concat(' min')
+          });
+          recette2.tempscuissonrecette = this.form.value.tempscuissonrecette.endsWith("min") ? this.form.value.tempscuissonrecette : this.form.value.tempscuissonrecette.concat(" min");
+          this.form.patchValue({
+            tempscuissonrecette: this.form.value.tempscuissonrecette.concat(' min')
+          });
+          recette2.tempstotalrecette = this.form.value.tempstotalrecette.endsWith("min") ? this.form.value.tempstotalrecette : this.form.value.tempstotalrecette.concat(" min");
+          this.form.patchValue({
+            tempstotalrecette: this.form.value.tempstotalrecette.concat(' min')
+          });
           recette2.nbpersonnerecette=this.form.value.nbpersonnerecette;
           recette2.recettepremiumrecette=this.form.value.recettepremiumrecette;
           // recette2.uid= this.uid;
@@ -171,6 +173,7 @@ console.log(this.recette);
 
   }
 }
+
   }
 
 
