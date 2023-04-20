@@ -1,12 +1,13 @@
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NotifierService } from 'angular-notifier';
 import { Subscription } from 'rxjs';
 import { HeaderType } from 'src/app/enum/header-type.enum';
 import { NotificationType } from 'src/app/enum/notification-type.enum';
 import { User } from 'src/app/models/user/user';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
-import { NotificationService } from 'src/app/services/notification/notification.service';
+
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
   public showLoading: boolean = false;
   private subscriptions: Subscription [] = [];
 
-  constructor(private router: Router, private authenticationService: AuthenticationService, private notificationService: NotificationService) { }
+  constructor(private router: Router,
+     private authenticationService: AuthenticationService,
+     private notifierService: NotifierService) { }
 
   ngOnInit(): void {
     if(this.authenticationService.isUserLoggedIn()) {
@@ -41,7 +44,8 @@ export class RegisterComponent implements OnInit, OnDestroy {
         console.log("Je suis dans Register", response.firstname);
 
         this.showLoading = false;
-        this.sendNotification(NotificationType.SUCCESS, `Votre compte a bien été crée ${response.username}`);
+        this.notifierService.notify('success', `Votre compte a bien été crée ${response.username}`);
+        // this.sendNotification(NotificationType.SUCCESS, `Votre compte a bien été crée ${response.username}`);
         this.router.navigateByUrl('/login');
       },
       (errorResponse: HttpErrorResponse) => {
@@ -55,9 +59,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
   private sendNotification(notificationType: NotificationType, message: string) {
     if(message){
-      this.notificationService.notify(notificationType, message);
+      // this.notificationService.notify(notificationType, message);
     } else {
-      this.notificationService.notify(notificationType, 'Une erreur est survenue. Veuillez réessayer.');
+      // this.notificationService.notify(notificationType, 'Une erreur est survenue. Veuillez réessayer.');
     }
   }
 

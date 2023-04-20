@@ -1,24 +1,14 @@
-
-<!-- <a href="#wrapper" data-type="section-switch" class="scrollup">
-  <i class="fas fa-angle-double-up"></i>
-</a> -->
-
 <app-header></app-header>
-
-
   <section class="recipe-without-sidebar-wrap padding-top-80 padding-bottom-22">
     <form class="submit-recipe-form">
       <div class="container">
           <div class="adv-search-wrap">
                <div class="input-group">
-
               <input type="text" name="searchTerm" [(ngModel)]="searchTerm" placeholder="Recherche" class="form-control" placeholder="Ingredients ex : farine oeuf chocolat etc...">
               <div class="btn-group">
                         <button type="button" (click)="rechercher(searchTerm)"class="btn-upload"><i class="flaticon-add-plus-button"></i>Rechercher</button>
-                        <!-- <button type="submit" class="btn-upload"><i class="flaticon-add-plus-button"></i>Enregistrer l'ingredient</button> -->
-                </div>
+                      </div>
               </div>
-
           </div>
           <div class="row" >
               <div class="col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let recette of recettesTrouvees.slice(debutnombrecetteaffichees, nombreRecettesAffichees); let i=index">

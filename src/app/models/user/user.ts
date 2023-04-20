@@ -9,7 +9,7 @@ export class User {
   public currentUsername: string;
 	public  email: string;
 	public  password: string;
-
+  public city: string;
 	public  address : string;
   public gender:string;
 	public  profileImageURL : string;
@@ -32,7 +32,7 @@ export class User {
 
         this.email = '',
         this.password = '',
-
+        this.city="",
         this.address = '',
         this.profileImageURL = '',
         this.gender='',

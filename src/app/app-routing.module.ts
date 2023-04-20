@@ -43,6 +43,7 @@ import { AuthenticationGuard } from './guard/authentication.guard';
 import { AdminGuard } from 'src/admin.guard';
 import { LogoutComponent } from './components/logout/logout.component';
 import { UserComponent } from './components/user/user.component';
+import { ProfiluserComponent } from './components/profiluser/profiluser.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent,canActivate:[AuthenticationGuard]  },
@@ -55,7 +56,7 @@ const routes: Routes = [
 
 {path:'user/management',component:UserComponent,canActivate:[AdminGuard] },
 { path:'',redirectTo:'login', pathMatch:'full'},
-
+{path:'profiluser',component:ProfiluserComponent,canActivate:[AuthenticationGuard] },
   {path:'recette',component:RecetteComponent,canActivate:[AuthenticationGuard]  },
   {path:'contact',component:ContactComponent },
   {path:'postrecette',component:PostrecetteComponent,canActivate:[AuthenticationGuard]  },

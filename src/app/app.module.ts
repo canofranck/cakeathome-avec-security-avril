@@ -72,6 +72,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ProfiluserComponent } from './components/profiluser/profiluser.component';
 /**
  * Custom angular notifier options
  */
@@ -166,6 +167,7 @@ const customNotifierOptions: NotifierOptions = {
     RegisterComponent,
     UserComponent,
     LogoutComponent,
+    ProfiluserComponent,
 
   ],
   imports: [

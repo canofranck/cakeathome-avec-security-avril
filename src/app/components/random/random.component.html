@@ -4,7 +4,7 @@
     <h2 class="item-heading">Les Recettes au Hasard</h2>
       <div class="row gutters-40">
           <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let item of randomRecettes ; let i=index">
-              <div class="product-box-layout4">
+              <div class="product-box-layout1">  <!--layout4 -->
                 <div class="site-img">
                     <div class="item-figure">
                     <a *ngFor="let g of gallerie; let i=index" [routerLink]="['/recette',item.idrecette]"><img *ngIf="g.idrecette == item.idrecette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" ></a>
