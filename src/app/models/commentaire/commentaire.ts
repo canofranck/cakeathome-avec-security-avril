@@ -1,5 +1,5 @@
 import { Recette } from "../recette/recette";
-import { Utilisateur } from "../utilisateur/utilsateur";
+// import { Utilisateur } from "../utilisateur/utilsateur";
 export class Commentaire {
 
 idcommentaire:number;

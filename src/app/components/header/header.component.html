@@ -14,10 +14,10 @@
                 <a class="nav-link mx-2 active" aria-current="page" routerLink="/home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-2" routerLink="/listabonnement">panneau admin</a>
+                <a class="nav-link mx-2 active" routerLink="/listabonnement">panneau admin</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link mx-2 active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Recettes
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -30,20 +30,23 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-2"    routerLink="/user/management">Panneau utilisateur</a>
+                <a class="nav-link mx-2 active"    routerLink="/user/management">Panneau utilisateur</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-2"    routerLink="/contact"  >Contact</a>
+                <a class="nav-link mx-2 active"    routerLink="/contact"  >Contact</a>
               </li>
               </ul>
               <ul class="navbar-nav ms-auto">
+                <li class="nav-action-perso">
+                  <a class="nav-link mx-2 active"  >Bienvenue {{username}}</a>
+               </li>
               <li class="nav-action-perso">
-                <a class="nav-link mx-2"  routerLink="/logout">Deconnection</a>
+                <a class="nav-link mx-2 active"  routerLink="/logout">Deconnection</a>
              </li>
-             <li class="nav-action-perso">
-              <a class="nav-link mx-2" routerLink="/login">Connection
+             <!-- <li class="nav-action-perso">
+              <a class="nav-link mx-2 active" routerLink="/login">Connection
               </a>
-          </li>
+          </li> -->
           <li class="nav-action-perso">
             <a routerLink="/postrecette" class="fill-btn">Sousmettre une recette</a>
 

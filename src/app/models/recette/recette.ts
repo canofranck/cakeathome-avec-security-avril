@@ -1,5 +1,5 @@
 import { Ingredients } from "../ingredients/ingredients";
-import { Utilisateur } from "../utilisateur/utilsateur";
+// import { Utilisateur } from "../utilisateur/utilsateur";
 
 export class Recette {
    public idrecette:number;

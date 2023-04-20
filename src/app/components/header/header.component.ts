@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   menu!: HTMLElement | null;
-
+  uid:number=0;
+  username:string='';
   constructor() {}
 
   ngOnInit(): void {
     const menu = document.querySelector('.mob-menu');
+    const token = localStorage.getItem('token');
+    if (token) {
+      const jwtHelper = new JwtHelperService();
+      const tokenPayload = jwtHelper.decodeToken(token);
+      const username = tokenPayload.sub;
+      const uid =tokenPayload.uid
+      console.log(" ici le pseudo du token  " +username);
+      console.log(" ici l id utilisateur du token  " +uid);
+      this.uid=uid
+      this.username=username;
+      console.log("uid veant du token : "+uid);
 
+    }
   }
   isMenuOpen = false;
 

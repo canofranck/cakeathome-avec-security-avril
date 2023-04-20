@@ -12,7 +12,7 @@ import { GallerieService } from 'src/app/services/gallerie/gallerie.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import {  EventEmitter, Output } from '@angular/core';
-import { Utilisateur } from 'src/app/models/utilisateur/utilsateur';
+
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { User } from 'src/app/models/user/user';
 import { NotifierService } from 'angular-notifier';

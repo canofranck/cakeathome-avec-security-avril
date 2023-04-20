@@ -39,10 +39,10 @@ import { ListRecetteComponent } from './components/recette/list-recette/list-rec
 import { RecetteComponent } from './components/recette/recette.component';
 import { TendanceComponent } from './components/tendance/tendance.component';
 
-import { AddUtilisateurComponent } from './components/utilisateur/add-utilisateur/add-utilisateur.component';
-import { EditUtilisateurComponent } from './components/utilisateur/edit-utilisateur/edit-utilisateur.component';
-import { ListUtilisateurComponent } from './components/utilisateur/list-utilisateur/list-utilisateur.component';
-import { UtilisateurComponent } from './components/utilisateur/utilisateur.component';
+// import { AddUtilisateurComponent } from './components/utilisateur/add-utilisateur/add-utilisateur.component';
+// import { EditUtilisateurComponent } from './components/utilisateur/edit-utilisateur/edit-utilisateur.component';
+// import { ListUtilisateurComponent } from './components/utilisateur/list-utilisateur/list-utilisateur.component';
+// import { UtilisateurComponent } from './components/utilisateur/utilisateur.component';
 
 import { ListGallerieComponent } from './components/list-gallerie/list-gallerie.component';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
@@ -135,10 +135,10 @@ const customNotifierOptions: NotifierOptions = {
     CommentaireComponent,
     EtapeComponent,
 
-    UtilisateurComponent,
-    AddUtilisateurComponent,
-    EditUtilisateurComponent,
-    ListUtilisateurComponent,
+    // UtilisateurComponent,
+    // AddUtilisateurComponent,
+    // EditUtilisateurComponent,
+    // ListUtilisateurComponent,
     ListRecetteComponent,
     AddRecetteComponent,
     EditRecetteComponent,

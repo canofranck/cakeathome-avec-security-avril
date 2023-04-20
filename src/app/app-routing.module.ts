@@ -29,10 +29,7 @@ import { RecetteComponent } from "./components/recette/recette.component";
 
 import { UploadFileComponent } from "./components/upload-file/upload-file.component";
 
-import { AddUtilisateurComponent } from "./components/utilisateur/add-utilisateur/add-utilisateur.component";
-import { EditUtilisateurComponent } from "./components/utilisateur/edit-utilisateur/edit-utilisateur.component";
-import { ListUtilisateurComponent } from "./components/utilisateur/list-utilisateur/list-utilisateur.component";
-import { UtilisateurComponent } from "./components/utilisateur/utilisateur.component";
+
 import { RecettesearchComponent } from './components/recettesearch/recettesearch.component';
 import { RandomComponent } from './components/random/random.component';
 import { PopulaireComponent } from './components/populaire/populaire.component';
@@ -64,11 +61,7 @@ const routes: Routes = [
   {path:'postrecette',component:PostrecetteComponent,canActivate:[AuthenticationGuard]  },
   {path:'ingredients',component:IngredientsComponent,canActivate:[AuthenticationGuard]  },
 
-  {path:'utilisateur',component:UtilisateurComponent,canActivate:[AuthenticationGuard]  },
-  {path:'utilisateur/:id',component:ListUtilisateurComponent,canActivate:[AuthenticationGuard]  },
-  {path:'addutilisateur',component:AddUtilisateurComponent,canActivate:[AuthenticationGuard]  },
-  {path:'editutilisateur/:id',component:EditUtilisateurComponent,canActivate:[AuthenticationGuard]  },
-  // {path:'listutilisateur',component:ListUtilisateurComponent},
+
   {path:'recette',component:RecetteComponent,canActivate:[AuthenticationGuard]  },
   {path:'recette/:id',component:RecetteComponent,canActivate:[AuthenticationGuard]  },
   {path:'addrecette',component:AddRecetteComponent,canActivate:[AuthenticationGuard]  },
