@@ -30,6 +30,8 @@ td {
   cursor: inherit;
   display: block;
 }
-.navbar-dark .navbar-nav .nav-link {
-  color: white;
-  }
+.nav-link {
+
+  color: #ffffff;
+  background-color: #000000;
+}

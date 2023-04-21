@@ -30,3 +30,7 @@ td {
   cursor: inherit;
   display: block;
 }
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: #FFFFFFFF;
+  background-color: #000000;
+}

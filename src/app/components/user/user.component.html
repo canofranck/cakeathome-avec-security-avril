@@ -16,7 +16,7 @@
   </div>
 
 </div>
-<nav class="navbar navbar-expand-md breadcrumb">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div  class="collapse navbar-collapse" id="navbarCollapse">
     <div class="nav nav-pills">
       <a class="nav-item nav-link active ml-1" (click)="changeTitle('Users')" data-toggle="tab" href="#users">
@@ -27,6 +27,11 @@
         <i class="fa fa-cogs"></i>
         Settings
       </a>
+      <a class="nav-item nav-link ml-3" (click)="changeTitle('etape')" data-toggle="tab" routerLink="/etape" >
+        <i class="fa fa-cogs"></i>
+        Gestion des Recettes, Etapes, Ingredients, Commentaire
+      </a>
+
       <a class="nav-item nav-link move-right mr-3" (click)="changeTitle('Profile')" data-toggle="tab" href="#profile">
         Bienvenue, {{user.firstname}}
         <i class="fa fa-user"></i>
