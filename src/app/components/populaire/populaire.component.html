@@ -11,7 +11,7 @@
                       <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
                           <div class="product-box-layout6" *ngFor="let recette of popRecettes  ; let i=index">
                               <div class="site-img" >
-                                
+
                                  <a *ngFor="let g of gallerie"  [routerLink]="['/recette',recette.idrecette]">
                                   <img *ngIf="g.idrecette == recette.idrecette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" ></a>
 
@@ -44,16 +44,8 @@
               </div>
           </div>
           <div class="col-lg-4 sidebar-widget-area sidebar-break-md">
-
-            <!-- <app-lastrecipes *ngIf="!isCalledFromHome"></app-lastrecipes> -->
-            <!-- <div class="widget ranna-box-padding">
-                <div class="widget-ad">
-                    <a href="#"><img src="assets/img/figure/figure3.jpg" alt="Ad" class="img-fluid"></a>
-                </div>
-            </div> -->
-            <!-- <app-categorie *ngIf="!isCalledFromHome"></app-categorie> -->
         </div>
-                </div>
+        </div>
 
   </div>
 </section>

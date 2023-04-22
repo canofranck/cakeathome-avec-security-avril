@@ -1,63 +1,133 @@
 <header class="header-one">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
     <div class="container-fluid">
-      <a class="navbar-brand"  routerLink="/user/management">Retour Gestion des Utilisateur</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" routerLink="/user/management"
+        >Retour Gestion des Utilisateur</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page" routerLink="/abonnement" >abonnement</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/abonnement"
+              >abonnement</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page" routerLink="/listrecette" >recette</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/listrecette"
+              >recette</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page"  routerLink="/commentaire"   >commentaire</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/commentaire"
+              >commentaire</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page"  routerLink="/etape"   >etape</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/etape"
+              >etape</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page" routerLink="/ingredient"   >ingredient</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/ingredient"
+              >ingredient</a
+            >
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-<br>
-<br>
-<H2 class="text-center">Editer un abonnement</H2>
-<div class="container border">
+  <br />
+  <br />
+  <H2 class="text-center">Editer un abonnement</H2>
+  <div class="container border">
     <form [formGroup]="editabonnementForm" (ngSubmit)="update()">
-        <div class="form-group">
-            <div class="input-field col s16">
-                <label for="idabonnement">  idabonnement</label>
-                <input type="text" name="" id="idabonnement" class="form-control" formControlName="idabonnement" data-length="10">
-            </div>
-            <div class="input-field col s16">
-                <label for="uid">uid</label>
-                <input type="text" name="" id="uid" class="form-control" formControlName="uid" data-length="100">
-            </div>
-            <div class="input-field col s16">
-              <label for="abonnementpris"> abonnementpris</label>
-              <input type="text" name="" id="abonnementpris" class="form-control" formControlName="abonnementpris" data-length="100">
-            </div>
-            <div class="input-field col s16">
-              <label for="abonnementdatedebut">abonnementdatedebut</label>
-              <input type="text" name="" id="abonnementdatedebut" class="form-control" formControlName="abonnementdatedebut" data-length="100">
-            </div>
-            <div class="input-field col s16">
-              <label for="abonnementduree"> abonnementduree</label>
-              <input type="text" name="" id="abonnementduree" class="form-control" formControlName="abonnementduree" data-length="100">
-            </div>
-
+      <div class="form-group">
+        <div class="input-field col s16">
+          <label for="idabonnement"> idabonnement</label>
+          <input
+            type="text"
+            name=""
+            id="idabonnement"
+            class="form-control"
+            formControlName="idabonnement"
+            data-length="10"
+          />
         </div>
-        <button class="btn btn-success" type="submit">Soumettre</button>
+        <div class="input-field col s16">
+          <label for="uid">uid</label>
+          <input
+            type="text"
+            name=""
+            id="uid"
+            class="form-control"
+            formControlName="uid"
+            data-length="100"
+          />
+        </div>
+        <div class="input-field col s16">
+          <label for="abonnementpris"> abonnementpris</label>
+          <input
+            type="text"
+            name=""
+            id="abonnementpris"
+            class="form-control"
+            formControlName="abonnementpris"
+            data-length="100"
+          />
+        </div>
+        <div class="input-field col s16">
+          <label for="abonnementdatedebut">abonnementdatedebut</label>
+          <input
+            type="text"
+            name=""
+            id="abonnementdatedebut"
+            class="form-control"
+            formControlName="abonnementdatedebut"
+            data-length="100"
+          />
+        </div>
+        <div class="input-field col s16">
+          <label for="abonnementduree"> abonnementduree</label>
+          <input
+            type="text"
+            name=""
+            id="abonnementduree"
+            class="form-control"
+            formControlName="abonnementduree"
+            data-length="100"
+          />
+        </div>
+      </div>
+      <button class="btn btn-success" type="submit">Soumettre</button>
     </form>
-    <br>
-</div>
-{{editabonnementForm.value | json}}
+    <br />
+  </div>
+  <!--    pour tester le formulaire {{editabonnementForm.value | json}} -->
+</header>

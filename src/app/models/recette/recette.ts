@@ -23,10 +23,6 @@ export class Recette {
    public listCommentaire:[];
    public  username?: string;
 
-  //  public quantiteingredient : string;
-  //  public idingredient :number;
-//    public ingredients:Ingredients[];
-// public quantiteingredient:string;
    constructor (){
     this.idrecette=0;
     this.titrerecette="";
@@ -44,16 +40,12 @@ export class Recette {
     this.notemoyenne=0;
     this.uid=0;
     this.listIngredient=[];
-    // this.quantiteingredient="";
+
     this.listGalerie=[];
     this.listEtape=[];
     this.listCommentaire=[];
     this.username="";
-    // this.id_ingredient=0;
-//     this.ingredients=[];
-// this.quantiteingredient='';
-
-
+ 
    }
 
 }

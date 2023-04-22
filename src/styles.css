@@ -9,8 +9,9 @@
  @import url("./assets/css/select2.min.css");
  @import url("./assets/css/summernote.css");
  @import url("./assets/css/style.css");
-   /* @import url("./assets/css/owl.video.play.html"); */
+
    @import "node_modules/angular-notifier/styles";
+   @import url("./assets/css/bootstrap-table.min.css");
 
 
 

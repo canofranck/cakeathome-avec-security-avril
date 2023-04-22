@@ -7,59 +7,49 @@ import { RecetteService } from 'src/app/services/recette/recette.service';
 @Component({
   selector: 'app-list-gallerie',
   templateUrl: './list-gallerie.component.html',
-  styleUrls: ['./list-gallerie.component.css']
+  styleUrls: ['./list-gallerie.component.css'],
 })
-export class ListGallerieComponent implements OnInit{
-
-  declare gallerie : any []; // Tableau contenant les galeries
-  declare form: FormGroup;  // Formulaire de création de la gallerie
-  declare recettes : any ; // Tableau contenant les recettes
-  @Input() idrecetteencours! : number; // Identifiant de la recette en cours
+export class ListGallerieComponent implements OnInit {
+  declare gallerie: any[]; // Tableau contenant les galeries
+  declare form: FormGroup; // Formulaire de création de la gallerie
+  declare recettes: any; // Tableau contenant les recettes
+  @Input() idrecetteencours!: number; // Identifiant de la recette en cours
 
   constructor(
-    private gallerieService : GallerieService,
-    private router : Router,
-    private formBuilder : FormBuilder,
-    private recetteService: RecetteService,
-  ){
-  }
+    private gallerieService: GallerieService,
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private recetteService: RecetteService
+  ) {}
   ngOnInit(): void {
     // Initialisation du formulaire
     this.form = this.formBuilder.group({
-      gallerieid:  ['', Validators.required],
-      idrecette:  [''],
-	    galleriefilename:  ['', Validators.required],
-	    uid :  ['', Validators.required],
-
-    })
-     // Récupération des galeries existantes
+      gallerieid: ['', Validators.required],
+      idrecette: [''],
+      galleriefilename: ['', Validators.required],
+      uid: ['', Validators.required],
+    });
+    // Récupération des galeries existantes
     this.getGalleries();
-     // Récupération de toutes les recettes
-    this.recetteService.findAllRecettes().subscribe(
-      data =>{
-        // Stockage des recettes dans un tableau
-          this.recettes = Object.values(data);
-           // Tri des recettes par date décroissante
-         this.recettes.sort((a: { daterecette: number; }, b: { daterecette: number; }) => (a.daterecette < b.daterecette ? 1 : -1))
-        // Sélection de la première recette de la liste
-         this.idrecetteencours=this.recettes[0].idrecette;
-        // Stockage de l'identifiant de la recette en cours
-          this.recetteService.setIdRecetteEncours( this.idrecetteencours);
-
-        }
-    )
-
+    // Récupération de toutes les recettes
+    this.recetteService.findAllRecettes().subscribe((data) => {
+      // Stockage des recettes dans un tableau
+      this.recettes = Object.values(data);
+      // Tri des recettes par date décroissante
+      this.recettes.sort(
+        (a: { daterecette: number }, b: { daterecette: number }) =>
+          a.daterecette < b.daterecette ? 1 : -1
+      );
+      // Sélection de la première recette de la liste
+      this.idrecetteencours = this.recettes[0].idrecette;
+      // Stockage de l'identifiant de la recette en cours
+      this.recetteService.setIdRecetteEncours(this.idrecetteencours);
+    });
   }
-   // Fonction permettant de récupérer toutes les galeries existantes
+  // Fonction permettant de récupérer toutes les galeries existantes
   getGalleries() {
-    return this.gallerieService.findAllGalleries().subscribe(
-      (data=>{
-        this.gallerie = data as any [];
-      }
-        )
-
-    )
+    return this.gallerieService.findAllGalleries().subscribe((data) => {
+      this.gallerie = data as any[];
+    });
   }
-
-
 }

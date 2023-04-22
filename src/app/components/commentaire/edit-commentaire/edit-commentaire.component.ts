@@ -7,66 +7,54 @@ import { CommentaireService } from 'src/app/services/commentaire/commentaire.ser
 @Component({
   selector: 'app-edit-commentaire',
   templateUrl: './edit-commentaire.component.html',
-  styleUrls: ['./edit-commentaire.component.css']
+  styleUrls: ['./edit-commentaire.component.css'],
 })
 export class EditCommentaireComponent implements OnInit {
-
   declare editcommentaireForm: FormGroup;
   commentaire: Commentaire = new Commentaire();
-  utilisateur : any={};
-  recette : any={};
+  utilisateur: any = {};
+  recette: any = {};
   constructor(
-  private commentaireService : CommentaireService,
-  private router : Router,
-  private route: ActivatedRoute,
-  private formBuilder: FormBuilder,
-
-
-  ) {
-   }
+    private commentaireService: CommentaireService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder
+  ) {}
   ngOnInit(): void {
-  const id = Number(this.route.snapshot.paramMap.get('id'));
-  this.editcommentaireForm = this.formBuilder.group({
-    idcommentaire: ['',Validators.required],
-    commentaire: ['',Validators.required],
-    notecommentaire: ['',Validators.required],
-    datecommentaire :['',Validators.required],
-    uid: ['',Validators.required],
-    idrecette: ['',Validators.required],
-  })
-  //récupere le produit via l'id
-  this.commentaireService.editCommentaire(id).subscribe(
-    (data :any) => {
-      console.log(data)
-      //complete le form avec le produit récupéré
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.editcommentaireForm = this.formBuilder.group({
+      idcommentaire: ['', Validators.required],
+      commentaire: ['', Validators.required],
+      notecommentaire: ['', Validators.required],
+      datecommentaire: ['', Validators.required],
+      uid: ['', Validators.required],
+      idrecette: ['', Validators.required],
+    });
+    //récupere le commentaire via l'id
+    this.commentaireService.editCommentaire(id).subscribe((data: any) => {
+      //complete le form avec le commentaire récupéré
       this.editcommentaireForm.patchValue({
-          idcommentaire: data.idcommentaire,
-          uid: data.uid,
-          idrecette: data.idrecette,
-          commentaire: data.commentaire,
+        idcommentaire: data.idcommentaire,
+        uid: data.uid,
+        idrecette: data.idrecette,
+        commentaire: data.commentaire,
 
-          notecommentaire: data.notecommentaire,
-          datecommentaire : data.datecommentaire,
+        notecommentaire: data.notecommentaire,
+        datecommentaire: data.datecommentaire,
       });
-      // this.utilisateur=data.uid;
-      this.recette=data.recette;
-    }
-  )
+
+      this.recette = data.recette;
+    });
   }
   update() {
     if (this.editcommentaireForm.valid) {
       let data = this.editcommentaireForm.value;
-      // data.uid= this.editcommentaireForm.value;
-      // let data2 = this.editcommentaireForm.value;
-      data.recette= this.recette;
-      console.log(this.editcommentaireForm.value);
 
-      this.commentaireService.updateCommentaire(data).subscribe(
-        () => {
-        this.router.navigate(['/commentaire'])
+      data.recette = this.recette;
 
-        }
-      )
+      this.commentaireService.updateCommentaire(data).subscribe(() => {
+        this.router.navigate(['/commentaire']);
+      });
     }
   }
-  }
+}

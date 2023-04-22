@@ -30,7 +30,18 @@ td {
   cursor: inherit;
   display: block;
 }
+.nav-link {
+
+  color: #ffffff;
+  background-color: #343a40;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  color: #FFFFFFFF;
-  background-color: #000000;
+  color: #fff;
+  background-color:#343a40;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #ff4a52;
+  border-color: #ff4a52;
 }

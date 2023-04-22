@@ -31,7 +31,9 @@
             "scripts": [
               "../cakeathome/src/assets/js/jquery-3.3.1.min.js",
               "../cakeathome/src/assets/js/smoothscroll.min.js",
-              "../cakeathome/src/assets/js/main.js"
+              "../cakeathome/src/assets/js/main.js",
+              "../cakeathome/src/assets/js/bootstrap.min.js",
+              "../cakeathome/src/assets/js/bootstrap-table.min.js"
             ]
           },
           "configurations": {
@@ -98,7 +100,9 @@
             "scripts": [
               "../cakeathome/src/assets/js/jquery-3.3.1.min.js",
               "../cakeathome/src/assets/js/smoothscroll.min.js",
-              "../cakeathome/src/assets/js/main.js"
+              "../cakeathome/src/assets/js/main.js",
+              "../cakeathome/src/assets/js/bootstrap.min.js",
+              "../cakeathome/src/assets/js/bootstrap-table.min.js"
             ]
           }
         }

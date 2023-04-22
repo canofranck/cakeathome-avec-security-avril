@@ -84,11 +84,7 @@ export class AuthenticationService {
         if (!this.jwtHelper.isTokenExpired(tok)) {
          // Stocke le nom d'utilisateur dans loggedInUsername en le décodant à partir du token
           this.loggedInUsername = this.jwtHelper.decodeToken(tok).sub;
-          console.log(
-            'Résultat this.loogedInUSername (decoded token) : [ ' +
-              this.loggedInUsername +
-              ' ] Authentication > isLoggedIn()'
-          );
+         
            // Retourne true si l'utilisateur est connecté
           return true;
         }

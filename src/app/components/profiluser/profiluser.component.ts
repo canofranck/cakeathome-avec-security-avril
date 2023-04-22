@@ -92,13 +92,7 @@ export class ProfiluserComponent implements OnInit {
     this.clickButton('openUserInfo');
 
   }
-  // Méthode pour récupérer le nom et l'image
-  // public onProfileImageChange(fileName : string, profileImage : File ):void{
-  //   // console.log(fileName, profileImage);
-  //   this.fileName = fileName;
-  //   this.profileImage = profileImage;
 
-  // }
 
   // Méthode pour récupérer le nom et l'image
   public onProfileImageChange(event:any):void{
@@ -109,7 +103,7 @@ export class ProfiluserComponent implements OnInit {
 
     this.fileName = file.name;
     this.profileImage = file;
-    console.log(this.fileName);
+  
 
   }
 
@@ -157,12 +151,12 @@ export class ProfiluserComponent implements OnInit {
   // Méthode pour ajouter un nouvel utilisateur
   public onAddNewUser(userForm:NgForm):void{
    const formData = this.userService.createUserFormData(null as any,userForm.value,this.profileImage);
-   console.log("Avant push : "+userForm);
+
 
    this.subscription.push(
     this.userService.addUser(formData).subscribe(
       (data : User) => {
-        console.log("Apres push : "+data);
+
         this.clickButton('new-user-close');
         this.getUsers(false);
         this.fileName = null as any;
@@ -184,7 +178,7 @@ export class ProfiluserComponent implements OnInit {
 
 // Méthode qui permet de rechercher parmis les utilisateurs
   public searchUsers(searchTerm:string): void {
-    // console.log(searchTerm);
+
 
     const results : User[] = [];
     for(const user of this.userService.getUsersFromLocalCache()){

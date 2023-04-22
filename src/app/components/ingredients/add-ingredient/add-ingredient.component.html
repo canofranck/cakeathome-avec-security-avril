@@ -1,80 +1,39 @@
-<!--
-<ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" routerLink="/utilisateur" >utilisateur</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="/abonnement" >abonnement</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="/listrecette" >recette</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="/commentaire"   >commentaire</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="/etape"   >etape</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="/ingredient"   >ingredient</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="/recetteingredient"   >recetteingredient</a>
-  </li>
-
-</ul>
-<br>
-<br> -->
-<!-- <H2 class="text-center">Ajouter un ingredient</H2>
-<div class="container border"> -->
-    <form [formGroup]="formaddIngredient" (ngSubmit)="create()">
-      <div class="row no-gutters">
-        <div class="col-6">
-                 <div class="form-group additional-input-box icon-right">
-
-                <input type="text" id="quantiteingredient" placeholder="quantite ingredient" class="form-control" formControlName="quantiteingredient" data-length="255">
-            </div>
-        </div>
-        </div>
-        <!-- <div class="form-group">
-                       <div class="input-field col s16">
-                <label for="quantiteingredient">quantiteingredient</label>
-                <input type="text" name="" id="quantiteingredient" class="form-control" formControlName="quantiteingredient" data-length="255">
-            </div>
-            </div> -->
-
-
-            <div class="col-12">
-        <button type="submit" class="btn-upload"><i class="flaticon-add-plus-button"></i>Enregistrer l'ingredient</button>
-        <button type="button" class="btn-upload" (click)="cahingre()" ><i class="flaticon-add-plus-button"></i>Liste des ingrdients fini</button>
+<form [formGroup]="formaddIngredient" (ngSubmit)="create()">
+  <div class="row no-gutters">
+    <div class="col-6">
+      <div class="form-group additional-input-box icon-right">
+        <input
+          type="text"
+          id="quantiteingredient"
+          placeholder="quantite ingredient"
+          class="form-control"
+          formControlName="quantiteingredient"
+          data-length="255"
+        />
       </div>
+    </div>
+  </div>
 
-      </form>
+  <div class="col-12">
+    <button type="submit" class="btn-upload">
+      <i class="flaticon-add-plus-button"></i>Enregistrer l'ingredient
+    </button>
+    <button type="button" class="btn-upload" (click)="cahingre()">
+      <i class="flaticon-add-plus-button"></i>Liste des ingrdients fini
+    </button>
+  </div>
+</form>
 
-    <br>
+<br />
 
-      <div *ngFor="let item of nouveau_tableau" style="text-align:center">
-        <div class="col-6">
-
-              <div class="form-group additional-input-box icon-left" >
-
-        <ul >{{item.quantiteingredient}}</ul>
-
-        </div>
-        </div>
-
-
-      </div>
-
-
-
-<!-- </div> -->
-
-
-
-
-
-
-
-
-
+<div *ngFor="let item of nouveau_tableau" style="text-align: center">
+  <div class="col-6">
+    <div class="form-group additional-input-box icon-left">
+      <ul>
+        {{
+          item.quantiteingredient
+        }}
+      </ul>
+    </div>
+  </div>
+</div>

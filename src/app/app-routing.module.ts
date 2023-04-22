@@ -49,7 +49,7 @@ const routes: Routes = [
   {path:'home',component:HomeComponent,canActivate:[AuthenticationGuard]  },
 
 
-  // ,canActivate:[AuthenticationGuard] },
+
 {path:'login',component:LoginComponent},
 {path:'logout',component:LogoutComponent},
 {path:'register', component:RegisterComponent},
@@ -88,7 +88,7 @@ const routes: Routes = [
   {path:'editcommentaire/:id',component:EditCommentaireComponent},
   {path:'listcommentaire',component:ListCommentaireComponent},
 
-  {path:'etape',component:EtapeComponent},
+  {path:'etape',component:ListEtapeComponent},
   {path:'etape/:id',component:ListEtapeComponent},
   {path:'addetape',component:AddEtapeComponent},
   {path:'editetape/:id',component:EditEtapeComponent},
@@ -102,10 +102,7 @@ const routes: Routes = [
 
   {path:'gallerie',component:ListGallerieComponent},
 
-  // {path:'recetteingredient',component:ListRecetteingredientComponent},
-  // {path:'recetteingredient/:id',component:ListRecetteingredientComponent},
-  // {path:'addrecetteingredient',component:AddRecetteingredientComponent},
-  // {path:'editrecetteingredient/:id',component:EditRecetteingredientComponent},
+
 ];
 
 @NgModule({

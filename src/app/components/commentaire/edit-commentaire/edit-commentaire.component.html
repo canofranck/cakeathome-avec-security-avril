@@ -1,70 +1,147 @@
 <header class="header-one">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
     <div class="container-fluid">
-      <a class="navbar-brand"  routerLink="/user/management">Retour Gestion des Utilisateur</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" routerLink="/user/management"
+        >Retour Gestion des Utilisateur</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page" routerLink="/abonnement" >abonnement</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/abonnement"
+              >abonnement</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page" routerLink="/listrecette" >recette</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/listrecette"
+              >recette</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page"  routerLink="/commentaire"   >commentaire</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/commentaire"
+              >commentaire</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page"  routerLink="/etape"   >etape</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/etape"
+              >etape</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page" routerLink="/ingredient"   >ingredient</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/ingredient"
+              >ingredient</a
+            >
           </li>
         </ul>
       </div>
     </div>
   </nav>
-<br>
-<br>
-<H2 class="text-center">Editer un Commentaire</H2>
-<div class="container border">
+  <br />
+  <br />
+  <H2 class="text-center">Editer un Commentaire</H2>
+  <div class="container border">
     <form [formGroup]="editcommentaireForm" (ngSubmit)="update()">
-        <div class="form-group">
-            <div class="input-field col s16">
-                <label for="idcommentaire">  idcommentaire</label>
-                <input type="text" name="" id="idcommentaire" class="form-control" formControlName="idcommentaire" data-length="10">
-            </div>
-            <div class="input-field col s16">
-                <label for="uid">uid</label>
-                <input type="text" name="" id="uid" class="form-control" formControlName="uid" data-length="100">
-            </div>
-            <div class="input-field col s16">
-              <label for="idrecette"> idrecette</label>
-              <input type="text" name="" id="idrecette" class="form-control" formControlName="idrecette" data-length="100">
-            </div>
-            <div class="input-field col s16">
-              <label for="commentaire">commentaire</label>
-              <input type="text" name="" id="commentaire" class="form-control" formControlName="commentaire" data-length="100">
-            </div>
-            <!-- <div class="input-field col s16">
+      <div class="form-group">
+        <div class="input-field col s16">
+          <label for="idcommentaire"> idcommentaire</label>
+          <input
+            type="text"
+            name=""
+            id="idcommentaire"
+            class="form-control"
+            formControlName="idcommentaire"
+            data-length="10"
+          />
+        </div>
+        <div class="input-field col s16">
+          <label for="uid">uid</label>
+          <input
+            type="text"
+            name=""
+            id="uid"
+            class="form-control"
+            formControlName="uid"
+            data-length="100"
+          />
+        </div>
+        <div class="input-field col s16">
+          <label for="idrecette"> idrecette</label>
+          <input
+            type="text"
+            name=""
+            id="idrecette"
+            class="form-control"
+            formControlName="idrecette"
+            data-length="100"
+          />
+        </div>
+        <div class="input-field col s16">
+          <label for="commentaire">commentaire</label>
+          <input
+            type="text"
+            name=""
+            id="commentaire"
+            class="form-control"
+            formControlName="commentaire"
+            data-length="100"
+          />
+        </div>
+        <!-- <div class="input-field col s16">
               <label for="imagecommentaire"> imagecommentaire</label>
               <input type="text" name="" id="imagecommentaire" class="form-control" formControlName="imagecommentaire" data-length="100">
             </div> -->
-            <div class="input-field col s16">
-              <label for="notecommentaire"> notecommentaire</label>
-              <input type="text" name="" id="notecommentaire" class="form-control" formControlName="notecommentaire" data-length="100">
-            </div>
-            <div class="input-field col s16">
-              <label for="datecommentaire"> datecommentaire</label>
-              <input type="text" name="" id="datecommentaire" class="form-control" formControlName="datecommentaire" data-length="100">
-            </div>
-
+        <div class="input-field col s16">
+          <label for="notecommentaire"> notecommentaire</label>
+          <input
+            type="text"
+            name=""
+            id="notecommentaire"
+            class="form-control"
+            formControlName="notecommentaire"
+            data-length="100"
+          />
         </div>
-        <button class="btn btn-success" type="submit">Soumettre</button>
+        <div class="input-field col s16">
+          <label for="datecommentaire"> datecommentaire</label>
+          <input
+            type="text"
+            name=""
+            id="datecommentaire"
+            class="form-control"
+            formControlName="datecommentaire"
+            data-length="100"
+          />
+        </div>
+      </div>
+      <button class="btn btn-success" type="submit">Soumettre</button>
     </form>
-    <br>
-</div>
-{{editcommentaireForm.value | json}}
+    <br />
+  </div>
+  {{ editcommentaireForm.value | json }}
+</header>

@@ -31,7 +31,7 @@ export class RecetteService {
    }
 
    updateRecette(recette:Recette){
-   
+
     return this.http.put(AppSettings.APP_URL+"/recettes/"+recette.idrecette,JSON.stringify(recette),this.httpOptions);
    }
 
@@ -42,7 +42,7 @@ export class RecetteService {
     return this.http.post<any>(AppSettings.APP_URL + '/recettes/' + recetteId + '/ingredients/' + ingredientId, {});
   }
   getIdRecetteEncours() {
-    console.log("get id recette"+this.idrecetteencours );
+
     return this.idrecetteencours;
   }
 
@@ -50,10 +50,10 @@ export class RecetteService {
 
     this.idrecetteencours = idRecette;
 
-    console.log("set idrecette"+this.idrecetteencours )
+
   }
   updateRecette2(recette:Recette,id :number){
-    // console.log(this.http.put(AppSettings.APP_URL+"/recettes/"+recette.idrecette,JSON.stringify(recette),this.httpOptions))
+
     return this.http.put(AppSettings.APP_URL+"/recettes/"+id,JSON.stringify(recette),this.httpOptions);
    }
 
@@ -66,8 +66,7 @@ if (token) {
   const tokenPayload = jwtHelper.decodeToken(token);
   const username = tokenPayload.sub;
   const uid =tokenPayload.uid
-  console.log(" ici le pseudo du token  " +username);
-  console.log(" ici l id utilisateur du token  " +uid);
+ 
   this.username=username
 
 }

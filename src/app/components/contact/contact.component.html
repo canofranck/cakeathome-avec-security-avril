@@ -1,184 +1,126 @@
-
 <body>
-  <!--[if lte IE 9]>
-  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
 
-  <!-- Add your site or application content here -->
-  <!-- Preloader Start Here -->
 
-  <!-- Preloader End Here -->
-  <!-- ScrollUp Start Here -->
-  <a href="#wrapper" data-type="section-switch" class="scrollup">
-      <i class="fas fa-angle-double-up"></i>
-  </a>
-  <!-- ScrollUp End Here -->
-  <div id="wrapper" class="wrapper">
-      <!-- Header Area Start Here -->
-<app-header></app-header>
-      <!-- Header Area End Here -->
-      <!-- Inne Page Banner Area Start Here -->
-      <section class="inner-page-banner bg-common" data-bg-image="img/figure/inner-page-banner1.jpg">
-          <div class="container">
-              <div class="row">
-                  <div class="col-12">
-                      <div class="breadcrumbs-area">
-                          <h1>Contactez Nous</h1>
-                          <ul>
-                              <li>
-                                  <a href="index.html">Home</a>
-                              </li>
-                              <li>Contact</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-      <!-- Inne Page Banner Area End Here -->
-      <!-- Contact Page Area Start Here -->
-      <section class="contact-page-wrap">
-          <div class="contact-box-left">
-              <div class="container">
-                  <div class="section-heading heading-dark">
-                      <h3 class="item-heading-big">Nos coordonnées
+  <app-header></app-header>
 
-                      </h3>
-                  </div>
-                  <p>Cake at home va vous répondre dans les meilleurs délai</p>
-                  <div class="contact-address">
-                      <ul>
-                          <li>
-                              <div class="item-icon"><i class="fas fa-map"></i></div>
-                              67 av Génerale de Gaulle, 77420 Champs sur Marne
-                          </li>
-                          <li>
-                              <div class="item-icon"><i class="far fa-envelope"></i></div>
-                              cakeathome@gmail.com
-                          </li>
-                          <li>
-                              <div class="item-icon"><i class="fas fa-phone"></i></div>
-                              +33 07 .. .. ..
-                          </li>
-                          <li>
-                              <div class="item-icon"><i class="fas fa-fax"></i></div>
-                              + 33 00 00 00 00
-                          </li>
-                      </ul>
-                  </div>
-                  <div class="section-heading heading-dark">
-                      <h3 class="item-heading-big">Ecrivez votre message ici</h3>
-                  </div>
-                  <form id="contact-form" class="contact-form-box">
-                      <div class="row">
-                          <div class="col-md-6 form-group">
-                              <input type="text" placeholder="nom *" class="form-control" name="name" data-error="Name field is required"
-                                  required>
-                              <div class="help-block with-errors"></div>
-                          </div>
-                          <div class="col-md-6 form-group">
-                              <input type="email" placeholder="E-mail *" class="form-control" name="email" data-error="E-mail field is required"
-                                  required>
-                              <div class="help-block with-errors"></div>
-                          </div>
-                          <div class="col-12 form-group">
-                              <input type="text" placeholder="Sujet *" class="form-control" name="subject"
-                                  data-error="Subject field is required" required>
-                              <div class="help-block with-errors"></div>
-                          </div>
-                          <div class="col-12 form-group">
-                              <textarea placeholder="Votre message" class="textarea form-control" name="message" id="form-message"
-                                  rows="7" cols="20" data-error="Message field is required" required></textarea>
-                              <div class="help-block with-errors"></div>
-                          </div>
-                          <div class="col-12 form-group mb-0 mt-3">
-                              <button type="submit" class="item-btn">ENVOYEZ VOTRE MESSAGE</button>
-                          </div>
-                          <div class="form-response"></div>
-                      </div>
-                  </form>
-              </div>
+  <section
+    class="inner-page-banner bg-common"
+    data-bg-image="img/figure/inner-page-banner1.jpg"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="breadcrumbs-area">
+            <h1>Contactez Nous</h1>
+            <ul>
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>Contact</li>
+            </ul>
           </div>
-
-          <div class="contact-box-right">
-              <div class="google-map-wrap-layout1">
-                  <iframe src="https://maps.google.com/maps?q=48.850987%2C%202.590301&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
-              </div>
-          </div>
-      </section>
-      <!-- Contact Page Area End Here -->
-      <!-- Footer Area Start Here -->
-      <footer class="ranna-bg-dark">
-          <div class="container">
-             <app-footer></app-footer>
-
-              <!-- <div class="copyright"><a href="">Templates Point</a></div> -->
-          </div>
-      </footer>
-      <!-- Footer Area End Here -->
-  </div>
-  <!-- Search Box Start Here -->
-  <div id="search" class="search-wrap">
-      <button type="button" class="close">×</button>
-      <form class="search-form">
-          <input type="search" value="" placeholder="Type here........" />
-          <button type="submit" class="search-btn"><i class="flaticon-search"></i></button>
-      </form>
-  </div>
-  <!-- Search Box End Here -->
-  <!-- Modal Start-->
-  <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <div class="title-default-bold mb-none">Se connecter</div>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-              <div class="modal-body">
-                  <form class="login-form">
-                      <input class="main-input-box" type="text" placeholder="Nom d'utilisateur" />
-                      <input class="main-input-box" type="password" placeholder="Mots de passe" />
-                      <div class="inline-box mb-5 mt-4">
-                          <div class="checkbox checkbox-primary">
-                              <input id="modal-checkbox" type="checkbox">
-                              <label for="modal-checkbox">Se Souvenir de moi</label>
-                          </div>
-                          <label class="lost-password"><a href="#">Mot de passe oublié ?</a></label>
-                      </div>
-                      <div class="inline-box mb-5 mt-4">
-                          <button class="btn-fill" type="submit" value="Login">Se Connecter</button>
-                          <a href="#" class="btn-register"><i class="fas fa-user"></i>S'enregistrer</a>
-                      </div>
-                  </form>
-                  <label>Se connecter avec un Reseau Social</label>
-                  <div class="login-box-social">
-                      <ul>
-                          <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
-                          <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
-                          <li><a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-                          <li><a href="#" class="google"><i class="fab fa-google-plus-g"></i></a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
+        </div>
       </div>
-  </div>
-  <!-- Modal End-->
-  <!-- Jquery Js -->
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <!-- Bootstrap Js -->
-  <script src="js/popper.min.js"></script>
-  <!-- Bootstrap Js -->
-  <script src="js/bootstrap.min.js"></script>
-  <!-- Plugins Js -->
-  <script src="js/plugins.js"></script>
-  <!-- Smoothscroll Js -->
-  <script src="js/smoothscroll.min.js"></script>
-  <!-- Google Map js -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtmXSwv4YmAKtcZyyad9W7D4AC08z0Rb4"></script>
-  <!-- Validator js -->
-  <script src="js/validator.min.js"></script>
-  <!-- Custom Js -->
-  <script src="js/main.js"></script>
-</body>
+    </div>
+  </section>
 
+  <section class="contact-page-wrap">
+    <div class="contact-box-left">
+      <div class="container">
+        <div class="section-heading heading-dark">
+          <h3 class="item-heading-big">Nos coordonnées</h3>
+        </div>
+        <p>Cake at home va vous répondre dans les meilleurs délai</p>
+        <div class="contact-address">
+          <ul>
+            <li>
+              <div class="item-icon"><i class="fas fa-map"></i></div>
+              67 av Génerale de Gaulle, 77420 Champs sur Marne
+            </li>
+            <li>
+              <div class="item-icon"><i class="far fa-envelope"></i></div>
+              cakeathome@gmail.com
+            </li>
+            <li>
+              <div class="item-icon"><i class="fas fa-phone"></i></div>
+              +33 07 .. .. ..
+            </li>
+            <li>
+              <div class="item-icon"><i class="fas fa-fax"></i></div>
+              + 33 00 00 00 00
+            </li>
+          </ul>
+        </div>
+        <div class="section-heading heading-dark">
+          <h3 class="item-heading-big">Ecrivez votre message ici</h3>
+        </div>
+        <form id="contact-form" class="contact-form-box">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input
+                type="text"
+                placeholder="nom *"
+                class="form-control"
+                name="name"
+                data-error="Name field is required"
+                required
+              />
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="col-md-6 form-group">
+              <input
+                type="email"
+                placeholder="E-mail *"
+                class="form-control"
+                name="email"
+                data-error="E-mail field is required"
+                required
+              />
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="col-12 form-group">
+              <input
+                type="text"
+                placeholder="Sujet *"
+                class="form-control"
+                name="subject"
+                data-error="Subject field is required"
+                required
+              />
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="col-12 form-group">
+              <textarea
+                placeholder="Votre message"
+                class="textarea form-control"
+                name="message"
+                id="form-message"
+                rows="7"
+                cols="20"
+                data-error="Message field is required"
+                required
+              ></textarea>
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="col-12 form-group mb-0 mt-3">
+              <button type="submit" class="item-btn">
+                ENVOYEZ VOTRE MESSAGE
+              </button>
+            </div>
+            <div class="form-response"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="contact-box-right">
+      <div class="google-map-wrap-layout1">
+        <iframe
+          src="https://maps.google.com/maps?q=48.850987%2C%202.590301&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+</body>

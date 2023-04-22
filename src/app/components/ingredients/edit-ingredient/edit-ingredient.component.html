@@ -1,64 +1,111 @@
 <header class="header-one">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
     <div class="container-fluid">
-      <a class="navbar-brand"  routerLink="/user/management">Retour Gestion des Utilisateur</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" routerLink="/user/management"
+        >Retour Gestion des Utilisateur</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page" routerLink="/abonnement" >abonnement</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/abonnement"
+              >abonnement</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page" routerLink="/listrecette" >recette</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/listrecette"
+              >recette</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page"  routerLink="/commentaire"   >commentaire</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/commentaire"
+              >commentaire</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page"  routerLink="/etape"   >etape</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/etape"
+              >etape</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-2 active" aria-current="page" routerLink="/ingredient"   >ingredient</a>
+            <a
+              class="nav-link mx-2 active"
+              aria-current="page"
+              routerLink="/ingredient"
+              >ingredient</a
+            >
           </li>
         </ul>
       </div>
     </div>
   </nav>
-<br>
-<br>
-<H2 class="text-center">Créer un ingredient</H2>
-<div class="container border">
+  <br />
+  <br />
+  <H2 class="text-center">Créer un ingredient</H2>
+  <div class="container border">
     <form [formGroup]="formeditIngredient" (ngSubmit)="update()">
-        <div class="form-group">
-            <div class="input-field col s16">
-                <label for="idingredient">idingredient</label>
-                <input type="text" name="" id="idingredient" class="form-control" formControlName="idingredient" data-length="255">
-            </div>
-            <div class="input-field col s16">
-              <label for="idrecette">idrecette</label>
-              <input type="text" name="" id="idrecette" class="form-control" formControlName="idrecette" data-length="255">
-          </div>
-
-            <div class="input-field col s16">
-                <label for="quantiteingredient">quantiteingredient</label>
-                <input type="text" name="" id="quantiteingredient" class="form-control" formControlName="quantiteingredient" data-length="255">
-            </div>
-            <!-- <div class="input-field col s16">
-              <label for="quantite">quantite</label>
-              <input type="text" name="" id="quantite" class="form-control" formControlName="quantite" data-length="100">
-            </div> -->
-            <!-- <div class="input-field col s16">
-              <label for="id_recette">id_recette</label>
-              <input type="text" name="" id="id_recette" class="form-control" formControlName="id_recette" data-length="100">
-            </div> -->
-
+      <div class="form-group">
+        <div class="input-field col s16">
+          <label for="idingredient">idingredient</label>
+          <input
+            type="text"
+            name=""
+            id="idingredient"
+            class="form-control"
+            formControlName="idingredient"
+            data-length="255"
+          />
         </div>
-        <button class="btn btn-success" type="submit">Soumettre</button>
-    </form>
-    <br>
-</div>
-{{formeditIngredient.value | json}}
+        <div class="input-field col s16">
+          <label for="idrecette">idrecette</label>
+          <input
+            type="text"
+            name=""
+            id="idrecette"
+            class="form-control"
+            formControlName="idrecette"
+            data-length="255"
+          />
+        </div>
 
+        <div class="input-field col s16">
+          <label for="quantiteingredient">quantiteingredient</label>
+          <input
+            type="text"
+            name=""
+            id="quantiteingredient"
+            class="form-control"
+            formControlName="quantiteingredient"
+            data-length="255"
+          />
+        </div>
+      </div>
+      <button class="btn btn-success" type="submit">Soumettre</button>
+    </form>
+    <br />
+  </div>
+  <!--  test valeur formulaire {{ formeditIngredient.value | json }} -->
+</header>

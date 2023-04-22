@@ -8,48 +8,26 @@ import { IngredientsService } from 'src/app/services/ingredients/ingredients.ser
 @Component({
   selector: 'app-ingredients',
   templateUrl: './ingredients.component.html',
-  styleUrls: ['./ingredients.component.css']
+  styleUrls: ['./ingredients.component.css'],
 })
-export class IngredientsComponent implements  OnInit {
+export class IngredientsComponent implements OnInit {
   declare ingredient: Ingredients;
-  declare recette : Recette[];
-  declare form : FormGroup;
+  declare recette: Recette[];
+  declare form: FormGroup;
 
   constructor(
     private ingredientService: IngredientsService,
-    private router : Router,
-    private route: ActivatedRoute,
-
-    )
-     {}
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.getIngredients();
   }
 
   getIngredients() {
-    return this.ingredientService.findAllIngredients().subscribe(
-      data => {
-        console.log(data);
-        this.ingredient = data as Ingredients;
-        // this.getRecetteParIngredient();
-      }
-    )
+    return this.ingredientService.findAllIngredients().subscribe((data) => {
+      this.ingredient = data as Ingredients;
+    });
   }
-  // getRecetteParIngredient (){
-  //   this.ingredientService.getRecetteParIngredient (this.ingredient.id_ingredient).subscribe(
-  //     recette =>this.recette=Recette
-  //   );
-  // }
-  // deleteUser(id: number) {
-
-  //   this.utilisateurService.deleteUser(id).subscribe
-  //     (
-  //       () => {
-  //         this.router.navigate(['/utilisateur'])
-  //       }
-  //     )
-
-
-  // }
 }

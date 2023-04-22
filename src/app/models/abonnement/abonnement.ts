@@ -6,7 +6,7 @@ export class Abonnement {
   public abonnementdatedebut:Date;
 	public abonnementduree:number;
   public uid:number;
-  // public utilisateur?: Utilisateur | null =null
+
 
   constructor (){
   this.idabonnement=0;
@@ -14,7 +14,7 @@ export class Abonnement {
   this.abonnementdatedebut=new Date;
   this.abonnementduree=0;
   this.uid=0;
-  // this.utilisateur=null;
+
 
   }
 }

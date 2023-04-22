@@ -6,41 +6,29 @@ import { RecetteService } from 'src/app/services/recette/recette.service';
 @Component({
   selector: 'app-etape',
   templateUrl: './etape.component.html',
-  styleUrls: ['./etape.component.css']
+  styleUrls: ['./etape.component.css'],
 })
-export class EtapeComponent implements  OnInit {
+export class EtapeComponent implements OnInit {
   declare etape: any[];
 
   constructor(
     private etapeService: EtapeService,
-    private recetteService : RecetteService,
+    private recetteService: RecetteService,
     private router: Router,
     private route: ActivatedRoute
-    )
-     {}
+  ) {}
 
   ngOnInit(): void {
     this.getEtapes();
   }
 
   getEtapes() {
-    return this.etapeService.findAllEtapes().subscribe(
-      data => {
-        console.log(data);
-        this.etape = data as any[];
-      }
-    )
+    return this.etapeService.findAllEtapes().subscribe((data) => {
+      this.etape = data as any[];
+    });
   }
 
   deleteUser(id: number) {
-
-    this.etapeService.deleteEtape(id).subscribe
-      (
-        () => {
-
-        }
-      )
-
-
+    this.etapeService.deleteEtape(id).subscribe(() => {});
   }
 }

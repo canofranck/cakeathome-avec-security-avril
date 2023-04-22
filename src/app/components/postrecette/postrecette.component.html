@@ -5,26 +5,11 @@
 
 
 
-
-    <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
-
-    <!-- Add your site or application content here -->
-    <!-- Preloader Start Here -->
-    <!-- <div id="preloader"></div> -->
-    <!-- Preloader End Here -->
-    <!-- ScrollUp Start Here -->
-    <a href="#wrapper" data-type="section-switch" class="scrollup">
-        <i class="fas fa-angle-double-up"></i>
-    </a>
-    <!-- ScrollUp End Here -->
     <div id="wrapper" class="wrapper">
-        <!-- Header Area Start Here -->
+
      <app-header></app-header>
      <notifier-container></notifier-container>
-        <!-- Header Area End Here -->
-        <!-- Inne Page Banner Area Start Here -->
+
         <section class="inner-page-banner bg-common" data-bg-image="img/figure/inner-page-banner1.jpg">
             <div class="container">
                 <div class="row">
@@ -42,9 +27,7 @@
                 </div>
             </div>
         </section>
-        <!-- Inne Page Banner Area End Here -->
 
-        <!-- Submit Recipe Area Start Here -->
         <section class="submit-recipe-page-wrap padding-top-74 padding-bottom-50">
             <div class="container">
                 <div class="row gutters-60">
@@ -64,13 +47,9 @@
                             </div>
                             </div>
 
-                            <!-- <label>Titre de la Recette</label> -->
-
-
-                            <!-- <div class="help-block with-errors"></div> -->
                         </div>
                         <div class="form-group">
-                                <!-- <label>Choisi une categorie</label> -->
+
                                 <div class="row no-gutters">
                                   <div class="col-6">
                                   <div class="form-group additional-input-box icon-right">
@@ -94,7 +73,7 @@
                               <div class="row no-gutters">
                                 <div class="col-6">
                                 <div class="form-group additional-input-box icon-right">
-                              <!-- <label>Choisir la difficulté</label> -->
+
                                 <select id="niveaudifficulterecette" formControlName="niveaudifficulterecette" class="form-control">
                                   <option value="" disabled selected hidden>Sélectionnez le difficulté</option>
                                   <option value="Facile">Facile</option>
@@ -106,31 +85,18 @@
                               </div>
                           </div>
                             <div class="form-group">
-                                <!-- <label>Description</label> -->
+
                                 <div class="row no-gutters">
-                                  <!-- <div class="col-6"> -->
+
                                   <div class="form-group additional-input-box icon-right">
                                 <textarea placeholder="Entrez ICI la description de la recette" class="textarea " name="descriptionrecette" id="descriptionrecette" formControlName="descriptionrecette" data-length="255"
                                     rows="7" cols="20" style="height:150px; width:100%;"  ></textarea>
                                 <div class="help-block with-errors"></div>
-                                <!-- </div> -->
+
                                 </div>
                                 </div>
                             </div>
 
-                            <!-- <div class="additional-input-wrap">
-                                <label>ajouter vos photos de la recette</label>
-                                <div class="form-group">
-                                    <ul class="upload-img">
-                                        <li><img src="../../../assets/img/figure/upload-banner1.jpg" alt="Upload Image"></li>
-                                        <li><img src="../../../assets/img/figure/upload-banner1.jpg" alt="Upload Image"></li>
-                                        <li><img src="../../../assets/img/figure/upload-banner1.jpg" alt="Upload Image"></li>
-                                        <li><img src="../../../assets/img/figure/upload-banner1.jpg" alt="Upload Image"></li>
-                                        <li><img src="../../../assets/img/figure/upload-banner1.jpg" alt="Upload Image"></li>
-                                    </ul>
-                                    <button type="submit" class="btn-upload"><i class="fas fa-cloud-upload-alt"></i>ENVOYER</button>
-                                </div>
-                            </div> -->
                             <div class="additional-input-wrap">
                                 <label>Informations pour la Recette :</label>
                                 <div class="row gutters-5">
@@ -168,52 +134,17 @@
                             </div>
                             <div class="additional-input-wrap">
 
-                              <!-- <label>Ingredients:</label> -->
-                              <!-- <label for="ingredients">Ingrédients :</label> -->
-
                               <button *ngIf="cachebuttoningredient" type="button" class="btn-upload" (click)="affingre()" ><i class="flaticon-add-plus-button"></i>AJOUTER DES INGREDIENTS</button>
                               <app-add-ingredient *ngIf="addingre" (cacheringre)="cacheringr()"></app-add-ingredient>
 
 
 
 
-                                <!-- <div class="row no-gutters">
-                                    <div class="col-6">
-                                        <div class="form-group additional-input-box icon-left">
-                                            <i class="fas fa-arrows-alt"></i>
-                                            <input type="text" placeholder="Temps de préparation: 00.00.00" class="form-control"
-                                                name="name">
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group additional-input-box icon-right">
-                                            <input type="text" placeholder="Temps de Cuisson:  00.00.00" class="form-control"
-                                                name="name">
-                                            <i class="fas fa-times"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group additional-input-box icon-left">
-                                            <i class="fas fa-arrows-alt"></i>
-                                            <input type="text" placeholder="Serving People: 00" class="form-control"
-                                                name="name">
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group additional-input-box icon-right">
-                                            <input type="text" placeholder="People Views: 00" class="form-control" name="name">
-                                            <i class="fas fa-times"></i>
-                                        </div>
-                                    </div>
-                                </div> -->
-
-                                <!-- <button type="submit" class="btn-upload"><i class="flaticon-add-plus-button"></i>ADD NEW
-                                    INGREDIENT</button> -->
 
                             </div>
 
                             <div class="form-group">
-                                <!-- <label>Description</label> -->
+
                                 <button *ngIf="cachebuttonetape"  type="button" class="btn-upload" (click)="affetapes()" ><i class="flaticon-add-plus-button"></i>AJOUTER UNE ETAPE</button>
                                 <app-add-etape *ngIf="afficheretape" (cacheretape)="cachetape()"></app-add-etape>
                                 <div class="summernote"></div>
@@ -234,76 +165,11 @@
             </div>
         </section>
 
-        <!-- Submit Recipe Area End Here -->
-        <!-- Footer Area Start Here -->
+
         <app-footer></app-footer>
-        <!-- Footer Area End Here -->
+
     </div>
-    <!-- Search Box Start Here -->
-    <div id="search" class="search-wrap">
-        <button type="button" class="close">×</button>
-        <form class="search-form">
-            <input type="search" value="" placeholder="Type here........" />
-            <button type="submit" class="search-btn"><i class="flaticon-search"></i></button>
-        </form>
-    </div>
-    <!-- Search Box End Here -->
-    <!-- Modal Start-->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="title-default-bold mb-none">Se connecter</div>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form class="login-form">
-                        <input class="main-input-box" type="text" placeholder="Nom d'utilisateur" />
-                        <input class="main-input-box" type="password" placeholder="Mots de passe" />
-                        <div class="inline-box mb-5 mt-4">
-                            <div class="checkbox checkbox-primary">
-                                <input id="modal-checkbox" type="checkbox">
-                                <label for="modal-checkbox">Se Souvenir de moi</label>
-                            </div>
-                            <label class="lost-password"><a href="#">Mot de passe oublié ?</a></label>
-                        </div>
-                        <div class="inline-box mb-5 mt-4">
-                            <button class="btn-fill" type="submit" value="Login">Se Connecter</button>
-                            <a href="#" class="btn-register"><i class="fas fa-user"></i>S'enregistrer</a>
-                        </div>
-                    </form>
-                    <label>Se connecter avec un Reseau Social</label>
-                    <div class="login-box-social">
-                        <ul>
-                            <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="#" class="google"><i class="fab fa-google-plus-g"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal End-->
-    <!-- Jquery Js -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <!-- Bootstrap Js -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap Js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins Js -->
-    <script src="js/plugins.js"></script>
-    <!-- Owl Carousel Js -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- Summernote JS -->
-    <script src="js/summernote.min.js"></script>
-    <!-- Select 2 Js -->
-    <script src="js/select2.full.min.js"></script>
-    <!-- Smoothscroll Js -->
-    <script src="js/smoothscroll.min.js"></script>
-    <!-- Custom Js -->
-    <script src="js/main.js"></script>
+ 
 </body>
 
 

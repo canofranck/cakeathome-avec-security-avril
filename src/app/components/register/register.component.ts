@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     if(this.authenticationService.isUserLoggedIn()) {
       this.router.navigateByUrl('/user/management');
-      console.log("Ca fonctionne login");
+
     }
 
 
@@ -36,12 +36,12 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   public onRegister(user: User): void{
     this.showLoading = true;
-    console.log(user);
+
 
     this.subscriptions.push(this.authenticationService.register(user).subscribe(
       (response: User)=>  {
 
-        console.log("Je suis dans Register", response.firstname);
+
 
         this.showLoading = false;
         this.notifierService.notify('success', `Votre compte a bien été crée ${response.username}`);
@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
         this.router.navigateByUrl('/login');
       },
       (errorResponse: HttpErrorResponse) => {
-          console.log(errorResponse);
+  
           this.sendNotification(NotificationType.ERROR, errorResponse.error.message);
           this.showLoading = false;
       }

@@ -1,4 +1,3 @@
-
 import { NotifierService } from 'angular-notifier';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -8,24 +7,21 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
 @Component({
   selector: 'app-logout',
   templateUrl: './logout.component.html',
-  styleUrls: ['./logout.component.css']
+  styleUrls: ['./logout.component.css'],
 })
 export class LogoutComponent implements OnInit {
-
-constructor(private router:Router, private notifierService:NotifierService, private authenticationService: AuthenticationService){}
+  constructor(
+    private router: Router,
+    private notifierService: NotifierService,
+    private authenticationService: AuthenticationService
+  ) {}
 
   ngOnInit(): void {
-
-;
-
-
-this.notifierService.notify(NotificationType.SUCCESS, "Tu es bien deconnectée")
-this.authenticationService.logOut();
-this.router.navigate(['/login']);
-
-
-
-    }
+    this.notifierService.notify(
+      NotificationType.SUCCESS,
+      'Tu es bien deconnectée'
+    );
+    this.authenticationService.logOut();
+    this.router.navigate(['/login']);
   }
-
-
+}
