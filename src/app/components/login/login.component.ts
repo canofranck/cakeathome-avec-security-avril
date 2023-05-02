@@ -49,10 +49,12 @@ export class LoginComponent implements OnInit, OnDestroy {
 
           // enregistrer pour avoir accès?
           if (loggedUser?.role == 'ROLE_ADMIN') {
+
             localStorage.setItem(
               'secretAuth',
               'cakelc8!*)54(im1gt7%@4y0^a8hyc2)v$vie-knhqh5*br3td@$#+cake'
-            );
+                         );
+
             this.notifierService.notify(
               'success',
               'Bienvenue sur Cake At Home adminstrateur'
@@ -61,12 +63,12 @@ export class LoginComponent implements OnInit, OnDestroy {
           // Récupération du token depuis le localStorage
           // const token = localStorage.getItem('token');
 
-          if (token) {
-            const jwtHelper = new JwtHelperService();
-            const tokenPayload = jwtHelper.decodeToken(token);
-            const username = tokenPayload.sub;
-            const uid = tokenPayload.uid;
-          }
+          // if (token) {
+          //   const jwtHelper = new JwtHelperService();
+          //   const tokenPayload = jwtHelper.decodeToken(token);
+          //   const username = tokenPayload.sub;
+          //   const uid = tokenPayload.uid;
+          // }
 
           this.router.navigateByUrl('/home');
           this.showLoading = false;

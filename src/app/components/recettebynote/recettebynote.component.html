@@ -9,7 +9,7 @@
                    <figure class="item-figure">
                       <div class="site-img">
                           <a *ngFor="let g of gallerie" [routerLink]="['/recette',recette.idrecette]">
-                           <img *ngIf="g.idrecette == recette.idrecette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post"  >
+                           <img *ngIf="g.idrecette == recette.idrecette"  src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post"  >
                           </a>
                        </div>
                     </figure>

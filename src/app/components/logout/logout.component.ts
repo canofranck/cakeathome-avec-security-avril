@@ -17,10 +17,12 @@ export class LogoutComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.notifierService.notify(
-      NotificationType.SUCCESS,
-      'Tu es bien deconnectée'
-    );
+    this.notifierService.notify('success', 'Veuillez vous etes déconnecter');
+
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    localStorage.removeItem('users');
+    localStorage.removeItem('secretAuth');
     this.authenticationService.logOut();
     this.router.navigate(['/login']);
   }

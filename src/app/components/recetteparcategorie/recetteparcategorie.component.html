@@ -6,17 +6,17 @@
 
               <div class="row" >
                   <div class="col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let recette of recetteAvecUsername.slice(debutnombrecetteaffichees, nombreRecettesAffichees); let i=index">
-                      <div class="product-box-layout1" >
-                        <figure class="item-figure">
+                      <div class="product-box-layout4" >
+
                           <div class="site-img" >
                           <a *ngFor="let g of gallerie" [routerLink]="['/recette',recette.idrecette]">
                             <img *ngIf="g.idrecette == recette.idrecette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post"  >
                           </a>
                           </div>
-                        </figure>
+                       
                           <div class="item-content">
                               <span class="sub-title">{{recette.categorierecette}}</span>
-                              <h3 class="item-title"><a href="single-recipe1.html">{{recette.titrerecette}}</a></h3>
+                              <h3 class="item-title"><a [routerLink]="['/recette',recette.idrecette]">{{recette.titrerecette}}</a></h3>
                               <ul class="item-rating">
                                   <li class="star-fill"><i class="fas fa-star"></i></li>
                                   <li class="star-fill"><i class="fas fa-star"></i></li>
@@ -27,9 +27,9 @@
                               </ul>
                               <p>{{recette.descriptionrecette}}</p>
                               <ul class="entry-meta">
-                                  <li><a href="#"><i class="fas fa-clock"></i>{{recette.tempspreparationrecette}}</a></li>
-                                  <li><a href="#"><i class="fas fa-user"></i>by <span>{{recette.username}}</span></a></li>
-                                  <li><a href="#"><i class="fas fa-heart"></i><span>{{recette.nblike}}</span> Likes</a></li>
+                                  <li><a [routerLink]="['/recette',recette.idrecette]"><i class="fas fa-clock"></i>{{recette.tempspreparationrecette}}</a></li>
+                                  <li><a [routerLink]="['/recette',recette.idrecette]"><i class="fas fa-user"></i>by <span>{{recette.username}}</span></a></li>
+                                  <li><a [routerLink]="['/recette',recette.idrecette]"><i class="fas fa-heart"></i><span>{{recette.nblike}}</span> Likes</a></li>
                               </ul>
                           </div>
                       </div>
@@ -45,4 +45,3 @@
                   </div>
 </form>
       </section>
-  

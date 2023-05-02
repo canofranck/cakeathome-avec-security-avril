@@ -82,6 +82,6 @@ export class RandomComponent implements OnInit {
   getGalleries() {
     this.gallerieService.findAllGalleries().subscribe((data) => {
       this.gallerie = data;
-    });
+        });
   }
 }

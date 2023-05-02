@@ -1,26 +1,23 @@
 <app-header *ngIf="isCalledFromHome"></app-header>
-<div class="widget ranna-box-padding" >
-  <div class="section-heading heading-dark" >
-      <h3 class="item-heading">DERNIERES RECETTES</h3>
+<div class="widget ranna-box-padding">
+  <div class="section-heading heading-dark">
+    <h3 class="item-heading">DERNIERES RECETTES</h3>
   </div>
   <div class="widget-latest">
-      <ul class="block-list remove-5th-child-lg"  >
-          <li class="single-item" *ngFor="let recette of lastRecettes ; let i=index" >
-              <div class="site-img"   >
-                <div class="item-img">
-                <a *ngFor="let g of gallerie; let i=index"  [routerLink]="['/recette', recette.idrecette]" ><img *ngIf="g.idrecette == recette.idrecette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post" ></a>
-                  <div class="count-number">{{i+1}}</div>
-              </div>
-            </div>
-              <div class="item-content">
-                  <div class="item-ctg" >{{recette.categorierecette}}</div>
-                  <h4 class="item-title"><a [routerLink]="['/recette', recette.idrecette]">{{recette.titrerecette}}</a></h4>
-                  <div class="item-post-by"><a [routerLink]="['/recette', recette.idrecette]"><i class="fas fa-user"></i><span>Par </span>{{recette.username}}</a></div>
-              </div>
-
-          </li>
-        </ul>
-
+    <ul class="block-list remove-5th-child-lg">
+      <li class="single-item" *ngFor="let recette of lastRecettes; let i=index">
+        <div class="item-img">
+          <a *ngFor="let g of gallerie; let i=index" [routerLink]="['/recette', recette.idrecette]">
+            <img *ngIf="g.idrecette == recette.idrecette" src="http://localhost:8085/images/{{g.galleriefilename}}" alt="Post">
+          </a>
+          <div class="count-number">{{i+1}}</div>
+        </div>
+        <div class="item-content">
+          <div class="item-ctg">{{recette.categorierecette}}</div>
+          <h4 class="item-title"><a [routerLink]="['/recette', recette.idrecette]">{{recette.titrerecette}}</a></h4>
+          <div class="item-post-by"><a [routerLink]="['/recette', recette.idrecette]"><i class="fas fa-user"></i><span>Par </span>{{recette.username}}</a></div>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
-

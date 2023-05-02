@@ -6,7 +6,9 @@
     <div class="row no-gutters">
       <div class="col-6">
         <div class="form-group additional-input-box icon-right">
-          <input
+          <ul> {{
+            "Etape n°" + numeroEtape + "  :  "}} </ul>
+          <!-- <input
             type="text"
             name=""
             placeholder="numeroetape"
@@ -14,7 +16,7 @@
             class="form-control"
             formControlName="numeroetape"
             data-length="100"
-          />
+          /> -->
         </div>
       </div>
     </div>
@@ -38,9 +40,9 @@
     <i class="flaticon-add-plus-button"></i>Enregistrer l'etape
   </button>
 
-  <button type="button" class="btn-upload" (click)="cachertape()">
+  <!-- <button type="button" class="btn-upload" (click)="cachertape()">
     <i class="flaticon-add-plus-button"></i>Liste des etapes fini
-  </button>
+  </button> -->
 </form>
 <div *ngFor="let item of listeEtape" style="text-align: center">
   <div class="col-6">

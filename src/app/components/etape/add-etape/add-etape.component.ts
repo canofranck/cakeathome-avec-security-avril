@@ -18,6 +18,7 @@ export class AddEtapeComponent implements OnInit {
   @Output() // variable en sortie, pour cacher les étapes après création
   public cacheretape: EventEmitter<any> = new EventEmitter<any>();
   listeEtape: any[] = [];
+  numeroEtape = 1;
   constructor(
     private etapeService: EtapeService, // service pour les étapes
     private recetteService: RecetteService, // service pour les recettes
@@ -28,7 +29,7 @@ export class AddEtapeComponent implements OnInit {
     // initialisation du formulaire
     this.formaddEtape = this.formBuilder.group({
       idetape: ['', Validators.required],
-      numeroetape: ['', Validators.required],
+      numeroetape: [this.numeroEtape, Validators.required],
       instructionsetape: ['', Validators.required],
       // imageetape:['',Validators.required],
       idrecette: ['', Validators.required],
@@ -47,6 +48,7 @@ export class AddEtapeComponent implements OnInit {
       // Stockage de l'id de la recette en cours dans le service des recettes
       this.recetteService.setIdRecetteEncours(this.idrecetteencours);
     });
+
   }
   create() {
     const formValues = this.formaddEtape.value;
@@ -61,6 +63,8 @@ export class AddEtapeComponent implements OnInit {
     this.etapeService.saveEtape(etape).subscribe((response) => {
       // Réinitialisation du formulaire après création d'une étape
       this.formaddEtape.reset();
+      this.numeroEtape++;
+      this.formaddEtape.patchValue({numeroetape: this.numeroEtape});
     });
   }
   // methode pour cacher le composant etape
